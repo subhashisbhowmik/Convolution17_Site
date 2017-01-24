@@ -1,0 +1,40 @@
+<svg version="1.1" id="Layer_1_copy_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="1024px" height="1024px" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+	<defs>
+		<style>
+			#main{
+				stroke-dasharray:100;
+				stroke-dashoffset:0;
+				-webkit-animation: dash 10s infinite alternate ease-in-out;
+				-moz-animation: dash 10s infinite alternate ease-in-out;
+				-o-animation: dash 10s infinite alternate ease-in-out;
+				animation: dash 10s linear infinite alternate ease-in-out;
+			}
+			@-webkit-keyframes dash{
+				0%{
+					stroke-dashoffset:0;
+				}
+				100%{
+					stroke-dashoffset:10000;
+				}
+			}
+		</style>
+	</defs>
+<path id="main" opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#ffffff" stroke-width="10" stroke-miterlimit="10" d="
+	M643.521,171.981c-55.294,2.839-107.494,3-159.016,12.235c-177.904,31.89-296.571,158.68-296.571,344.702
+	c0,163.164,169.4,358.317,355.026,363.562c80.07,2.265,158.251,0.314,238.366,1.439c19.045,0.271,46.445-2.319,45.44,28.445
+	c-0.855,26.266-25.641,24.886-43.511,24.37c-105.445-3.05-207.726,7.82-312.261-13.385
+	c-205.276-41.636-339.126-214.268-339.126-406.702c0-232.378,174.957-390.816,382.212-406.776c89.87-6.92,180.561-5.64,270.881-5.93
+	c17.565-0.055,40.252,9.137,41.186,37.06c0.646,19.336-22.822,21.577-39.341,21.17C739.334,171.004,643.551,172.491,643.521,171.981
+	z"/>
+<path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#ffffff" stroke-width="5" stroke-miterlimit="10" d="
+	M531.89,393.622c-107.19,80.746-105.34,187.266-6.274,268.896c-63.761-7.925-117.506-71.865-115.051-136.891
+	C413.064,459.507,467.955,399.787,531.89,393.622z"/>
+<polygon opacity="0.9" fill="none" stroke="#ffffff" stroke-width="5" stroke-miterlimit="10" points="773.558,425.488 
+	739.391,498.341 761.432,486.693 724.174,545.843 748.919,533.2 680.196,631.266 677.197,631.214 701.148,576.873 685.644,581.76 
+	717.83,525.908 690.453,533.254 724.434,455.585 675.709,462.736 691.827,431.392 "/>
+<g opacity="0.9">
+	<path fill="none" stroke="#ffffff" stroke-width="5" stroke-miterlimit="10" d="M631.891,426.937v191.947h34.011v13.632h-95.285
+		v-13.632h34.011V446.468l-34.011,6.702V439.26L631.891,426.937z"/>
+</g>
+</svg>
