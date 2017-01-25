@@ -26,6 +26,10 @@ var moving = false;
     $(window).on("load", function () {
         var wh = $('body').height();
         // console.log(wh);
+        setTimeout(function () {
+
+            loop(0);
+        },0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
