@@ -388,12 +388,22 @@ b {
 }
 
 #algo{
-    background-color: #e94d36;
+    background-color: #9b69e9;
+    padding: 0;
 }
 #algo>.shrink{
 
     transform: scale(0.9,0.85);
 }
+
+#algo a{
+    color:dodgerblue;
+    cursor: pointer;
+}
+#algo a:hover{
+    color:cornflowerblue;
+}
+
 
 #console {
     font-family: monospace;
@@ -401,12 +411,13 @@ b {
     margin: -64% 10% 64%;
     width: 50%;
     /*height:700px;*/
-    font-size: small;
+    font-size: 85%;
     overflow: hidden;
 }
 
 #consoleImg {
     width: 100%;
+    margin-top: -8%;
 }
 
 .consoletext {

@@ -143,7 +143,9 @@ function viewUpdate() {
     $('.bg').each(function () {
         $(this).height($(this).parent().height());
     });
+    $('#algo').css("height",$("#consoleImg").height()+"px");
     homeUpdate();
+
 
 }
 

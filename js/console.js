@@ -12,10 +12,10 @@ var algomaniac =
      d8888888888 888      Y88b  d88P Y88b. .d88P 888   \"   888  d8888888888 888   Y8888   888    d8888888888 Y88b  d88P<br>\
     d88P     888 88888888  \"Y8888P88  \"Y88888P\"  888       888 d88P     888 888    Y888 8888888 d88P     888  \"Y8888P\"</div><br>";
 
-var algo_details = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam assumenda aut autem beatae blanditiis consectetur cupiditate deserunt dolor et excepturi facere facilis fugiat impedit itaque,     iusto labore maiores minus molestias necessitatibus nesciunt nisi nostrum omnis placeat praesentium quas quibusdam quos rem saepe sapiente similique soluta, ut vel! Beatae deleniti dignissimos doloribus esse exercitationem laborum molestiae nulla pariatur perferendis. Aliquam consequuntur earum est, molestiae molestias natus neque obcaecati praesentium qui, quod unde veritatis vero voluptates. Asperiores debitis distinctio eligendi expedita impedit incidunt iste iusto, molestias, nemo nobis nostrum nulla odio odit optio porro provident quam, quisquam rem repellat reprehenderit soluta tempore vel voluptas! Adipisci alias at beatae dolor earum esse, eveniet facilis id molestiae nihil numquam pariatur reiciendis rem sequi sit ut veniam! Aliquam animi aspernatur beatae, dolorum id illum maiores provident quasi quis quisquam, quod rerum? Consequatur ea eaque hic illo incidunt iste libero magnam natus nesciunt nostrum  optio reprehenderit, soluta temporibus! Consequatur deleniti doloribus itaque nesciunt voluptate?     Consectetur dignissimos distinctio facere in, iure perferendis placeat porro quae quia recusandae tenetur, voluptas? Aliquam, in, maxime? Accusamus doloremque ducimus est exercitationem, iure minima necessitatibus perspiciatis quia sint voluptatum? Aliquam architecto cupiditate eos ex illo ipsa ipsam ipsum, iste repellendus sit.<br>";
+var algo_details = "Coding has never been so awesome before. So you think you can tame an wild territory of algorithms, data structure and AI techniques under shortage of time and space? Then this is the place you deserve! What's more? This year, the format ensures that you get to battle it out with the bests even if you call yourself a novice (we know you aren't). So get ready to become the maniac! <br><a style='margin:0 auto' href='./'>Click here to register</a> <br>Contact: Anisha Bannerjee- +91 9474656643";
 var python27 = "Python 2.7.12 (default, Jul  1 2016, 15:12:24)<br>    [GCC 5.4.0 20160609] on linux2<br>Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.<br><br>";
 var algo_prizes = "{'1st':'10000.00','2nd':'6000.00','3rd':'4000.00'}<br>";
-var convoRoot="<div style='display:inline-block;color:#eb3d3d'>root</div>@<div style='display:inline-block;color:#6e9ff9'>Convolution17</div># ";
+var convoRoot="<br><div style='display:inline-block;color:#eb3d3d'>root</div>@<div style='display:inline-block;color:#6e9ff9'>Convolution17</div># ";
 var typing = false;
 var buffer = "";
 var realbuffer = "";
@@ -56,7 +56,7 @@ function con_type(s, color,i) {
     setTimeout(function () {
         bufferType(color,i);
 
-    },1000);
+    },200);
 
     // }
     // for (var i=0;i<s.length;i++){
