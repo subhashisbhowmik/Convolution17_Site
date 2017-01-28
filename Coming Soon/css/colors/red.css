@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.text-logo {
+	color: #bb141a;
+}
+.intro-tile {
+	color: red;
+}
+.obak {
+  color: #BB141A;
+}
+.md-overlay {
+  background: none repeat scroll 0 0 rgba(187, 20, 26, 0.3);
+}
+.fa-social {
+  background: none repeat scroll 0 0 #BB141A;
+}
+.icon rect, .icon line {
+  fill: #BB141A;
+  stroke: #BB141A;
+}
+.title {
+  color: #BB141A;
+}
+.contact-title {
+  color: #ffffff;
+}
+.service-top {
+	color: #BB141A;
+}
+.service-bottom {
+	color: #BB141A;
+}
+.fa-service {
+	color: #BB141A;
+	border: 1px solid #BB141A;
+}
+.contact {
+  background-color: #BB141A;
+}
+#footer {
+  background-color: #BB141A;
+}
+.btn-contact {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.fa-sliders {
+  color: #bb141a;
+}
+.color-option-title {
+  color: #bb141a;
+}
+.red {
+  background: #bb141a;
+}

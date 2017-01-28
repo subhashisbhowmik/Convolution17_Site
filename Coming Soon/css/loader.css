@@ -1,0 +1,81 @@
+body{
+    overflow: hidden;
+}
+
+@keyframes bganim {
+    from{filter: hue-rotate(0deg)}
+    to{filter: hue-rotate(360deg)}
+}
+
+#loader{
+    background-color: #4c85ef;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    animation: bganim 50s infinite;
+    align-content: center;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#loaderB{
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#animatedlogo{
+    position: absolute;
+    display: inline-block ;
+    margin-left:50%;
+    margin-top:50vh;
+}
+#animatedlogo>img{
+    margin-top:-50%;
+    margin-left:-50%;
+    height: 30vh;
+    width: auto;
+}
+
+#keyboard{
+    left:0;
+    bottom: 0;
+    display: inline-block;
+    position: absolute;
+}
+#keyboard>img{
+    padding: 5vh;
+    height: 12vh;
+    width: auto;
+}
+#mousescroll{
+    right:0;
+    bottom: 0;
+    display: inline-block;
+    position: absolute;
+}
+#mousescroll>img{
+    padding: 5vh;
+    height: 12vh;
+    width: auto;
+}
+
+@media only screen and (max-width:700px){
+    #mousescroll{
+        display: none;
+    }
+    #keyboard{
+        display: none;
+    }
+}

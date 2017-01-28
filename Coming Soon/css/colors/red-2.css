@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+.text-logo {
+	color: #ff0000;
+}
+.intro-tile {
+	color: red;
+}
+.obak {
+  color: #ff0000;
+}
+.md-overlay {
+  background: none repeat scroll 0 0 rgba(255, 0, 0, 0.3);
+}
+.fa-social {
+  background: none repeat scroll 0 0 #ff0000;
+}
+.icon rect, .icon line {
+  fill: #ff0000;
+  stroke: #ff0000;
+}
+.title {
+  color: #ff0000;
+}
+.contact-title {
+  color: #ffffff;
+}
+.service-top {
+	color: #ff0000;
+}
+.service-bottom {
+	color: #ff0000;
+}
+.fa-service {
+	color: #ff0000;
+	border: 1px solid #ff0000;
+}
+.contact {
+  background-color: #ff0000;
+}
+#footer {
+  background-color: #ff0000;
+}
+.btn-contact {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+.fa-sliders {
+  color: #ff0000;
+}
+.color-option-title {
+  color: #ff0000;
+}
+.red-2 {
+  background: #ff0000;
+}

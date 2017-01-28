@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+.text-logo {
+	color: #555;
+}
+.intro-tile {
+	color: red;
+}
+.obak {
+  color: #555;
+}
+.btn-modal {
+  background-color: #555;
+}
+.btn-modal:hover {
+  color: #555;
+}
+.md-content {
+  background: none repeat scroll 0 0 #555;
+}
+.btn-notify-popup {
+  background: none repeat scroll 0 0 #555;
+  border-color: transparent;
+}
+.md-overlay {
+  background: none repeat scroll 0 0 rgba(85, 85, 85, 0.3);
+}
+.fa-social {
+  background: none repeat scroll 0 0 #555;
+}
+.icon rect, .icon line {
+  fill: #555;
+  stroke: #555;
+}
+.title {
+  color: #555;
+}
+.contact-title {
+  color: #ffffff;
+}
+.service-top {
+	color: #555;
+}
+.service-bottom {
+	color: #555;
+}
+.fa-service {
+	color: #555;
+	border: 1px solid #555;
+}
+.contact {
+  background-color: #555;
+}
+#footer {
+  background-color: #555;
+}
+.btn-contact {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.options-head {
+  background: #555;
+}
+.fa-sliders {
+  color: #555;
+}
