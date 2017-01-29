@@ -29,7 +29,7 @@ var moving = false;
         setTimeout(function () {
 
             loop(0);
-        },0);
+        }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
@@ -52,13 +52,13 @@ var moving = false;
             callbacks: {
                 whileScrolling: function () {
                     var v = -$('#mCSB_2_container').offset().top;
-                    var wh = $('body').height();
+                    //var wh = $('body').height();
                     var marks = [0, 0, 0, 0, 0];
                     var thres = 645;
                     var thres2 = 600;
                     var thres3 = 650;
                     var thres4 = 700;
-                    var colours = ['#000008', '#000008', '0D182D', '2E3C58', '637392'];
+                    //var colours = ['#000008', '#000008', '0D182D', '2E3C58', '637392'];
                     marks[0] = v / 15 - 80;
                     // marks[1]=-v/5+125.4;
                     marks[2] = -v / 5 + 125.4;
@@ -82,20 +82,15 @@ var moving = false;
                     $('#about').find('.inner').each(function (i) {
                         // if (marks[4 - i] < 0 || (4 - i) != 2 || (4 - i) != 3 || (4 - i) != 4)
                         // if((marks[4 - i])>0)
-                        // $(this).css('border-bottom', 'solid ' + (marks[4 - i]) + 'px ' + colours[4 - i]);
-                        // console.log( 4-i+': solid ' + (marks[4 - i]) + 'px ' + colours[4 - i]);
+                        //TODO: Creates the parallax
                         $(this).css('transform', 'translate(0px,' + (-marks[4 - i]) + 'px)');
-                        // console.log($(this));
                     });
-                    // filterUpdate(v);
-                    // console.log('translate(0px,' + (markMain) + ') scale(' + scale + ',' + scale + ')');
-
+                    //TODO: This scales and translates the top Convo header
                     $('#home').find('.inner').css('transform', 'translate(0px,' + (markMain) + 'px) scale(' + scale + ',' + scale + ')');
                     var item = null;
                     $('.item').each(function () {
                         if (v + $(window).height() / 3 >= $(this).position().top || (item == null)/* || (v-item.offset().top)>(v-$(this).offset().top))*/) item = $(this);
                     });
-                    // console.log(item);
                     if (!item.hasClass('active') && !moving) {
                         $('li.active').removeClass('active');
                         var $target = $('#tab-' + item.attr('id'));
@@ -143,7 +138,7 @@ function viewUpdate() {
     $('.bg').each(function () {
         $(this).height($(this).parent().height());
     });
-    $('#algo').css("height",$("#consoleImg").height()+"px");
+    $('#algo').css("height", $("#consoleImg").height() + "px");
     homeUpdate();
 
 
@@ -159,7 +154,6 @@ function homeUpdate() {
 //     console.log($item.css('padding-bottom').replace("px", ""));
 //     setTimeout(homeUpdate,100);
     var wh = $('body').height();
-    console.log('change');
     $element.css('padding-top', wh / 2 + 25 - $element.height() / 2);
 
     // setTimeout(homeUpdate, 100);
@@ -176,11 +170,11 @@ var holder;
 
 $(window).on('load', function () {
     // console.log('ok');
-    var $loader=$('#loader');
-    $loader.css('opacity','0');
-    setTimeout(function(){
+    var $loader = $('#loader');
+    $loader.css('opacity', '0');
+    setTimeout(function () {
         $loader.remove();
-    },300);
+    }, 300);
     setTimeout(function () {
         $('.hidden').removeClass('hidden');
     }, 100);
@@ -216,7 +210,7 @@ $(document).ready(function () {
         moving = true;
         // $('#wrapper').animate({
         //     scrollTop: ($('#'+$(this).find('span').html().toLowerCase()).offset().top)
-        // }, 2000);
+        // }, 2000)
         var isAbout = $('#tab-about').hasClass('active');
         $('li.active').removeClass('active');
         $(this).addClass('active');
@@ -238,24 +232,24 @@ $(document).ready(function () {
         }, time);
     });
 });
-$(window).scroll(function () {
-    var v = $(document).scrollTop();
-    item = null;
-    // console.log(v);
-    var wh = $(window).height();
-    var marks = [0, 0, 0, 0, 0];
-    marks[1] = v / 2;
-    var $parent = $('#about');
-    // console.log(wh - $parent.find('.inner'));
-    $parent.find('.inner').css('padding-top', wh - $parent.find('.inner'));
-    for (var i = 0; i < 5; i++) {
-        var $element = $parent.find('.inner');
-        $element.css('margin-top', marks[4 - i]);
-        $parent = $element;
-
-    }
-
-    $('#nav').find('ul li').each(function () {
-        if (v > $(this).offset().top && (item == null || (v - item.offset().top) > (v - $(this).offset().top))) item = $(this);
-    });
-});
+// $(window).scroll(function () {
+//     var v = $(document).scrollTop();
+//     item = null;
+//     // console.log(v);
+//     var wh = $(window).height();
+//     var marks = [0, 0, 0, 0, 0];
+//     marks[1] = v / 2;
+//     var $parent = $('#about');
+//     // console.log(wh - $parent.find('.inner'));
+//     $parent.find('.inner').css('padding-top', wh - $parent.find('.inner'));
+//     for (var i = 0; i < 5; i++) {
+//         var $element = $parent.find('.inner');
+//         $element.css('margin-top', marks[4 - i]);
+//         $parent = $element;
+//
+//     }
+//
+//     $('#nav').find('ul li').each(function () {
+//         if (v > $(this).offset().top && (item == null || (v - item.offset().top) > (v - $(this).offset().top))) item = $(this);
+//     });
+// });
