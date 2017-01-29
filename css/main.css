@@ -525,11 +525,29 @@ b {
     display: block;
     padding: 15px;
     box-sizing: border-box;
+    clear: both;
+    background-color: #8b59c9;
+    height: 70px;
 }
 .algo_buttons_class{
     text-transform: uppercase;
     text-decoration: none;
-    background-color:white ;
+    color:white !important;
+    background-color: #2a2e39;
+    box-shadow: 0 4px 3px #333;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 25px;
+
+}
+#algo_sponsors{
+    width: 100%;
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+    clear: both;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    background-color: #7b49b9;
 }
 @media(max-width: 1020px){
 
