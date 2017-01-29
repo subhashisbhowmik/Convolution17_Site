@@ -190,7 +190,7 @@ brightness(130 %);
     height: 2px;
     background-color: black;
     display: block;
-    width: 85%;
+    width: 72%;
     margin: auto;
     -webkit-transition: all 0.5s ease-in .9s;
     -moz-transition: all 0.5s ease-in .9s;
@@ -529,7 +529,7 @@ b {
 .algo_buttons_class{
     text-transform: uppercase;
     text-decoration: none;
-    background-color: ;
+    background-color:white ;
 }
 @media(max-width: 1020px){
 
