@@ -709,7 +709,7 @@ b {
     width: 21.2vw;
     height: 16.3vw;
     display: inline-block;
-    outline: 2px solid #eb3d3d;
+    /*outline: 2px solid #eb3d3d;*/
     z-index: 100;
     position: relative;
     /*bottom: 50px;*/

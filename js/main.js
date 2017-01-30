@@ -29,6 +29,7 @@ var moving = false;
         // console.log(wh);
         setTimeout(function () {
             multimeter();
+            osc_update();
             loop(0);
         }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
