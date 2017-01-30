@@ -3,14 +3,14 @@
  */
 $console = $('#console');
 var algomaniac =
-"<br><div style='white-space: pre;font-size: 90%;' id = 'ltxt'>         d8888 888       .d8888b.   .d88888b.  888b     d888        d8888 888b    888 8888888        d8888  .d8888b.<br>" +
-"        d88888 888      d88P  Y88b d88P\" \"Y88b 8888b   d8888       d88888 8888b   888   888         d88888 d88P  Y88b<br>\
-       d88P888 888      888    888 888     888 88888b.d88888      d88P888 88888b  888   888        d88P888 888    888<br>\
-      d88P 888 888      888        888     888 888Y88888P888     d88P 888 888Y88b 888   888       d88P 888 888<br>\
-     d88P  888 888      888  88888 888     888 888 Y888P 888    d88P  888 888 Y88b888   888      d88P  888 888<br>\
-    d88P   888 888      888    888 888     888 888  Y8P  888   d88P   888 888  Y88888   888     d88P   888 888    888<br>\
-   d8888888888 888      Y88b  d88P Y88b. .d88P 888   \"   888  d8888888888 888   Y8888   888    d8888888888 Y88b  d88P<br>\
-  d88P     888 88888888  \"Y8888P88  \"Y88888P\"  888       888 d88P     888 888    Y888 8888888 d88P     888  \"Y8888P\"</div><br>";
+"<br><div style='white-space: pre;font-size: 90%;' id = 'ltxt'>          d8888 888       .d8888b.   .d88888b.  888b     d888        d8888 888b    888 8888888        d8888  .d8888b.<br>" +
+"         d88888 888      d88P  Y88b d88P\" \"Y88b 8888b   d8888       d88888 8888b   888   888         d88888 d88P  Y88b<br>\
+        d88P888 888      888    888 888     888 88888b.d88888      d88P888 88888b  888   888        d88P888 888    888<br>\
+       d88P 888 888      888        888     888 888Y88888P888     d88P 888 888Y88b 888   888       d88P 888 888<br>\
+      d88P  888 888      888  88888 888     888 888 Y888P 888    d88P  888 888 Y88b888   888      d88P  888 888<br>\
+     d88P   888 888      888    888 888     888 888  Y8P  888   d88P   888 888  Y88888   888     d88P   888 888    888<br>\
+    d8888888888 888      Y88b  d88P Y88b. .d88P 888   \"   888  d8888888888 888   Y8888   888    d8888888888 Y88b  d88P<br>\
+   d88P     888 88888888  \"Y8888P88  \"Y88888P\"  888       888 d88P     888 888    Y888 8888888 d88P     888  \"Y8888P\"</div><br>";
 
 var algo_details = "Coding has never been so awesome before. So you think you can tame an wild territory of algorithms, data structure and AI techniques under shortage of time and space? Then this is the place you deserve! What's more? This year, the format ensures that you get to battle it out with the bests even if you call yourself a novice (we know you aren't). So get ready to become the maniac! <br><a style='margin:0 auto' href='./'>Click here to register</a> <br>Contact: Anisha Bannerjee- +91 9474656643";
 var python27 = "Python 2.7.12 (default, Jul  1 2016, 15:12:24)<br>    [GCC 5.4.0 20160609] on linux2<br>Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.<br><br>";

@@ -21,6 +21,7 @@ function filterUpdate(v) {
     //     //$(this).css('filter', 'saturate(' + saturation + '%) blur(' + blur + 'px) sepia(113%) brightness(130%)').css('filter', 'saturate(' + saturation + '%) blur(' + blur + 'px) sepia(113%) brightness(130%)');
     // });
 }
+var scale = 1;
 var moving = false;
 (function ($) {
     $(window).on("load", function () {
@@ -52,7 +53,8 @@ var moving = false;
             callbacks: {
                 whileScrolling: function () {
                     var v = -$('#mCSB_2_container').offset().top;
-                    //var wh = $('body').height();
+                    var wh = $('body').height();
+                    var $element = $('#home').find('.inner');
                     var marks = [0, 0, 0, 0, 0];
                     var thres = 645;
                     var thres2 = 600;
@@ -64,7 +66,7 @@ var moving = false;
                     marks[2] = -v / 5 + 125.4;
                     marks[3] = -v / 3 + 209.3;
                     marks[4] = -(v * 11 / 20) + 325;
-                    var scale = (thres - v) * 0.6 / thres + 0.6;
+                    scale = (thres - v) * 0.6 / thres + 0.6;
                     scale = scale > 1 ? 1 : (scale < 0.6 ? 0.6 : scale);
                     var markMain = v * 17 / 20;
                     markMain = markMain > thres2 ? [(thres2) + (((markMain - thres2) * 12) / 20)] : markMain;
@@ -85,6 +87,7 @@ var moving = false;
                         //TODO: Creates the parallax
                         $(this).css('transform', 'translate(0px,' + (-marks[4 - i]) + 'px)');
                     });
+                    // $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
                     //TODO: This scales and translates the top Convo header
                     $('#home').find('.inner').css('transform', 'translate(0px,' + (markMain) + 'px) scale(' + scale + ',' + scale + ')');
                     var item = null;
@@ -140,8 +143,6 @@ function viewUpdate() {
     });
     $('#algo').css("height", $("#consoleImg").height() + "px");
     homeUpdate();
-
-
 }
 
 function homeUpdate() {
@@ -154,8 +155,8 @@ function homeUpdate() {
 //     console.log($item.css('padding-bottom').replace("px", ""));
 //     setTimeout(homeUpdate,100);
     var wh = $('body').height();
-    $element.css('padding-top', wh / 2 + 25 - $element.height() / 2);
-
+    // console.log($element.height() / scale);
+    $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
     // setTimeout(homeUpdate, 100);
 }
 
