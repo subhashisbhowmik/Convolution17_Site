@@ -652,6 +652,15 @@ b {
     color: white;
     font-weight: 500;
 }
+
+#oscillograph{
+    background-color: red;
+}
+#multitext{
+    background-color: red;
+}
+
+
 #circuistic>p.off{
     padding-left: 60%;
     opacity: 0;
