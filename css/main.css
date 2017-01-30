@@ -599,13 +599,14 @@ b {
     margin-right: 20px;
     font-weight: 500;
     text-decoration: none;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     box-shadow: 0 0 3px #555;
     display: inline-block;
     border-radius: 4px;
 }
 #circuistic_buttons_wrapper{
     width: 100%;
+    margin-top: -5px;
     display: flex;
     text-align: center;
     transform:translate(-4.3%,100%);
@@ -623,6 +624,25 @@ b {
     color: white;
     font-weight: 500;
     transition: all 0.5s ease-in-out;
+}
+
+#circuistic_contacts{
+    display: flex;
+    padding:15px;
+    text-align: center;
+    width: 100%;
+}
+#circuistic_contacts_inner{
+    display: flex;
+    padding:15px;
+    text-align: center;
+    margin: auto;
+    border-radius: 100px;
+    margin-bottom: -5px;
+    white-space: pre;
+    font-size: 1.1em;
+    box-shadow: 0 0 3px #555;
+    background-color:#eeeeee;
 }
 .circuistic_button:hover{
     background-color: #3f9ce4;
