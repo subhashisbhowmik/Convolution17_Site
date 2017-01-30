@@ -584,13 +584,35 @@ b {
     border: solid rgba(69, 19, 172, 1) 20px;
 }
 
-#circuistic>p{
-    padding-left: 50%;
+#circuistic_text{
+
     opacity: 1;
     transition: all 0.5s ease-in-out;
-    padding-top: 2%;
+    padding: 5px;
+    background-color:#dddddd;
+    width: 60vw;
+    float: right;
+    margin: 10px;
+    font-size: 1.2em;
+    line-height: 105%;
+    color: #222;
+    margin-right: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 100px;
+    box-shadow: 0 0 3px #555;
+    display: inline-block;
+    border-radius: 4px;
 }
-
+#circuistic_buttons_wrapper{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.circuistic_button{
+    padding: 10px 20px;
+    margin: 2px;
+}
 #circuistic>p.off{
     padding-left: 60%;
     opacity: 0;
@@ -601,8 +623,12 @@ b {
 }
 
 #lcd>img{
-    position: absolute;
-    width: 30%;
+    width: 30vw;
+    float: left;
+    display: none;
+}
+#lcd>img:nth-child(1){
+    display: inline-block;
 }
 
 .ckt_image{
