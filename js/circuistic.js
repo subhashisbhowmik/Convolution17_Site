@@ -1,17 +1,17 @@
 /**
  * Created by Subhashis on 31-01-2017.
  */
-var $multi=$('#multitext');
+var $multi = $('#multitext');
 function multimeter() {
-    $multi.text((3.43+Math.random()/5).toString().substr(0,4));
+    $multi.text((3.43 + Math.random() / 5).toString().substr(0, 4));
     setTimeout(function () {
         multimeter();
-    },500+1500*Math.random());
+    }, 500 + 1500 * Math.random());
 }
 
-var data = [],
+var data = [],data2=[],
     totalPoints = 300;
-var updateInterval = 30;
+var updateInterval = 10;
 function getRandomData() {
 
     if (data.length > 0)
@@ -42,7 +42,7 @@ function getRandomData() {
 
     return res;
 }
-var t=1;
+var t = 1,t2=1.5;
 
 function getData() {
 
@@ -52,9 +52,9 @@ function getData() {
     // Do a random walk
 
     while (data.length < totalPoints) {
-        var y=5*Math.sin(2*Math.PI*0.5*t)-Math.sin(6*Math.PI*0.5*t)+0.5*Math.sin(10*Math.PI*0.5*t);
+        var y = 5 * Math.sin(2 * Math.PI * 0.5 * t) - Math.sin(6 * Math.PI * 0.5 * t) + 0.5 * Math.sin(10 * Math.PI * 0.5 * t);
         data.push(y);
-        t+=0.01;
+        t += 0.01;
     }
 
     // Zip the generated y values with the x values
@@ -66,27 +66,63 @@ function getData() {
 
     return res;
 }
+function getData2() {
 
-var plot = $.plot("#oscillograph",  [ getData()], {
-    colors: ['#11eeb1'],
-    series: {
-        shadowSize: 0	// Drawing is faster without shadows
-    },
-    yaxis: {
-        min: -10,
-        max: 10
-    },
-    xaxis: {
-        show: true
+    if (data2.length > 0)
+        data2 = data2.slice(1);
+
+    // Do a random walk
+
+    while (data2.length < totalPoints) {
+        var y = 5 * Math.sin(2 * Math.PI * 0.5 * t2+Math.PI/4) + Math.sin(6 * Math.PI * 0.5 * t2+Math.PI*3/2) + 0.5 * Math.sin(4 * Math.PI * 0.5 * t2+Math.PI);
+        data2.push(y);
+        t2 += 0.01;
     }
-});
+
+    // Zip the generated y values with the x values
+
+    var res = [];
+    for (var i = 0; i < data2.length; ++i) {
+        res.push([i, data2[i]])
+    }
+
+    return res;
+}
+function getSeriesObj() {
+    return [
+        {
+            data: getData(),
+            lines: {show: true, fill: false}
+        }, {
+            data: getData2(),
+            lines: {show: true, fill: false}
+        }];
+}
+var plot = $.plot("#oscillograph", getSeriesObj(),{
+        colors: ['#11eebc1','#11febc1'],
+        series: {
+            shadowSize: 0,	// Drawing is faster without shadows
+            lines: {
+                show: true,
+                fill: false,
+            }
+
+        },
+        yaxis: {
+            min: -10,
+            max: 10
+        },
+        xaxis: {
+            show: true
+        }
+    });
+
 
 function osc_update() {
 
-    plot.setData([getData()]);
-
-    // Since the axes don't change, we don't need to call plot.setupGrid()
-
+    plot.setData(getSeriesObj());
+    plot.getData()[1].lines.lineWidth = 3;
+    plot.getData()[0].lines.lineWidth = 3;
     plot.draw();
     setTimeout(osc_update, updateInterval);
 }
