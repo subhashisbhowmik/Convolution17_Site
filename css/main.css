@@ -588,8 +588,8 @@ b {
 
     opacity: 1;
     transition: all 0.5s ease-in-out;
-    padding: 5px;
-    background-color:#dddddd;
+    padding: 14px;
+    background-color:#eeeeee;
     width: 60vw;
     float: right;
     margin: 10px;
@@ -606,12 +606,31 @@ b {
 }
 #circuistic_buttons_wrapper{
     width: 100%;
-    display: block;
+    display: flex;
     text-align: center;
+    transform:translate(-4.3%,100%);
+}
+
+#circuistic_buttons_wrapper_inner{
+    margin: auto;
+    width: 35%;
 }
 .circuistic_button{
+    background-color: #2e6da4;
+    box-shadow: 2px 2px 5px rgba(86,86,86,0);
     padding: 10px 20px;
     margin: 2px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+.circuistic_button:hover{
+    background-color: #3f9ce4;
+    box-shadow: 2px 2px 5px rgba(86,86,86,1);
+    padding: 10px 20px;
+    margin: 2px;
+    color: white;
+    font-weight: 500;
 }
 #circuistic>p.off{
     padding-left: 60%;
@@ -627,7 +646,7 @@ b {
     float: left;
     display: none;
 }
-#lcd>img:nth-child(1){
+#lcd>img:nth-child(4){
     display: inline-block;
 }
 
