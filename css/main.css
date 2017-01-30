@@ -653,12 +653,12 @@ b {
     font-weight: 500;
 }
 
-#oscillograph{
-    background-color: red;
-}
-#multitext{
-    background-color: red;
-}
+/*#oscillograph{*/
+    /*background-color: red;*/
+/*}*/
+/*#multitext{*/
+    /*background-color: red;*/
+/*}*/
 
 
 #circuistic>p.off{
