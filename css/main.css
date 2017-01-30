@@ -539,6 +539,7 @@ b {
     box-shadow: 0 4px 3px #333;
     font-family: 'Josefin Sans', sans-serif;
     padding: 10px 25px;
+    border-radius: 3px;
 
 }
 #algo_sponsors{
@@ -682,4 +683,27 @@ b {
 .ckt_image{
     margin-bottom: -4px;
     width: 100%;
+    position:relative ;
+}
+#multitext{
+    width: 15.4vw;
+    height: 130px;
+    display: inline-block;
+    outline: 2px solid #eb3d3d;
+    z-index: 100;
+    bottom: 50px;
+    left: 34px;
+    margin-top: -240px;
+    position: relative;
+}
+#oscillograph{
+    width: 21vw;
+    height: 222px;
+    display: inline-block;
+    outline: 2px solid #eb3d3d;
+    z-index: 100;
+    position: relative;
+    bottom: 50px;
+    right: 104px;
+    margin-top: -262px;
 }
