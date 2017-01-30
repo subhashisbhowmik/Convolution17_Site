@@ -28,7 +28,7 @@ var moving = false;
         var wh = $('body').height();
         // console.log(wh);
         setTimeout(function () {
-
+            multimeter();
             loop(0);
         }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;

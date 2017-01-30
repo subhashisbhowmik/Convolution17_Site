@@ -5,6 +5,11 @@ body {
     height: 100vh;
 }
 
+@font-face {
+    font-family: 'lcd';
+    src: url('../fonts/digital-7.ttf');
+}
+
 #holder {
     z-index: 10;
     position: fixed;
@@ -688,13 +693,16 @@ b {
 }
 #multitext{
     width: 15.4vw;
-    height: 9.8vw;
+    height: 8vw;
     display: inline-block;
-    outline: 2px solid #eb3d3d;
+    /*outline: 2px solid #eb3d3d;*/
     z-index: 100;
     /*bottom: 50px;*/
     left: 2.65%;
-    margin-top: -21.7vw;
+    font-family: lcd, monospace;
+    text-align: right;
+    font-size: 7vw;
+    margin-top: -19.9vw;
     position: relative;
 }
 #oscillograph{
