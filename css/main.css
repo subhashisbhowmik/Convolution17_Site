@@ -582,7 +582,8 @@ b {
     color: #2A2E39;
     font-family: 'Josefin Sans',sans-serif;
     font-weight: bolder;
-    border: solid rgba(69, 19, 172, 1) 20px;
+    border: solid rgba(69, 19, 172, 1) 1.4vw;
+    border-bottom: solid rgba(69, 19, 172, 1) 15px;
 }
 
 #circuistic_text{
@@ -687,23 +688,23 @@ b {
 }
 #multitext{
     width: 15.4vw;
-    height: 130px;
+    height: 9.8vw;
     display: inline-block;
     outline: 2px solid #eb3d3d;
     z-index: 100;
-    bottom: 50px;
-    left: 34px;
-    margin-top: -240px;
+    /*bottom: 50px;*/
+    left: 2.65%;
+    margin-top: -21.7vw;
     position: relative;
 }
 #oscillograph{
-    width: 21vw;
-    height: 222px;
+    width: 21.2vw;
+    height: 16.3vw;
     display: inline-block;
     outline: 2px solid #eb3d3d;
     z-index: 100;
     position: relative;
-    bottom: 50px;
-    right: 104px;
-    margin-top: -262px;
+    /*bottom: 50px;*/
+    right: 7.4vw;
+    margin-top: -23vw;
 }
