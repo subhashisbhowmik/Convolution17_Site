@@ -744,20 +744,25 @@ b {
     background-color: #2a2e39;
     border-radius: 50%;
     overflow: hidden;
-}
-/*@keyframes expand {*/
-    /*from{*/
-        /*right: inherit;*/
-    /*}to{*/
-         /*right: 20px;*/
-     /*}*/
-/*}*/
+}/*
+@keyframes expand {
+    from{
+        width: inherit;
+        height: inherit;
+        transform: scale(0.1);
+    }to{
+         margin-left: 20px;
+         border-radius: 0 !important;
+
+        overflow: auto;
+             transform: scale(1);
+     }
+}*/
 .right_div_expanded{
-    transition: all 2s ease-in-out;
+    animation: expand 2s ease-in-out;
     height: 300px !important;
     width: 200px !important;
     border-radius: 0 !important;
-    right: 20px;
+    z-index: 1000;
     overflow: auto;
-    display: block;
 }
