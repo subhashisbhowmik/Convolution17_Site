@@ -7,6 +7,7 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 if (screen.width < 700) {
     document.location = "mobile/";
 }
+var vbn = null;
 function filterUpdate(v) {
     // var thres3=700;
     // var maxBlur = 25, maxSaturation = 350,minBlur=5;
@@ -155,9 +156,11 @@ function homeUpdate() {
 //     console.log(wh/2+25-$item.height()-$item.parent().height()*0.03+'px');
 //     console.log($item.css('padding-bottom').replace("px", ""));
 //     setTimeout(homeUpdate,100);
-    var wh = $('body').height();
+    var $body = $('body');
+    var wh = $body.height();
+    // var ww = $body.width();
     // console.log($element.height() / scale);
-    $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
+    $element.css('padding-top', 5 * wh / 16 /*+ 25 - $element.height() / scale / 2*/);
     // setTimeout(homeUpdate, 100);
 }
 
@@ -183,19 +186,53 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
+    var expanded=false;
+    $('#right_div').on('click', function () {
+        $('#right_div').addClass('expanded');
+        setTimeout(function () {
+            if(!expanded)
+            $('#right_div>.content').fadeIn('0.2s');
+            $("#arrow_a").addClass('arrow_rotate');
+            expanded=true;
+        },200);
+    });
+
+    $('#close').on('click', function () {
+        setTimeout(function () {
+            $('#right_div>.content').fadeOut('0.2s');
+        }, 0);
+        setTimeout(function () {
+            $('#right_div').removeClass('expanded');
+            $("#arrow_a").attr('class','');
+            expanded=false;
+        }, 201);
+
+    });
+    $('#arrow').on('click', function () {
+        if(expanded) {
+            setTimeout(function () {
+                $('#right_div>.content').fadeOut('0.2s');
+            }, 0);
+            setTimeout(function () {
+                $('#right_div').removeClass('expanded');
+                $("#arrow_a").attr('class', '');
+                expanded = false;
+            }, 201);
+        }
+    });
+
     $(document).keydown(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
         if (event.keyCode > 36 && event.keyCode < 41)
             $('#main').trigger(event);
     });
-    
-    $('#button_login').on('click',  function () {
+
+    $('#button_login').on('click', function () {
         console.log(1);
-        $("#right_div").attr('class','right_div_expanded');
+        $("#right_div").attr('class', 'right_div_expanded');
     });
-    
-    
-    
+
+
     $(document).keyup(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
         if (event.keyCode > 36 && event.keyCode < 41)
