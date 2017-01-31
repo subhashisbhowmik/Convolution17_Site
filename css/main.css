@@ -841,7 +841,7 @@ b {
     position: fixed;
     z-index: 1200;
     background-color: rgba(0,0,0,0.3);
-    display: none;
+    display: block;
 }
 #login_signup_div_content{
     display: block;
@@ -862,6 +862,14 @@ b {
     font-weight: 500;
     animation:diveDown 0.3s ease-in-out;
 }
+#login_signup_div_content_in{
+    height: calc(460px - 80px);
+    width: calc(100% - 40px);
+    margin:2px auto;
+    margin-top: 30px;
+    display: block;
+
+}
 #login_signup_div_close{
     float: right;
     clear: left;
@@ -871,4 +879,53 @@ b {
     background-color: #31708f;
     color: #2a2e39;
     cursor: pointer;
+}
+.log_sin{
+    width: 50%;
+
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.log_sin label{
+    font-size: 1.1em;
+    display: block;
+
+    text-transform: uppercase;
+    color: #eeeeee;
+}
+.log_sin input{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    line-height: 105%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 10px auto;
+    border-bottom: 2px solid #31708f;
+    color: #eeeeee;
+    width: 80%;
+    display: block;
+}
+.log_sin button{
+    outline: none;
+    background-color: #2a2e39;
+    border: none;
+    padding: 10px 20px;
+    color: #eeeeee;
+    text-transform: uppercase;
+
+}
+.log_sin select{
+    outline: none;
+    background-color: #2a2e39;
+    border: none;
+    padding: 10px 20px;
+    color: #eeeeee;
+    width: 80%;
+    text-transform: uppercase;
 }
