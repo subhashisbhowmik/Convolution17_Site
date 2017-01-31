@@ -207,7 +207,7 @@ $(document).ready(function () {
             $('#right_div').removeClass('expanded');
             $("#arrow_a").attr('class','');
             expanded=false;
-        }, 201);
+        }, 280);
 
     });
     $('#arrow').on('click', function () {
@@ -219,7 +219,7 @@ $(document).ready(function () {
                 $('#right_div').removeClass('expanded');
                 $("#arrow_a").attr('class', '');
                 expanded = false;
-            }, 201);
+            }, 280);
         }
     });
 
