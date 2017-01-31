@@ -732,37 +732,36 @@ b {
     background-color: #2a2e39;
     border-radius: 50%;
     z-index: 1000;
+
 }
 
 #right_div{
     position: fixed;
     bottom: 30px;
-    right: -100vw;
-    height: 200px;
-    width: 300px;
+    right: 30px;
+    height: 80px;
+    width: 80px;
     box-shadow: 0 0 5px #333;
     background-color: #2a2e39;
-    border-radius: 50%;
     overflow: hidden;
-}/*
+    display: block;
+    z-index: 1000;
+    transform: scale(0);
+    border-radius: 50%;
+    float: right;
+    transition: 2s;
+}
 @keyframes expand {
     from{
-        width: inherit;
-        height: inherit;
-        transform: scale(0.1);
+        margin-right: inherit;
     }to{
-         margin-left: 20px;
-         border-radius: 0 !important;
-
-        overflow: auto;
-             transform: scale(1);
+         margin-right: 20px !important;
      }
-}*/
+}
 .right_div_expanded{
-    animation: expand 2s ease-in-out;
-    height: 300px !important;
-    width: 200px !important;
-    border-radius: 0 !important;
-    z-index: 1000;
-    overflow: auto;
+
+    transform: scale(1) !important;
+    border-radius: 5px !important;
+    height: 500px !important;
+    width: 300px !important;
 }
