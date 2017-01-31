@@ -190,6 +190,10 @@ $(document).ready(function () {
         $('#right_div').addClass('expanded');
         $('#right_div>.content').show('0.2s');
     });
+
+    $('#close').on('click',function () {
+       $('#right_div').removeClass('expanded');
+    });
     
     $(document).keydown(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
