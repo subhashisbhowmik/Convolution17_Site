@@ -739,13 +739,15 @@ b {
     position:fixed;
     bottom:30px;
     right:30px;
-    height:0;
-    width:0;
+    height:50px;
+    width:50px;
+    padding: 20px;
     border-radius: 50%;
-    border:25px solid  #2A2E39;
+    border:0 solid  #2A2E39;
     z-index: 399;
     box-shadow: 2px 2px 5px #333;
     background-color: #2A2E39;
+    box-sizing: border-box;
 }
 
 #right_div.expanded{
@@ -753,4 +755,15 @@ b {
     width:300px;
     border-radius: 5%;
 
+}
+
+#arrow{
+    position:fixed;
+    bottom: 26px;;
+    right:46px;
+    padding: 5px;
+    font-size:3em;
+    color: #9d9d9d;
+    transform:rotate(-90deg);
+    transform-origin: center;
 }
