@@ -192,7 +192,7 @@ $(document).ready(function () {
         $('#right_div').addClass('expanded');
         setTimeout(function () {
             if(!expanded) {
-                $('#right_div>.content').fadeIn('0.2s');
+                $('#right_div>.content').fadeIn(200);
             }
             $("#arrow_a").addClass('arrow_rotate');
             expanded=true;
@@ -201,26 +201,33 @@ $(document).ready(function () {
 
     $('#close').on('click', function () {
         setTimeout(function () {
-            $('#right_div>.content').fadeOut('0.1s');
+            $('#right_div>.content').fadeOut(100);
         }, 0);
         setTimeout(function () {
             $('#right_div').removeClass('expanded');
             $("#arrow_a").attr('class','');
             expanded=false;
-        }, 280);
+        }, 250);
 
     });
     $('#arrow').on('click', function () {
         if(expanded) {
             setTimeout(function () {
-                $('#right_div>.content').fadeOut('0.1s');
+                $('#right_div>.content').fadeOut(100);
             }, 0);
             setTimeout(function () {
                 $('#right_div').removeClass('expanded');
                 $("#arrow_a").attr('class', '');
                 expanded = false;
-            }, 280);
+            }, 250);
         }
+    });
+
+    $("#login_signup_btn").on('click',function () {
+       $("#login_signup_div").fadeIn(200);
+    });
+    $("#login_signup_div_close").click(function () {
+        $("#login_signup_div").fadeOut(100);
     });
 
     $(document).keydown(function (event) {
