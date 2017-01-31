@@ -164,7 +164,7 @@ brightness(130 %);
     position: relative;
     padding-top: 30vh;
     margin: auto;
-    max-width: 75vw;
+    max-width: 60vw;
 }
 
 #first.foreground {
@@ -613,10 +613,12 @@ b {
 }
 #circuistic_buttons_wrapper{
     width: 100%;
-    margin-top: -5px;
+    z-index: 102;
     display: flex;
     text-align: center;
-    transform:translate(-4.3%,100%);
+    margin-left: -4.3%;
+    position: absolute;
+    margin-bottom: -3vw;
 }
 
 #circuistic_buttons_wrapper_inner{
@@ -717,4 +719,38 @@ b {
     /*bottom: 50px;*/
     right: 7.4vw;
     margin-top: -23vw;
+}
+
+/*#button_login{*/
+    /*position:fixed;*/
+    /*bottom:30px;*/
+    /*right:30px;*/
+    /*height:50px;*/
+    /*width:50px;*/
+    /*box-shadow: 2px 2px 5px #333;*/
+    /*background-color: #2A2E39;*/
+    /*border-radius: 50%;*/
+    /*overflow: hidden;*/
+    /*z-index: 400;*/
+/*}*/
+
+#right_div{
+    transition:all 0.2s ease-in-out;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    height:0;
+    width:0;
+    border-radius: 50%;
+    border:25px solid  #2A2E39;
+    z-index: 399;
+    box-shadow: 2px 2px 5px #333;
+    background-color: #2A2E39;
+}
+
+#right_div.expanded{
+    height:400px;
+    width:300px;
+    border-radius: 5%;
+
 }

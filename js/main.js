@@ -155,9 +155,11 @@ function homeUpdate() {
 //     console.log(wh/2+25-$item.height()-$item.parent().height()*0.03+'px');
 //     console.log($item.css('padding-bottom').replace("px", ""));
 //     setTimeout(homeUpdate,100);
-    var wh = $('body').height();
+    var $body=$('body');
+    var wh = $body.height();
+    // var ww = $body.width();
     // console.log($element.height() / scale);
-    $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
+    $element.css('padding-top', 5*wh / 16 /*+ 25 - $element.height() / scale / 2*/);
     // setTimeout(homeUpdate, 100);
 }
 
@@ -183,6 +185,12 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
+    
+    $('#right_div').on('click',function () {
+        $('#right_div').addClass('expanded');
+        $('#right_div>.content').show('0.2s');
+    });
+    
     $(document).keydown(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
         if (event.keyCode > 36 && event.keyCode < 41)
