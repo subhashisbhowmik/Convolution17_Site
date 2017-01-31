@@ -8,9 +8,9 @@ body{
 }
 
 #loader{
+    z-index: 10000;
     background-color: #4c85ef;
-    position: absolute;
-    z-index: 100;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     animation: bganim 50s infinite;

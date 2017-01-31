@@ -99,6 +99,7 @@ var moving = false;
                     if (!item.hasClass('active') && !moving) {
                         $('li.active').removeClass('active');
                         var $target = $('#tab-' + item.attr('id'));
+                        if(item.attr('id')!='home')$('#right_div').removeClass('home');
                         $target.addClass('active');
                         $('#nav').mCustomScrollbar("scrollTo", $target.position().left - 50 < 0 ? 0 : $target.position().left - 30, {
                             scrollInertia: 500
@@ -190,8 +191,9 @@ $(document).ready(function () {
     $('#right_div').on('click', function () {
         $('#right_div').addClass('expanded');
         setTimeout(function () {
-            if(!expanded)
-            $('#right_div>.content').fadeIn('0.2s');
+            if(!expanded) {
+                $('#right_div>.content').fadeIn('0.2s');
+            }
             $("#arrow_a").addClass('arrow_rotate');
             expanded=true;
         },200);
@@ -199,7 +201,7 @@ $(document).ready(function () {
 
     $('#close').on('click', function () {
         setTimeout(function () {
-            $('#right_div>.content').fadeOut('0.2s');
+            $('#right_div>.content').fadeOut('0.1s');
         }, 0);
         setTimeout(function () {
             $('#right_div').removeClass('expanded');
@@ -211,7 +213,7 @@ $(document).ready(function () {
     $('#arrow').on('click', function () {
         if(expanded) {
             setTimeout(function () {
-                $('#right_div>.content').fadeOut('0.2s');
+                $('#right_div>.content').fadeOut('0.1s');
             }, 0);
             setTimeout(function () {
                 $('#right_div').removeClass('expanded');
