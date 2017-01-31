@@ -188,6 +188,14 @@ $(document).ready(function () {
         if (event.keyCode > 36 && event.keyCode < 41)
             $('#main').trigger(event);
     });
+    
+    $('#button_login').on('click',  function () {
+        console.log(1);
+        $("#right_div").attr('class','right_div_expanded');
+    });
+    
+    
+    
     $(document).keyup(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
         if (event.keyCode > 36 && event.keyCode < 41)
@@ -255,3 +263,4 @@ $(document).ready(function () {
 //         if (v > $(this).offset().top && (item == null || (v - item.offset().top) > (v - $(this).offset().top))) item = $(this);
 //     });
 // });
+
