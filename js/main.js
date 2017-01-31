@@ -227,6 +227,7 @@ $(document).ready(function () {
        $("#login_signup_div").fadeIn(200);
     });
     $("#login_signup_div_close").click(function () {
+        
         $("#login_signup_div").fadeOut(100);
     });
 
