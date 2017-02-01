@@ -1,3 +1,31 @@
+<?php
+    require_once "php/functions.php";
+    $await_confirm=0;
+    $name="";
+    if(isset($_COOKIE['convo_mail'])){
+        $email=$_COOKIE['convo_mail'];
+        if(isset($_COOKIE['convo_token'])){
+            $token=$_COOKIE['convo_token'];
+            $result=sql("SELECT * FROM `users` WHERE `email`='$email' AND `token`='$token'");
+            if($result->num_rows>0){
+                $row=$result->fetch_assoc();
+                $name=$row['name'];
+                if(!isset($_SESSION['on'])){
+                    $token=randomString(64);
+                    sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
+                    $_COOKIE['convo_token']=$token;
+                }
+            }else{
+                $_COOKIE['convo_mail']='';
+                $_COOKIE['convo_token']='';
+            }
+        }else{
+            if(isset($_COOKIE['not_confirmed'])&&$_COOKIE['not_confirmed']==='1')
+                $await_confirm=1;
+            else $_COOKIE['convo_mail']='';
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,10 +84,10 @@
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log_sin">
-                <form action="" method="post" name="login_form">
+                <form action="php/login.php" method="post" name="login_form">
                     <label>Login</label>
-                    <input type="email" id="login_email" placeholder="E-mail ID"/>
-                    <input type="password" id="login_pwrd" name="login_pwrd" placeholder="Password"/>
+                    <input type="email" id="login_email" name="login_email" placeholder="E-mail ID"/>
+                    <input type="password" id="login_pass" name="login_pass" placeholder="Password"/>
                     <button id="login_btn">Login</button>
                 </form>
             </div>

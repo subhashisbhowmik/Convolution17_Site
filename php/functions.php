@@ -131,6 +131,14 @@ function checkAuth($path)
     }
 }
 
+function checkConvoAuth(){
+    $email="";
+    $token="";
+    if(isset($_COOKIE['convo_mail']))$email=$_COOKIE['convo_mail'];
+    if(isset($_COOKIE['convo_token']))$token=$_COOKIE['token'];
+    
+}
+
 function hashPass($pass)
 {
     return $pass; //TODO: Decide a hashing algorithm
