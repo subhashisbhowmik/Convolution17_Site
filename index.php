@@ -260,30 +260,49 @@
             <br/>
             <h1 id="sparkhack" class="item">SPARKHACK</h1>
             <div id="sparkhack_wrapper">
-
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="crossfire" class="item">Crossfire</h1>
             <div class="blankDiv">
                 Crossfire info comming soon
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="decisia" class="item">DECISIA</h1>
             <div class="blankDiv">
                 Decisia info comming soon
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>
             <div class="blankDiv">
                 Inquizzitive info comming soon
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="workshops" class="item">PRESENTATION</h1>
             <div class="blankDiv">
                 Presentations will be here soon
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="sponsors" class="item">SPONSORS</h1>
             <div class="blankDiv">
-
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
             <h1 id="contact" class="item">CONTACT</h1>
             <div class="blankDiv">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
             </div>
         </div>
     </div>
