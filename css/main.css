@@ -910,6 +910,11 @@ b {
     color: #eeeeee;
     width: 80%;
     display: block;
+    transition-duration: 0.2s;
+}
+
+.log_sin input:focus{
+    border-bottom: 1px solid rgba(105,126,138,1);
 }
 .log_sin button{
     outline: none;
@@ -940,15 +945,4 @@ background-color: rgba(42,46,57,0.8);
     font-size: 1em;
     margin:20px;
     border-bottom: 1px solid rgba(75,96,108,0.8);
-}
-
-.log_sin optgroup{
-    margin-top: -100px;
-}
-.log_sin option{
-    background-color: #33475E;
-    color: whitesmoke;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
 }
