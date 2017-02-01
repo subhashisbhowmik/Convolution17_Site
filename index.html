@@ -56,48 +56,38 @@
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log_sin">
-                <form action="" method="" name="login_form">
+                <form action="" method="post" name="login_form">
                     <label>Login</label>
-                    <input type="email" id="login_email" id="login_email" placeholder="email id"/>
-                    <input type="password" id="login_pwrd" name="login_pwrd" placeholder="password"/>
-                    <button id="login_btn">Login</input>
+                    <input type="email" id="login_email" placeholder="E-mail ID"/>
+                    <input type="password" id="login_pwrd" name="login_pwrd" placeholder="Password"/>
+                    <button id="login_btn">Login</button>
                 </form>
             </div>
 
             <div class="log_sin">
-                <form action="" method="" name="signup_form">
+                <form action="php/signup.php" method="post" name="signup_form">
                     <label>sign up</label>
-                    <input type="text" id="signup_name" placeholder="your name"/>
-                    <input type="email" id="signup_email" placeholder="email id"/>
-                    <input type="password" id="signup_password"  placeholder="password"/>
-                    <input type="password" id="signup_password_2"  placeholder="confirm password"/>
-                    <input type="text" id="signup_institute"  placeholder="College or University"/>
-                    <select >
-                        <optgroup>
-                            <option>Select Class</option>
-                            <option id="ch1">UG 1st yr</option>
-                            <option id="ch2">UG 2nd yr</option>
-                            <option id="ch3">UG 3rd yr</option>
-                            <option id="ch4">UG 4th yr</option>
+                    <input type="text" id="signup_name" name="signup_name" placeholder="Name"/>
+                    <input type="email" id="signup_email" name="signup_email" placeholder="E-mail ID"/>
+                    <input type="password" id="signup_password" name="signup_password"  placeholder="Password"/>
+                    <input type="password" id="signup_password_2" name="signup_password_2" placeholder="Confirm Password"/>
+                    <input type="text" id="signup_institute" name="signup_institute" placeholder="College or University"/>
+                    <input type="text" id="signup_dept" name="signup_dept" placeholder="Department"/>
+                    <select id="class" name="class">
+                        <optgroup label="class">
+                            <option>CLASS</option>
+                            <option>UG 1st yr</option>
+                            <option>UG 2nd yr</option>
+                            <option>UG 3rd yr</option>
+                            <option>UG 4th yr</option>
                         </optgroup>
                     </select>
-                    <button id="signup_btn">Sign up</input>
+                    <button id="signup_btn" type="submit">Sign up</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
-<div id="detailsDivWrapper">
-    <div id="detailsDiv">
-        <div id="detailsDivClose">&#x2715;</div>
-        <div id="detailsDivContent">
-
-        </div>
-    </div>
-</div>
-
 <div id="right_div" class="home">
     <div class="content" style="display:none">
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
@@ -187,8 +177,8 @@
                 <div style="margin-top: 1.2vw">
                     <div id="circuistic_buttons_wrapper">
                         <div id="circuistic_buttons_wrapper_inner">
-                            <a href="" style="text-decoration:none;float: left;" id="circuistic_details_btn"><div class="circuistic_button">DETAILS</div></a>
-                            <a href="" style="text-decoration:none;float: right;" id="circuistic_register_btn"><div class="circuistic_button">REGISTER</div></a>
+                            <a href="" style="text-decoration:none;float: left;"><div class="circuistic_button">DETAILS</div></a>
+                            <a href="" style="text-decoration:none;float: right;"><div class="circuistic_button">REGISTER</div></a>
                             <div style="clear: both"></div>
                         </div>
                     </div>
