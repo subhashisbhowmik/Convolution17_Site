@@ -1,4 +1,5 @@
 <?php
+require_once "mailer.php";
 $conn = NULL;
 connect();
 session_start();

@@ -14,7 +14,7 @@ if ($con === "") die('Invalid Request');
 $sql="SELECT `id` FROM `users` WHERE `email`='$email' AND `confirmation` = '$con'";
 $result=sql($sql);
 if($result->num_rows>0){
-    $sql="UPDATE `users` SET `confirmation`=NULL WHERE WHERE `email`='$email'";
+    $sql="UPDATE `users` SET `confirmation`='0' WHERE WHERE `email`='$email'";
     //TODO:Make login
     $token=randomString(64);
 //    sql("DELETE FROM `cookie` WHERE 'email'='$email'");
