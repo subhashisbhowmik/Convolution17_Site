@@ -86,8 +86,8 @@
             <div class="log_sin">
                 <form action="php/login.php" method="post" name="login_form">
                     <label>Login</label>
-                    <input type="email" id="login_email" name="login_email" placeholder="E-mail ID"/>
-                    <input type="password" id="login_pass" name="login_pass" placeholder="Password"/>
+                    <input required="required"  type="email" id="login_email" name="login_email" placeholder="E-mail ID"/>
+                    <input required="required"  type="password" id="login_pass" name="login_pass" placeholder="Password"/>
                     <button id="login_btn">Login</button>
                 </form>
             </div>
@@ -95,13 +95,13 @@
             <div class="log_sin">
                 <form action="php/signup.php" method="post" name="signup_form">
                     <label>sign up</label>
-                    <input type="text" id="signup_name" name="signup_name" placeholder="Name"/>
-                    <input type="email" id="signup_email" name="signup_email" placeholder="E-mail ID"/>
-                    <input type="password" id="signup_password" name="signup_password"  placeholder="Password"/>
-                    <input type="password" id="signup_password_2" name="signup_password_2" placeholder="Confirm Password"/>
-                    <input type="text" id="signup_institute" name="signup_institute" placeholder="College or University"/>
-                    <input type="text" id="signup_dept" name="signup_dept" placeholder="Department"/>
-                    <select id="class" name="class">
+                    <input required="required"  type="text" id="signup_name" name="signup_name" placeholder="Name"/>
+                    <input required="required"  type="email" id="signup_email" name="signup_email" placeholder="E-mail ID"/>
+                    <input required="required"  pattern=".{8,100}" type="password" id="signup_password" name="signup_password"  placeholder="Password (At least 8 characters long)"/>
+                    <input required="required"  type="password" id="signup_password_2" name="signup_password_2" placeholder="Confirm Password"/>
+                    <input required="required"  "type="text" id="signup_institute" name="signup_institute" placeholder="College or University"/>
+                    <input required="required"  type="text" id="signup_dept" name="signup_dept" placeholder="Department"/>
+                    <select required="required"  id="class" name="class">
                         <optgroup label="class">
                             <option>CLASS</option>
                             <option>UG 1st yr</option>
