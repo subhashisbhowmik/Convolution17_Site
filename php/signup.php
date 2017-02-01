@@ -53,8 +53,13 @@ if ($dept === "") die('5');
 if (isset($_REQUEST['signup_institute'])) $inst = sanitizeString($_REQUEST['signup_institute']);
 if ($inst === "") die('6');
 //echo "<br>x$email";
-$mailres=sql("SELECT `email` FROM `users` WHERE `email`='$email'");
-if($mailres->num_rows>0)die('0');
+$mailres=sql("SELECT * FROM `users` WHERE `email`='$email'");
+if($mailres->num_rows>0){
+    if($mailres->fetch_assoc()['confirmation']=='0')
+    die('0');
+    else
+        sql("DELETE FROM `users` WHERE `email`='$email'");
+}
 
 $con=randomString(16);
 $result = sql("INSERT INTO `users` 
@@ -63,10 +68,10 @@ VALUES (NULL,   '$email','$name','$pass','$class','$dept','$inst','$con')");
 $encodedmail=urlencode($email);
 
 //TODO:Authenticate
-$body="Click <b></b><a href='www.convolutionjuee.com/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>";
+$body="Click <b></b><a href='http://www.convolutionjuee.com/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>";
 $_COOKIE['convo_mail']=$email;
 $_COOKIE['not_confirmed']=1;
-echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam folder if you did'nt find a mail in the inbox, and unmark it as spam.<br><a href='www.convolutionjuee.com'>Click here to get back to the site.</a></div>";
+echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam folder if you did'nt find a mail in the inbox, and unmark it as spam.<br><a href='http://www.convolutionjuee.com'>Click here to get back to the site.</a></div>";
 //header("Location: ../");
 ob_end_flush();
 flush();
