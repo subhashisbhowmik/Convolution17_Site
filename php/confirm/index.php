@@ -24,7 +24,7 @@ if($result->num_rows>0){
     $_COOKIE['convo_mail']=$email;
     $_COOKIE['convo_token']=$token;
     $_SESSION['on']='1';
-    header("Location: ../");
+//    header("Location: ../");
 }else{
     die('Invalid confirmation link');
 }
