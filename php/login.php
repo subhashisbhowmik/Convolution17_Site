@@ -16,7 +16,7 @@ $sql="SELECT * FROM `users` WHERE `email`='$email' AND `pass`='$pass'";
 $result=sql($sql);
 if($result->num_rows>0){
     $row=$result->fetch_assoc();
-    if($row['confirmation']<>'0') {
+    if($row['confirmation']=='0') {
         $token = randomString(64);
         sql("DELETE FROM `cookie` WHERE 'email'='$email'");
         $result = sql("INSERT INTO `cookie` (`mail`,`token`) VALUES ('$email','$token')");
