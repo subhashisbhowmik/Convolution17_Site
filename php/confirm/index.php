@@ -17,7 +17,7 @@ $result=sql($sql);
 if($result->num_rows>0){
     $sql="UPDATE `users` SET `confirmation`='0' WHERE `email`='$email'";
     //TODO:Make login
-//    echo $sql;
+    echo $sql;
     $token=randomString(64);
 //    sql("DELETE FROM `cookie` WHERE 'email'='$email'");
     $result=sql("INSERT INTO `cookie` (`mail`,`token`) VALUES ('$email','$token')");
