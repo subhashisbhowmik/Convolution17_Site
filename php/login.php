@@ -8,9 +8,9 @@
 require_once "functions.php";
 $email = "";
 $pass = "";
-if (isset($_REQUEST['signup_email'])) $email = sanitizeString($_REQUEST['signup_email']);
+if (isset($_REQUEST['login_email'])) $email = sanitizeString($_REQUEST['login_email']);
 if ($email === "") die('1');
-if (isset($_REQUEST['signup_password'])) $pass = sanitizeString($_REQUEST['signup_password']);
+if (isset($_REQUEST['login_password'])) $pass = sanitizeString($_REQUEST['login_password']);
 if ($pass === "") die('2');
 $sql="SELECT * FROM `users` WHERE `email`='$email' AND `pass`='$pass'";
 $result=sql($sql);
