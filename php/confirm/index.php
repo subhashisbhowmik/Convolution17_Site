@@ -5,9 +5,10 @@
  * Date: 01-02-2017
  * Time: 21:13
  */
+require_once "../functions.php";
 $email="";
 $con="";
-if (isset($_REQUEST['id'])) $name = sanitizeString($_REQUEST['id']);
+if (isset($_REQUEST['id'])) $email = sanitizeString($_REQUEST['id']);
 if ($email === "") die('Invalid Request');
 if (isset($_REQUEST['con'])) $con = urldecode($_REQUEST['con']);
 if ($con === "") die('Invalid Request');
