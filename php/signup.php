@@ -67,8 +67,8 @@ $result = sql("INSERT INTO `users`
 VALUES (NULL,   '$email','$name','$pass','$class','$dept','$inst','$con')");
 $encodedmail=urlencode($email);
 
-//TODO:Authenticate
-$body="Click <b></b><a href='http://www.convolutionjuee.com/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>";
+//TODO: Remove /test !!IMPORTANT
+$body="Click <b></b><a href='http://www.convolutionjuee.com/test/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>";
 $_COOKIE['convo_mail']=$email;
 $_COOKIE['not_confirmed']=1;
 echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><a href='http://www.convolutionjuee.com'>Click here to get back to the site.</a></div>";
