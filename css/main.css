@@ -867,10 +867,10 @@ b {
     animation:appearIn 0.3s ease-in-out;
 }
 #login_signup_div_content_in{
-    height: calc(460px - 70px);
+    height: calc(460px - 80px);
     width: calc(100% - 40px);
     margin:2px auto;
-    margin-top: 20px;
+    margin-top: 30px;
     display: block;
 
 }
