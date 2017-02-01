@@ -15,8 +15,9 @@ if ($con === "") die('Invalid Request');
 $sql="SELECT `id` FROM `users` WHERE `email`='$email' AND (`confirmation` = '$con' OR `confirmation` = '0')";
 $result=sql($sql);
 if($result->num_rows>0){
-    $sql="UPDATE `users` SET `confirmation`='0' WHERE WHERE `email`='$email'";
+    $sql="UPDATE `users` SET `confirmation`='0' WHERE `email`='$email'";
     //TODO:Make login
+//    echo $sql;
     $token=randomString(64);
 //    sql("DELETE FROM `cookie` WHERE 'email'='$email'");
     $result=sql("INSERT INTO `cookie` (`mail`,`token`) VALUES ('$email','$token')");
@@ -27,4 +28,4 @@ if($result->num_rows>0){
 }else{
     die('Invalid confirmation link');
 }
-header('Location: ../../');
+//header('Location: ../../');
