@@ -243,6 +243,15 @@ $(document).ready(function () {
     });
 
 
+    $("#circuistic_details_btn").click(function (e) {
+        e.preventDefault();
+       $("#detailsDivWrapper").fadeIn(100);
+    });
+    $("#detailsDivClose").click(function () {
+        $("#detailsDivWrapper").fadeOut(50);
+    });
+
+
     $(document).keyup(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
         if (event.keyCode > 36 && event.keyCode < 41)
