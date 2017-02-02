@@ -227,8 +227,8 @@ $(document).ready(function () {
         if (!changing) {
             if (expanded) {
                 setTimeout(function () {
-                    $('#right_div>.content').fadeOut(100);
-                }, 0);
+                    $('#right_div>.content').fadeOut(300);
+                }, 50);
                 setTimeout(function () {
                     $('#right_div').removeClass('expanded');
                     $("#arrow_a").attr('class', '');

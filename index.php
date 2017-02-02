@@ -1,4 +1,5 @@
 <?php
+
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
@@ -139,18 +140,32 @@ if (isset($_COOKIE['convo_mail'])) {
     </div>
 </div>
 
-<div id="right_div" class="home">
-    <div class="content" style="display:none">
+<div id="right_div" class="home" >
+    <div class="content" style="display:none; ">
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
-        <div id="content_inside">
+        <div id="content_inside" >
 
             <div <?php if($name!='') echo 'style="display:none;"' ;?>id="login_signup_btn">
                 Login / Sign Up
             </div>
-            <div <?php if($name=='') echo 'style="display:none;"' ;?>id="name_show">
-                <?php echo "Hi, ".$name;?>
+            <div id="name_show" <?php if($name=='') echo 'style="display:none;"' ;?>>
+                <?php echo $name;?>
+                
             </div>
-
+            <div id="notifications_wrapper" <?php if($name=='') echo 'style="display:none;"' ;?>>
+                <div class="notification">
+                    random notification
+                    <div class="notification_remove">&#x2715;</div>
+                </div>
+                <div class="notification">
+                    random notification
+                    <div class="notification_remove">&#x2715;</div>
+                </div>
+                <div class="notification">
+                    random notification
+                    <div class="notification_remove">&#x2715;</div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="arrow">
