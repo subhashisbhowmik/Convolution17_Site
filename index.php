@@ -12,26 +12,26 @@ if (isset($_COOKIE['convo_mail'])) {
         if ($result->num_rows > 0) {
 //            $row = $result->fetch_assoc();
 //            $mail = $row['mail'];
-            $row=sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
+            $row = sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
 //            print_r($row);
-            $name=$row['name'];
+            $name = $row['name'];
             if (!isset($_SESSION['on'])) {
                 $token = randomString(64);
                 sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
 //                $_COOKIE['convo_token'] = $token;
-                setcookie('convo_token',$token,time() + (86400 * 30), "/");
+                setcookie('convo_token', $token, time() + (86400 * 30), "/");
             }
         } else {
 //            $_COOKIE['convo_mail'] = '';
 //            $_COOKIE['convo_token'] = '';
-            setcookie('convo_mail','',time() + (86400 * 30), "/");
-            setcookie('convo_token','',time() + (86400 * 30), "/");
+            setcookie('convo_mail', '', time() + (86400 * 30), "/");
+            setcookie('convo_token', '', time() + (86400 * 30), "/");
 
         }
     } else {
         if (isset($_COOKIE['not_confirmed']) && $_COOKIE['not_confirmed'] === '1')
             $await_confirm = 1;
-        else setcookie('convo_mail','',time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
+        else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
     }
 }
 ?>
@@ -140,31 +140,29 @@ if (isset($_COOKIE['convo_mail'])) {
     </div>
 </div>
 
-<div id="right_div" class="home" >
+<div id="right_div" class="home">
     <div class="content" style="display:none; ">
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
-        <div id="content_inside" >
+        <div id="content_inside">
 
-            <div <?php if($name!='') echo 'style="display:none;"' ;?>id="login_signup_btn">
+            <div <?php if ($name != '') echo 'style="display:none;"'; ?>id="login_signup_btn" class="noSelect">
                 Login / Sign Up
             </div>
-            <div id="name_show" <?php if($name=='') echo 'style="display:none;"' ;?>>
-                <?php echo $name;?>
-                
+            <div id="name_show" <?php if ($name == '') echo 'style="display:none;"'; ?> >
+                <?php echo $name; ?>
+
             </div>
-            <div id="notifications_wrapper" <?php if($name=='') echo 'style="display:none;"' ;?>>
+            <div id="noti_dummy" style="display:none;cursor: pointer">
                 <div class="notification">
                     random notification
                     <div class="notification_remove">&#x2715;</div>
                 </div>
-                <div class="notification">
-                    random notification
-                    <div class="notification_remove">&#x2715;</div>
-                </div>
-                <div class="notification">
-                    random notification
-                    <div class="notification_remove">&#x2715;</div>
-                </div>
+            </div>
+            <div id="notifications_wrapper" <?php if ($name == '') echo 'style="display:none;"'; ?> class="noSelect">
+
+            </div>
+            <div id="notifications_buttons" <?php if ($name == '') echo 'style="display:none;"'; ?> >
+                <div id="settings">Settings</div><a id="logout" href="php/logout.php"><div>Logout</div></a>
             </div>
         </div>
     </div>
@@ -177,8 +175,8 @@ if (isset($_COOKIE['convo_mail'])) {
 <div id="wrapper">
     <div id="main">
         <div id="convo">
-            <div class="bg noSelect"></div>
-            <div id="home" class="item noSelect">
+            <div class="bg"></div>
+            <div id="home" class="item">
                 <!--<div class="bg"></div>-->
                 <div class="inner">
                     <!--<img id="ju" src="img/ju.png"/>-->
@@ -189,7 +187,7 @@ if (isset($_COOKIE['convo_mail'])) {
             </div>
             <div id="about" class="item">
                 <!--<div class="bg"></div>-->
-                <div class="parallax noSelect">
+                <div class="parallax">
                     <img src="img/parallax/5.svg" class="inner" id="item5">
                     <img src="img/parallax/4.svg" class="inner" id="item4">
                     <img src="img/parallax/3.svg" class="inner" id="item3">
@@ -238,7 +236,7 @@ if (isset($_COOKIE['convo_mail'])) {
                 </div>
                 <div id="circuistic_contacts">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>

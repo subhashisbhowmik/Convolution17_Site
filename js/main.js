@@ -1,6 +1,7 @@
 /**
  * Created by Subhashis on 19-11-2016.
  */
+var prev='home';
 if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
     location.replace("mobile/");
 }
@@ -31,20 +32,20 @@ var moving = false;
         setTimeout(function () {
             multimeter();
             osc_update();
-            loop(0);
+            loop(-2);
         }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
-            scrollInertia: 100,
+            scrollInertia: 1000,
             // snapAmount: wh/20,
             // snapOffset:50,
             mouseWheel: {
-                deltaFactor: 100,
-                scrollAmount: 30
+                deltaFactor: 'auto',
+                scrollAmount: 100
             },
             keyboard: {
-                scrollAmount: 10
+                scrollAmount: 100
             },
             scrollButtons: {
                 tabindex: 10
@@ -99,6 +100,12 @@ var moving = false;
                     if (!item.hasClass('active') && !moving) {
                         $('li.active').removeClass('active');
                         var $target = $('#tab-' + item.attr('id'));
+                        // console.log(item.attr('id'));
+                        if(prev!='algomaniac')
+                        if(item.attr('id')=='algomaniac'){
+                            go();
+                        }
+                        prev=item.attr('id');
                         if (item.attr('id') != 'home')$('#right_div').removeClass('home');
                         $target.addClass('active');
                         $('#nav').mCustomScrollbar("scrollTo", $target.position().left - 50 < 0 ? 0 : $target.position().left - 30, {
@@ -248,11 +255,32 @@ $(document).ready(function () {
 
         $("#login_signup_div").fadeOut(100);
     });
-
+    var buttonswitch = false;
     $(document).keydown(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});
-        if (event.keyCode > 36 && event.keyCode < 41)
-            $('#main').trigger(event);
+        if (event.keyCode > 36 && event.keyCode < 41) {
+            if (event.keyCode == 37) {
+                //Left
+                if (!buttonswitch) {
+                    buttonswitch = true;
+                    $('#nav').find('.active').prev().click();
+                    setTimeout(function () {
+                        buttonswitch=false;
+                    },1500);
+                }
+            } else if (event.keyCode == 39) {
+                //Right
+                if (!buttonswitch) {
+                    buttonswitch = true;
+                    $('#nav').find('.active').next().click();
+                    setTimeout(function () {
+                        buttonswitch=false;
+                    },1500);
+                }
+            } else
+                $('#main').trigger(event);
+
+        }
     });
 
     $('#button_login').on('click', function () {
