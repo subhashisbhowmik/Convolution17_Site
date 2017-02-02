@@ -418,6 +418,21 @@ b {
     padding: 0;
 }
 
+#algomaniac{
+    background-color: #9b69e9;
+}
+
+#algo_head{
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    padding:20px 0 0;
+    margin: 0 10px -10px;
+    border-bottom: 2px solid white;
+}
+
 #algo > .shrink {
     transform: scale(0.9, 0.85);
 }
@@ -961,6 +976,16 @@ b {
     border-bottom: 1px solid rgba(105, 126, 138, 1);
 }
 
+.log_sin input.wrong:focus {
+    border-bottom: 1px solid rgba(138, 47, 43, 1);
+}
+
+.log_sin input.wrong {
+    border-bottom: 1px solid rgba(138, 47, 43, 0.8);
+}
+
+
+
 .log_sin button {
     outline: none;
     background-color: rgba(42, 46, 57, 1);
@@ -1136,4 +1161,12 @@ b {
         left: 100%;
         right: -90%
     }
+}
+
+#contacts_container{
+    min-height: 50vh;
+}
+
+.contact_block{
+    border-radius: 400px;
 }

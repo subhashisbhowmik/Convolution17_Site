@@ -1,30 +1,38 @@
 <?php
-    require_once "php/functions.php";
-    $await_confirm=0;
-    $name="";
-    if(isset($_COOKIE['convo_mail'])){
-        $email=$_COOKIE['convo_mail'];
-        if(isset($_COOKIE['convo_token'])){
-            $token=$_COOKIE['convo_token'];
-            $result=sql("SELECT * FROM `users` WHERE `email`='$email' AND `token`='$token'");
-            if($result->num_rows>0){
-                $row=$result->fetch_assoc();
-                $name=$row['name'];
-                if(!isset($_SESSION['on'])){
-                    $token=randomString(64);
-                    sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
-                    $_COOKIE['convo_token']=$token;
-                }
-            }else{
-                $_COOKIE['convo_mail']='';
-                $_COOKIE['convo_token']='';
+require_once "php/functions.php";
+$await_confirm = 0;
+$name = "";
+if (isset($_COOKIE['convo_mail'])) {
+    $email = $_COOKIE['convo_mail'];
+    if (isset($_COOKIE['convo_token'])) {
+        $token = $_COOKIE['convo_token'];
+//        echo "SELECT * FROM `cookie` WHERE `mail`='$email' AND `token`='$token'";
+        $result = sql("SELECT * FROM `cookie` WHERE `mail`='$email' AND `token`='$token'");
+        if ($result->num_rows > 0) {
+//            $row = $result->fetch_assoc();
+//            $mail = $row['mail'];
+            $row=sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
+//            print_r($row);
+            $name=$row['name'];
+            if (!isset($_SESSION['on'])) {
+                $token = randomString(64);
+                sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
+//                $_COOKIE['convo_token'] = $token;
+                setcookie('convo_token',$token,time() + (86400 * 30), "/");
             }
-        }else{
-            if(isset($_COOKIE['not_confirmed'])&&$_COOKIE['not_confirmed']==='1')
-                $await_confirm=1;
-            else $_COOKIE['convo_mail']='';
+        } else {
+//            $_COOKIE['convo_mail'] = '';
+//            $_COOKIE['convo_token'] = '';
+            setcookie('convo_mail','',time() + (86400 * 30), "/");
+            setcookie('convo_token','',time() + (86400 * 30), "/");
+
         }
+    } else {
+        if (isset($_COOKIE['not_confirmed']) && $_COOKIE['not_confirmed'] === '1')
+            $await_confirm = 1;
+        else setcookie('convo_mail','',time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,24 +92,31 @@
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log_sin">
-                <form action="php/login.php" method="post" name="login_form">
+                <form action="php/login.php" method="get" name="login_form">
                     <label>Login</label>
-                    <input required="required"  type="email" id="login_email" name="login_email" placeholder="E-mail ID"/>
-                    <input required="required"  type="password" id="login_pass" name="login_pass" placeholder="Password"/>
+                    <input required="required" type="email" id="login_email" name="login_email"
+                           placeholder="E-mail ID"/>
+                    <input required="required" type="password" id="login_pass" name="login_pass"
+                           placeholder="Password"/>
                     <button id="login_btn">Login</button>
                 </form>
             </div>
 
             <div class="log_sin">
-                <form action="php/signup.php" method="post" name="signup_form">
+                <form action="php/signup.php" method="get" name="signup_form">
                     <label>sign up</label>
-                    <input required="required"  type="text" id="signup_name" name="signup_name" placeholder="Name"/>
-                    <input required="required"  type="email" id="signup_email" name="signup_email" placeholder="E-mail ID"/>
-                    <input required="required"  pattern=".{8,100}" type="password" id="signup_password" name="signup_password"  placeholder="Password (At least 8 characters long)"/>
-                    <input required="required"  type="password" id="signup_password_2" name="signup_password_2" placeholder="Confirm Password"/>
-                    <input required="required"  "type="text" id="signup_institute" name="signup_institute" placeholder="College or University"/>
-                    <input required="required"  type="text" id="signup_dept" name="signup_dept" placeholder="Department"/>
-                    <select required="required"  id="class" name="class">
+                    <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
+                    <input required="required" type="email" id="signup_email" name="signup_email"
+                           placeholder="E-mail ID"/>
+                    <input required="required" pattern=".{8,100}" type="password" id="signup_password"
+                           name="signup_password" placeholder="Password (At least 8 characters long)"/>
+                    <input required="required" type="password" id="signup_password_2" name="signup_password_2"
+                           placeholder="Confirm Password"/>
+                    <input required="required" "type="text" id="signup_institute" name="signup_institute"
+                    placeholder="College or University"/>
+                    <input required="required" type="text" id="signup_dept" name="signup_dept"
+                           placeholder="Department"/>
+                    <select required="required" id="class" name="class">
                         <optgroup label="class">
                             <option>CLASS</option>
                             <option>UG 1st yr</option>
@@ -129,9 +144,13 @@
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
         <div id="content_inside">
 
-            <div id="login_signup_btn">
+            <div <?php if($name!='') echo 'style="display:none;"' ;?>id="login_signup_btn">
                 Login / Sign Up
             </div>
+            <div <?php if($name=='') echo 'style="display:none;"' ;?>id="name_show">
+                <?php echo "Hi, ".$name;?>
+            </div>
+
         </div>
     </div>
     <div id="arrow">
@@ -202,23 +221,32 @@
                     by building a prototype circuit. The prototype must be both efficient and economical.
                     Come. Build. Win.
                 </div>
-                <div id="circuistic_contacts"><div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact:  </i> <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233  </div>   Anurag Chhetry- +919732812683</div></div>
+                <div id="circuistic_contacts">
+                    <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
+                        <div> Anurag Chhetry- +919732812683</div>
+                    </div>
+                </div>
                 <!--<div id="circuistic_buttons_wrapper">-->
-                    <!--<div id="circuistic_buttons_wrapper_inner">-->
-                        <!--<a href="" style="text-decoration:none;float: left;"><div class="circuistic_button">DETAILS</div></a>-->
-                        <!--<a href="" style="text-decoration:none;float: right;"><div class="circuistic_button">REGISTER</div></a>-->
-                        <!--<div style="clear: both"></div>-->
-                    <!--</div>-->
+                <!--<div id="circuistic_buttons_wrapper_inner">-->
+                <!--<a href="" style="text-decoration:none;float: left;"><div class="circuistic_button">DETAILS</div></a>-->
+                <!--<a href="" style="text-decoration:none;float: right;"><div class="circuistic_button">REGISTER</div></a>-->
+                <!--<div style="clear: both"></div>-->
+                <!--</div>-->
                 <!--</div>-->
                 <div style="margin-top: 1.2vw">
                     <div id="circuistic_buttons_wrapper">
                         <div id="circuistic_buttons_wrapper_inner">
-                            <a id="circuistic_details_btn" style="text-decoration:none;float: left;"><div class="circuistic_button">DETAILS</div></a>
-                            <a href="" style="text-decoration:none;float: right;"><div class="circuistic_button">REGISTER</div></a>
+                            <a id="circuistic_details_btn" style="text-decoration:none;float: left;">
+                                <div class="circuistic_button">DETAILS</div>
+                            </a>
+                            <a href="" style="text-decoration:none;float: right;">
+                                <div class="circuistic_button">REGISTER</div>
+                            </a>
                             <div style="clear: both"></div>
                         </div>
                     </div>
-                <img class="ckt_image" src="img/circuistic/Circuits_2.png"/>
+                    <img class="ckt_image" src="img/circuistic/Circuits_2.png"/>
                 </div>
                 <div>
                     <div id="multitext" style="float:left">23.7</div>
@@ -226,35 +254,46 @@
                     <div style="clear: both"></div>
                 </div>
             </div>
-            <h1 id="algomaniac" class="item">ALGOMANIAC</h1>
-            <hr>
-            <div id="algo">
-                <div class="shrink">
-                    <!--img id="consoleImg" src="img/flat_terminal_bare.svg"/-->
-                    <div id="laptop_screen">
-                        <div id="termial_titlebar">
-                            <div class="terminal_buttons" style="background-color:red;"></div>
-                            <div class="terminal_buttons" style="background-color:#FFC107;"></div>
-                            <div class="terminal_buttons" style="background-color:green;"></div>
+            <div id="algomaniac" class="item">
+                <!--                <hr>-->
+                <div id="algo_head">ALGOMANIAC</div>
+                <div id="algo">
+                    <div class="shrink">
+                        <!--img id="consoleImg" src="img/flat_terminal_bare.svg"/-->
+                        <a class="algo_buttons_class" href=""
+                           style="position:absolute;width:80px;float: left;top:80%;left:2%">
+                            details
+                        </a>
+                        <a class="algo_buttons_class" href=""
+                           style="position:absolute;width:80px;float: right;top:80%;right:2%">
+                            register
+                        </a>
+                        <div id="laptop_screen">
+                            <div id="termial_titlebar">
+                                <div class="terminal_buttons" style="background-color:red;"></div>
+                                <div class="terminal_buttons" style="background-color:#FFC107;"></div>
+                                <div class="terminal_buttons" style="background-color:green;"></div>
+                            </div>
+                            <div id="console"></div>
+
                         </div>
-                        <div id="console"></div>
+                        <div id="laptop_bottom"></div>
 
                     </div>
-                    <div id="laptop_bottom"></div>
-                </div>
-                <br/>
-                <div id="algo_buttons_wrapper">
-                    <a class="algo_buttons_class" href="" style="float: left;">
-                        details
-                    </a>
-                    <a class="algo_buttons_class" href="" style="float: right;">
-                        register
-                    </a>
-
-                </div>
-                <div id="algo_sponsors">
-                    place for sponsors
-
+                    <br/>
+                    <!--                    <div id="algo_buttons_wrapper">-->
+                    <!--                        <a class="algo_buttons_class" href="" style="float: left;">-->
+                    <!--                            details-->
+                    <!--                        </a>-->
+                    <!--                        <a class="algo_buttons_class" href="" style="float: right;">-->
+                    <!--                            register-->
+                    <!--                        </a>-->
+                    <!---->
+                    <!--                    </div>-->
+                    <!--                    <div id="algo_sponsors">-->
+                    <!--                        place for sponsors-->
+                    <!---->
+                    <!--                    </div>-->
                 </div>
             </div>
             <br/>
@@ -298,11 +337,19 @@
                     <div class="indeterminate"></div>
                 </div>
             </div>
-            <h1 id="contact" class="item">CONTACT</h1>
-            <div class="blankDiv">
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <div id="contact" class="item">
+                <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;">
+                    <div id="contact_head" style=" border-bottom: 2px solid white;display: inline-block">CONTACTS</div>
                 </div>
+                <!--                <div class="blankDiv">-->
+                <!--                    <div class="progress">-->
+                <!--                        <div class="indeterminate"></div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <div id="contacts_container">
+
+                </div>
+
             </div>
         </div>
     </div>
@@ -313,5 +360,6 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/circuistic.js"></script>
 <script type="text/javascript" src="js/console.js"></script>
+<script type="text/javascript" src="js/login_signup.js"></script>
 </body>
 </html>

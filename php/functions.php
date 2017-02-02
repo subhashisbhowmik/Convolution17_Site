@@ -108,7 +108,7 @@ function checkAuth($path)
 
                     clearAllCookies();
                     session_destroy();
-                    if($path=="")return 0;
+                    if ($path == "") return 0;
                     header("Location: " . $path);
                 }
             }
@@ -121,23 +121,51 @@ function checkAuth($path)
             }
             clearAllCookies();
             session_destroy();
-            if($path=="")return 0;
+            if ($path == "") return 0;
             header("Location: " . $path);
         }
     } else {
         clearAllCookies();
         session_destroy();
-        if($path=="")return 0;
+        if ($path == "") return 0;
         header("Location: " . $path);
     }
 }
 
-function checkConvoAuth(){
-    $email="";
-    $token="";
-    if(isset($_COOKIE['convo_mail']))$email=$_COOKIE['convo_mail'];
-    if(isset($_COOKIE['convo_token']))$token=$_COOKIE['token'];
-    
+$authname='';
+$authmail='';
+function checkConvoAuth($loc)
+{
+    $email = "";
+    $token = "";
+    if (isset($_COOKIE['convo_mail'])) $email = $_COOKIE['convo_mail'];
+    if (isset($_COOKIE['convo_token'])) $token = $_COOKIE['convo_token'];
+    if ($email == '' || $token == '') {
+        if ($loc != '') header("Location: $loc");
+        return 0;
+    } else {
+        $result = sql("SELECT * FROM `cookie` WHERE `mail`=$email AND `token`=$token");
+        if ($result->num_rows == 0) {
+//            $_COOKIE['convo_token'] = '';
+//            $_COOKIE['convo_mail'] = '';
+            setcookie('convo_mail','',time() + (86400 * 30), "/");
+            setcookie('convo_token','',time() + (86400 * 30), "/");
+            if ($loc != '') header("Location: $loc");
+            return -2;
+        } else {
+            if($result->fetch_assoc()['confirmation']=='0') {
+                if (!isset($_SESSION['on'])) {
+                    $token = randomString(64);
+                    sql("UPDATE `cookie` SET `token`=$token WHERE `email`=$email");
+                    $_SESSION['on'] = '1';
+                }
+                return 1;
+            }else{
+                if ($loc != '') header("Location: $loc");
+                return -1;
+            }
+        }
+    }
 }
 
 function hashPass($pass)
@@ -192,7 +220,8 @@ function decode($str)
     return $result;
 }
 
-function dpLink($docuserid, $docid){
+function dpLink($docuserid, $docid)
+{
     $icon = "./doc_icon.svg";
     if (file_exists("../dp/user/$docuserid" . ".jpg")) $icon = "../dp/user/$docuserid" . ".jpg";
     if (file_exists("../dp/user/$docuserid" . ".jpeg")) $icon = "../dp/user/$docuserid" . ".jpeg";
@@ -202,6 +231,7 @@ function dpLink($docuserid, $docid){
     if (file_exists("../dp/doc/$docid" . ".png")) $icon = "../dp/doc/$docid" . ".png";
     return $icon;
 }
+
 //echo decode(encode("Hi! It's me.\n<br>"));
 //echo encode("Hi! It's me.\n<br>");
 

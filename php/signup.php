@@ -56,7 +56,7 @@ if ($inst === "") die('6');
 $mailres=sql("SELECT * FROM `users` WHERE `email`='$email'");
 if($mailres->num_rows>0){
     if($mailres->fetch_assoc()['confirmation']=='0')
-    die('0');
+    die("<div style='text-align: center;font-size: 2em'>User with the same e-mail Already exists.<hr><a href='../'>Click here to get back to the site.</a></div>");
     else
         sql("DELETE FROM `users` WHERE `email`='$email'");
 }
@@ -69,10 +69,11 @@ $encodedmail=urlencode($email);
 
 //TODO: Remove /test !!IMPORTANT
 $body="Click <b></b><a href='http://www.convolutionjuee.com/test/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>";
-$_COOKIE['convo_mail']=$email;
-$_COOKIE['not_confirmed']=1;
-echo $email.'!'.$token;
-//echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><a href='http://www.convolutionjuee.com'>Click here to get back to the site.</a></div>";
+//$_COOKIE['convo_mail']=$email;
+//$_COOKIE['not_confirmed']=1;
+setcookie('convo_mail',$email,time() + (86400 * 30), "/");
+setcookie('not_confirmed','1',time() + (86400 * 30), "/");
+echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><a href='../'>Click here to get back to the site.</a></div>";
 //header("Location: ../");
 ob_end_flush();
 flush();

@@ -21,8 +21,11 @@ if($result->num_rows>0){
     $token=randomString(64);
 //    sql("DELETE FROM `cookie` WHERE 'email'='$email'");
     $result=sql("INSERT INTO `cookie` (`mail`,`token`) VALUES ('$email','$token')");
-    $_COOKIE['convo_mail']=$email;
-    $_COOKIE['convo_token']=$token;
+//    $_COOKIE['convo_mail']=$email;
+//    $_COOKIE['convo_token']=$token;
+    setcookie('convo_mail',$email,time() + (86400 * 30), "/");
+    setcookie('convo_token',$token,time() + (86400 * 30), "/");
+
     $_SESSION['on']='1';
 //    header("Location: ../");
 }else{
