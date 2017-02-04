@@ -350,43 +350,52 @@ if (isset($_COOKIE['convo_mail'])) {
             <div id="sparkhack_wrapper"
                  style="background-image: url('./img/SH/Sparkhack_background.jpg');background-repeat: no-repeat;background-size: cover;background-position: top">
                 <div id="sh_todo">
-                    <div class="note todo_note" id="todo1">
-                        <div id="todoNoteWrapper1">
+                    <div id="todoNoteWrapper1">
+                        <div class="note todo_note" id="todo1" style="z-index: 950;">
+                            <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Details</div>
-                            <div class="noteDetails" style="display:none"></div>
+                            <div class="noteDetails" style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'. Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!--                    <div class="note todo_note" id="todo2">-->
                     <!--                        2nd to do note-->
                     <!--                    </div>-->
                 </div>
                 <div id="sh_in_progress">
-                    <div id="inprogressNoteWrapper1">
-                        <div class="note in_progress_note" id="in_progress1">
-                            in progress note
+                    <div id="inprogressNoteWrapper1" class="noteWrapper">
+                        <div class="note in_progress_note nr" id="in_progress1">
+                            <div class="note_remove">&#x2715;</div>
+                            <div class="noteContent">Mentors</div>
+                            <div class="noteDetails" style="display:none"></div>
                         </div>
                     </div>
-                    <div id="inprogressNoteWrapper2">
+                    <div id="inprogressNoteWrapper2" class="noteWrapper">
 
-                        <div class="note in_progress_note" id="in_progress2">
-                            2nd in progress note
+                        <div class="note in_progress_note nr" id="in_progress2">
+                            <div class="note_remove">&#x2715;</div>
+                            <div class="noteContent nr">Judges</div>
+                            <div class="noteDetails" style="display:none"></div>
                         </div>
                     </div>
                 </div>
 
                 <div id="sh_done">
-                    <div id="doneNoteWrapper1">
+                    <div id="doneNoteWrapper1" class="noteWrapper">
 
-                        <div class="note done_note" id="done1">
+                        <div class="note done_note nr" id="done1">
+                            <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Prizes</div>
-                            <div class="noteDetails" style="display:none"></div>
+                            <div class="noteDetails" style="display:none">1st Prize: Rs. 15,000<br>2nd Prize: Rs. 10,000<br>3rd Prize: Rs. 5,000
+                            </div>
                         </div>
                     </div>
-                    <div id="doneNoteWrapper2">
+                    <div id="doneNoteWrapper2" class="noteWrapper">
                         <div class="note done_note" id="done2">
+                            <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Contacts</div>
-                            <div class="noteDetails" style="display:none"></div>
+                            <div class="noteDetails" style="display:none">Paulomi Bhowmick<br>+918961565172</div>
                         </div>
                     </div>
                 </div>
@@ -448,6 +457,7 @@ if (isset($_COOKIE['convo_mail'])) {
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/circuistic.js"></script>
 <script type="text/javascript" src="js/console.js"></script>
+<script type="text/javascript" src="js/note.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>
 </body>
 </html>

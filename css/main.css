@@ -1144,7 +1144,7 @@ b {
     padding-bottom: 20px;
 }
 
-.note::before{
+.note::before {
     content: '';
     width: 5px;
     height: 5px;
@@ -1157,71 +1157,96 @@ b {
 }
 
 /*#done1{*/
-    /*transform:rotate(14deg) translate(3%,4%);*/
+/*transform:rotate(14deg) translate(3%,4%);*/
 /*}*/
 
 /*#done2{*/
-    /*transform:rotate(-14deg) translate(73%,64%);*/
+/*transform:rotate(-14deg) translate(73%,64%);*/
 /*}*/
 
-.note{
-height: 100px;
-width: 100px;
-display: inline-block;
-overflow: hidden !important;
-box-shadow: 0 2px 2px rgba(0,0,0,0.6);
-color: black;
-font-family: cursive;
-padding: 20px;
-margin: 15px;
-transition: all 0.2s ease-in-out;
-cursor: pointer;
-position: absolute;
+.note {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    transform-origin: 50% 5%;
+    overflow: hidden !important;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+    color: black;
+    font-family: cursive;
+    padding: 20px;
+    margin: 15px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    position: absolute;
 }
 
-.todo_note{
-background-color: #4CAF50;
-transform: rotate(5deg);
-}
-.done_note{
-background-color:#4c85ef;
-transform: rotate(-10deg);
-}
-.in_progress_note{
-background-color: #d9534f;
-transform: rotate(10deg);
+.todo_note {
+    background-color: #4CAF50;
+    transform: rotate(5deg);
 }
 
-#sh_todo{
-margin-top: 214px;
-margin-left: 60px;
-height: 63vh;
-width: calc(30vw - 60px);
-display: inline-block;
-}
-#sh_in_progress{
-margin-top: 214px;
-margin-left: 14px;
-height: 63vh;
-display: inline-block;
-width: calc(39vw - 60px);
-}
-#sh_done{
-margin-top: 210px;
-margin-left: 15px;
-height: 63vh;
-/* outline: 2px solid crimson; */
-width: calc(30vw - 50px);
-display: inline-block;
+.done_note {
+    background-color: #4c85ef;
+    transform: rotate(-10deg);
 }
 
-.note:hover{
-    transform: rotate(1deg) !important;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,0.5);
+.in_progress_note {
+    background-color: #d9534f;
+    transform: rotate(10deg);
+}
+
+#sh_todo {
+    margin-top: 214px;
+    margin-left: 60px;
+    height: 63vh;
+    width: calc(30vw - 60px);
+    display: inline-block;
+}
+
+#sh_in_progress {
+    margin-top: 214px;
+    margin-left: 14px;
+    height: 63vh;
+    display: inline-block;
+    width: calc(39vw - 60px);
+}
+
+#sh_done {
+    margin-top: 210px;
+    margin-left: 15px;
+    height: 63vh;
+    /* outline: 2px solid crimson; */
+    width: calc(30vw - 50px);
+    display: inline-block;
+}
+
+#todo1 {
+    transform: rotate(-10deg);
+}
+
+#in_progress1 {
+    transform: rotate(-15deg);
+}
+
+#in_progress2 {
+    transform: rotate(5deg);
+}
+
+#done1 {
+    transform: rotate(10deg);
+}
+
+#done2 {
+    transform: rotate(10deg);
+}
+
+.note:hover {
+    transform: rotate(0deg) !important;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .blankDiv {
-height: 600px;
+    height: 600px;
     width: 100vw;
     background-color: #204d74;
     font-family: 'Josefin Sans', sans-serif;
@@ -1387,9 +1412,26 @@ height: 600px;
     display: inline-block;
     margin-right: 5px;
     margin-top: 2px;
-    right:0;
-    top:0;
+    right: 0;
+    top: 0;
     font-size: 0.8em;
+    padding: 3px 4px;
+    border-radius: 50%;
+    background-color: #803423;
+    color: #e5e5e5;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.note_remove {
+    position: absolute;
+    display: none;
+    margin-right: 5px;
+    margin-top: 2px;
+    right: 0;
+    top: 0;
+    font-size: 0.9em;
     padding: 3px 4px;
     border-radius: 50%;
     background-color: #803423;
@@ -1421,29 +1463,60 @@ height: 600px;
 
 }
 
-#message{
+#message {
     color: white;
     font-size: 1.3em;
     padding: 15px;
 }
 
-#todoNoteWrapper1{
+#todoNoteWrapper1 {
     position: absolute;
-    transform: translate(80%,20%) rotate(20deg);
+    transform: translate(12vw, 8vw) /*rotate(-20deg)*/;
 }
-#inprogressNoteWrapper1{
+
+#inprogressNoteWrapper1 {
     position: absolute;
-    transform: translate(10%,10%) rotate(-5deg);
+    /*transform: rotate(-5deg);*/
 }
-#inprogressNoteWrapper2{
+
+#inprogressNoteWrapper2 {
     position: absolute;
-    transform: translate(80%,80%) rotate(15deg);
+    transform: translate(21vw, 4vw) /*rotate(15deg)*/;
 }
-#donenotewrapper1{
+
+#donenotewrapper1 {
     position: absolute;
-    transform: translate(20%,20%) rotate(-20deg);
+    transform: translate(2vw, 2vw) /*rotate(-20deg)*/;
 }
-#doneNoteWrapper2{
+
+#doneNoteWrapper2 {
     position: absolute;
-    transform: translate(80%,20%) rotate(30deg);
+    transform: translate(12vw, 12vw) /*rotate(30deg)*/;
 }
+
+.expandedNote{
+    height:auto;
+    width: auto;
+    transform: translate(0,0) rotate(0deg) !important;
+    z-index: 800;
+    filter: brightness(120%);
+}
+
+.expandedNote .noteDetails{
+    padding-bottom: 2px;
+}
+
+.expandedNote .note_remove{
+    display: inline-block;
+}
+
+.expandedNote .noteDetails{
+    color:rgba(0,0,0,0.9);
+    display: block!important;
+    padding: 5px;
+    white-space: pre;
+    border-top: 1px solid black;
+}
+/*.noteWrapper:hover{*/
+/*transform: rotate(-1deg) !important;*/
+/*}*/
