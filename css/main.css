@@ -1167,6 +1167,8 @@ b {
 .note {
     height: 100px;
     width: 100px;
+    min-height: 100px;
+    min-width: 100px;
     display: inline-block;
     transform-origin: 50% 5%;
     overflow: hidden !important;
@@ -1494,12 +1496,18 @@ b {
     transform: translate(12vw, 12vw) /*rotate(30deg)*/;
 }
 
+
 .expandedNote{
     height:auto;
     width: auto;
     transform: translate(0,0) rotate(0deg) !important;
     z-index: 800;
+    transition: all 0.2s ease-in-out;
     filter: brightness(120%);
+}
+
+.noteDetails{
+    user-select: none;
 }
 
 .expandedNote .noteDetails{

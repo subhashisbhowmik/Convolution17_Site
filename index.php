@@ -87,7 +87,7 @@ if (isset($_COOKIE['convo_mail'])) {
             <li id="tab-circuistic" data-id="circuistic"><span><b>Circuistic</b></span></li>
             <li id="tab-algomaniac" data-id="algomaniac"><span><b>Algomaniac</b></span></li>
             <li id="tab-sparkhack" data-id="sparkhack"><span><b>Sparkhack</b></span></li>
-            <li id="tab-crossfire" data-id="Crossfire"><span><b>Crossfire</b></span></li>
+            <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-workshops" data-id="workshops"><span><b>Presentation</b></span></li>
@@ -400,9 +400,9 @@ if (isset($_COOKIE['convo_mail'])) {
                     </div>
                 </div>
             </div>
-            <h1 id="crossfire" class="item">Crossfire</h1>
+            <h1 id="controversial" class="item">CONtroversial</h1>
             <div class="blankDiv">
-                Crossfire info comming soon
+                CONtroversial info comming soon
                 <div class="progress">
                     <div class="indeterminate"></div>
                 </div>
