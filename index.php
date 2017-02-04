@@ -1,8 +1,9 @@
 <?php
-
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
+$email="";
+$num_noti=0;
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -33,6 +34,13 @@ if (isset($_COOKIE['convo_mail'])) {
             $await_confirm = 1;
         else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
     }
+    if($name!=''){
+        $result=sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
+        $num_noti=$result->num_rows;
+        $result_seen=sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
+    }
+    $m='';
+    if(isset($_GET['m']))$m=$_GET['m'];
 }
 
 
@@ -90,7 +98,23 @@ if (isset($_COOKIE['convo_mail'])) {
     </div>
 </div>
 <!--<div id="button_login"></div>-->
-
+<div id="message_div" style="display:none;">
+    <div id="message"><?php 
+        if($m!=''){
+            if($m=='li'){
+                echo "Logged In";
+            }else if($m=='lo'){
+                echo "Logged Out";
+            }else if($m=='wp'){
+                echo "Wrong Username or Password";
+            }else if($m=='nc'){
+                //TODO: Resend.php
+                echo "Please confirm your e-mail ID first. <a id='resend' href='php/resend.php'></a>";
+            }
+        }                                 
+        ?></div>
+    <div class="message_remove">&#x2715;</div>
+</div>
 <div id="login_signup_div">
     <div id="login_signup_div_content">
         <div id="login_signup_div_close">&#x2715;</div>
@@ -144,8 +168,14 @@ if (isset($_COOKIE['convo_mail'])) {
 </div>
 
 <div id="right_div" class="home">
+    <div id="noti_num" style="<?php if($num_noti==0) echo "display:none;"?>">
+        <div style="display: table-cell; vertical-align: middle;">
+            <?php echo $num_noti;?>
+        </div>
+    </div>
     <div class="content" style="display:none; ">
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
+        
         <div id="content_inside">
 
             <div <?php if ($name != '') echo 'style="display:none;"'; ?>id="login_signup_btn" class="noSelect">
@@ -165,7 +195,10 @@ if (isset($_COOKIE['convo_mail'])) {
 
             </div>
             <div id="notifications_buttons" <?php if ($name == '') echo 'style="display:none;"'; ?> >
-                <div id="settings">Settings</div><a id="logout" href="php/logout.php"><div>Logout</div></a>
+                <div id="settings">Settings</div>
+                <a id="logout" href="php/logout.php">
+                    <div>Logout</div>
+                </a>
             </div>
         </div>
     </div>
@@ -229,7 +262,8 @@ if (isset($_COOKIE['convo_mail'])) {
                 <!--<h1 class="item" style="text-align: center; color: #00cc66">CIRCUISTIC</h1>-->
                 <!--<hr>-->
                 <br>
-                <div id="circuistic_text">Tired of reading only text books? Have an inherent love for circuits?
+                <div id="circuistic_text" style="cursor: default;">Tired of reading only text books? Have an inherent
+                    love for circuits?
                     Then this is the event you were looking for. CONVOLUTION 2017 presents CIRCUISTIC 4.0, the circuit
                     building event of the year. To all the enthusiasts and hobbyists out there here is your chance to
                     create magic with circuits and walk away with awesome prizes.<br>
@@ -237,9 +271,9 @@ if (isset($_COOKIE['convo_mail'])) {
                     by building a prototype circuit. The prototype must be both efficient and economical.
                     Come. Build. Win.
                 </div>
-                <div id="circuistic_contacts">
+                <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>

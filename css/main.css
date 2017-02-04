@@ -5,8 +5,6 @@ body {
     height: 100vh;
 }
 
-
-
 @font-face {
     font-family: 'lcd';
     src: url('../fonts/digital-7.ttf');
@@ -420,17 +418,17 @@ b {
     padding: 0;
 }
 
-#algomaniac{
+#algomaniac {
     background-color: #9b69e9;
 }
 
-#algo_head{
+#algo_head {
     width: auto;
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
     color: white;
-    padding:20px 0 0;
+    padding: 20px 0 0;
     margin: 0 10px -10px;
     border-bottom: 2px solid white;
 }
@@ -791,11 +789,27 @@ b {
     border-radius: 25px;
     border: 0 solid #2A2E39;
     z-index: 399;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     background-color: #2A2E39;
     box-sizing: border-box;
     opacity: 0.7;
+}
+
+#noti_num {
+    text-align: center;
+    display: table;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #bb141a;
+    color: white;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
 }
 
 #right_div.home {
@@ -811,7 +825,7 @@ b {
     max-height: 500px;
     min-height: 200px;
     overflow-y: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
     overflow-wrap: hyphenate;
     width: 300px;
     border-radius: 5px;
@@ -881,9 +895,9 @@ b {
     background-color: rgba(76, 133, 239, 0.8);
 }
 
-#notifications_buttons{
+#notifications_buttons {
     display: table;
-    border-spacing:4px;
+    border-spacing: 4px;
 }
 
 #settings {
@@ -891,7 +905,7 @@ b {
     display: table-cell;
     text-align: center;
     width: 30%;
-    left:0;
+    left: 0;
     position: relative;
     margin: 2px;
     background-color: rgba(76, 133, 239, 1);
@@ -1045,8 +1059,6 @@ b {
 .log_sin input.wrong {
     border-bottom: 1px solid rgba(138, 47, 43, 0.8);
 }
-
-
 
 .log_sin button {
     outline: none;
@@ -1296,24 +1308,26 @@ b {
     }
 }
 
-#contacts_container{
+#contacts_container {
     min-height: 50vh;
 }
 
-.contact_block{
+.contact_block {
     border-radius: 400px;
 }
-#name_show::before{
-    content:'Hi';
+
+#name_show::before {
+    content: 'Hi';
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.3em;
     font-weight: 500;
-    color: #eee ;
-    background-color:rgba(41, 61, 84,0.7);
+    color: #eee;
+    background-color: rgba(41, 61, 84, 0.7);
     padding: 1px 4px;
     border-radius: 50%;
 }
-#name_show{
+
+#name_show {
     cursor: default;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.2em;
@@ -1322,18 +1336,20 @@ b {
     padding: 15px;
     background-color: #33475E;
 }
-#notifications_wrapper{
+
+#notifications_wrapper {
     width: 100%;
-    padding-top:5px;
+    padding-top: 5px;
     box-sizing: border-box;
     display: block;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.1em;
     font-weight: 500;
 }
-.notification{
+
+.notification {
     display: inherit;
-    margin: 0 auto  ;
+    margin: 0 auto;
     margin-bottom: 2px;
     padding: 10px;
     background-color: #a94442;
@@ -1343,7 +1359,8 @@ b {
     overflow-x: hidden;
 
 }
-.notification_remove{
+
+.notification_remove {
     display: inline-block;
     margin-right: -50px;
     float: right;
@@ -1356,6 +1373,48 @@ b {
     cursor: pointer;
     transition: 0.2s;
 }
-.notification:hover .notification_remove{
+
+.message_remove {
+    position: absolute;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 2px;
+    right:0;
+    top:0;
+    font-size: 0.8em;
+    padding: 3px 4px;
+    border-radius: 50%;
+    background-color: #803423;
+    color: #e5e5e5;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.notification:hover .notification_remove {
     margin-right: 4px;
+}
+
+#message_div {
+    background-color: rgb(44, 73, 135);
+    z-index: 900;
+    margin: 20px;
+    max-width: 90vw;
+    /*max-height: 10vh;*/
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border: 1px solid black;
+    /*height: 80px;*/
+    width: 200px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+}
+
+#message{
+    color: white;
+    font-size: 1.3em;
+    padding: 15px;
 }

@@ -37,15 +37,15 @@ var moving = false;
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
-            scrollInertia: 1000,
+            scrollInertia: 500,
             // snapAmount: wh/20,
             // snapOffset:50,
             mouseWheel: {
                 deltaFactor: 'auto',
-                scrollAmount: 100
+                scrollAmount: 250
             },
             keyboard: {
-                scrollAmount: 100
+                scrollAmount: 200
             },
             scrollButtons: {
                 tabindex: 10
@@ -194,9 +194,23 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
+    if(window.location.hash) {
+        var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+        if(hash=='0' && $('#message_div').text()!=''){
+            $('#message_div').show();
+            if($('#message_div').text()=="Wrong Username or Password"){
+                $("#login_signup_div").fadeIn(200);
+            }
+        }
+        window.location.hash='';
+    }
+    $('#message_div .message_remove').click(function () {
+        $(this).parent().fadeOut('fast');
+    });
     var expanded = false;
     var changing = false;
     $('#right_div').on('click', function () {
+        $('#noti_num').fadeOut('fast');
         if (!changing) {
             changing = true;
             $('#right_div').addClass('expanded');
@@ -231,6 +245,8 @@ $(document).ready(function () {
         }
     });
     $('#arrow').on('click', function () {
+        $('#noti_num').fadeOut('fast');
+
         if (!changing) {
             if (expanded) {
                 setTimeout(function () {
@@ -266,7 +282,7 @@ $(document).ready(function () {
                     $('#nav').find('.active').prev().click();
                     setTimeout(function () {
                         buttonswitch=false;
-                    },1500);
+                    },1200);
                 }
             } else if (event.keyCode == 39) {
                 //Right
@@ -275,7 +291,7 @@ $(document).ready(function () {
                     $('#nav').find('.active').next().click();
                     setTimeout(function () {
                         buttonswitch=false;
-                    },1500);
+                    },1200);
                 }
             } else
                 $('#main').trigger(event);
