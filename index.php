@@ -2,8 +2,8 @@
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
-$email="";
-$num_noti=0;
+$email = "";
+$num_noti = 0;
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -34,15 +34,14 @@ if (isset($_COOKIE['convo_mail'])) {
             $await_confirm = 1;
         else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
     }
-    if($name!=''){
-        $result=sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
-        $num_noti=$result->num_rows;
-        $result_seen=sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
+    if ($name != '') {
+        $result = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
+        $num_noti = $result->num_rows;
+        $result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
     }
-    $m='';
-    if(isset($_GET['m']))$m=$_GET['m'];
+    $m = '';
+    if (isset($_GET['m'])) $m = $_GET['m'];
 }
-
 
 
 ?>
@@ -99,19 +98,19 @@ if (isset($_COOKIE['convo_mail'])) {
 </div>
 <!--<div id="button_login"></div>-->
 <div id="message_div" style="display:none;">
-    <div id="message"><?php 
-        if($m!=''){
-            if($m=='li'){
+    <div id="message"><?php
+        if ($m != '') {
+            if ($m == 'li') {
                 echo "Logged In";
-            }else if($m=='lo'){
+            } else if ($m == 'lo') {
                 echo "Logged Out";
-            }else if($m=='wp'){
+            } else if ($m == 'wp') {
                 echo "Wrong Username or Password";
-            }else if($m=='nc'){
+            } else if ($m == 'nc') {
                 //TODO: Resend.php
                 echo "Please confirm your e-mail ID first. <a id='resend' href='php/resend.php'></a>";
             }
-        }                                 
+        }
         ?></div>
     <div class="message_remove">&#x2715;</div>
 </div>
@@ -168,14 +167,14 @@ if (isset($_COOKIE['convo_mail'])) {
 </div>
 
 <div id="right_div" class="home">
-    <div id="noti_num" style="<?php if($num_noti==0) echo "display:none;"?>">
+    <div id="noti_num" style="<?php if ($num_noti == 0) echo "display:none;" ?>">
         <div style="display: table-cell; vertical-align: middle;">
-            <?php echo $num_noti;?>
+            <?php echo $num_noti; ?>
         </div>
     </div>
     <div class="content" style="display:none; ">
         <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
-        
+
         <div id="content_inside">
 
             <div <?php if ($name != '') echo 'style="display:none;"'; ?>id="login_signup_btn" class="noSelect">
@@ -273,7 +272,7 @@ if (isset($_COOKIE['convo_mail'])) {
                 </div>
                 <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>
@@ -348,30 +347,47 @@ if (isset($_COOKIE['convo_mail'])) {
             </div>
             <br/>
             <h1 id="sparkhack" class="item"></h1>
-            <div id="sparkhack_wrapper" style="background-image: url('./img/SH/Sparkhack_background.jpg');background-repeat: no-repeat;background-size: cover;background-position: top">
+            <div id="sparkhack_wrapper"
+                 style="background-image: url('./img/SH/Sparkhack_background.jpg');background-repeat: no-repeat;background-size: cover;background-position: top">
                 <div id="sh_todo">
                     <div class="note todo_note" id="todo1">
-                        to do note
+                        <div id="todoNoteWrapper1">
+                            <div class="noteContent">Details</div>
+                            <div class="noteDetails" style="display:none"></div>
+                        </div>
                     </div>
-                    <div class="note todo_note" id="todo2">
-                        2nd to do note
-                    </div>
+                    
+                    <!--                    <div class="note todo_note" id="todo2">-->
+                    <!--                        2nd to do note-->
+                    <!--                    </div>-->
                 </div>
                 <div id="sh_in_progress">
-                    <div class="note in_progress_note" id="in_progress1">
-                        in progress note
+                    <div id="inprogressNoteWrapper1">
+                        <div class="note in_progress_note" id="in_progress1">
+                            in progress note
+                        </div>
                     </div>
-                    <div class="note in_progress_note" id="in_progress2">
-                        2nd in progress note
+                    <div id="inprogressNoteWrapper2">
+
+                        <div class="note in_progress_note" id="in_progress2">
+                            2nd in progress note
+                        </div>
                     </div>
                 </div>
 
                 <div id="sh_done">
-                    <div class="note done_note" id="done1">
-                        done note
+                    <div id="doneNoteWrapper1">
+
+                        <div class="note done_note" id="done1">
+                            <div class="noteContent">Prizes</div>
+                            <div class="noteDetails" style="display:none"></div>
+                        </div>
                     </div>
-                    <div class="note done_note" id="done2">
-                        2nd done note
+                    <div id="doneNoteWrapper2">
+                        <div class="note done_note" id="done2">
+                            <div class="noteContent">Contacts</div>
+                            <div class="noteDetails" style="display:none"></div>
+                        </div>
                     </div>
                 </div>
             </div>
