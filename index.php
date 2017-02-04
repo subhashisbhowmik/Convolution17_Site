@@ -34,6 +34,9 @@ if (isset($_COOKIE['convo_mail'])) {
         else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
     }
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -310,10 +313,32 @@ if (isset($_COOKIE['convo_mail'])) {
                 </div>
             </div>
             <br/>
-            <h1 id="sparkhack" class="item">SPARKHACK</h1>
-            <div id="sparkhack_wrapper">
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <h1 id="sparkhack" class="item"></h1>
+            <div id="sparkhack_wrapper" style="background-image: url('./img/SH/Sparkhack_background.jpg');background-repeat: no-repeat;background-size: cover;background-position: top">
+                <div id="sh_todo">
+                    <div class="note todo_note" id="todo1">
+                        to do note
+                    </div>
+                    <div class="note todo_note" id="todo2">
+                        2nd to do note
+                    </div>
+                </div>
+                <div id="sh_in_progress">
+                    <div class="note in_progress_note" id="in_progress1">
+                        in progress note
+                    </div>
+                    <div class="note in_progress_note" id="in_progress2">
+                        2nd in progress note
+                    </div>
+                </div>
+
+                <div id="sh_done">
+                    <div class="note done_note" id="done1">
+                        done note
+                    </div>
+                    <div class="note done_note" id="done2">
+                        2nd done note
+                    </div>
                 </div>
             </div>
             <h1 id="crossfire" class="item">Crossfire</h1>
