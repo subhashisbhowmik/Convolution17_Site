@@ -1,11 +1,11 @@
 <?php
-/*
+
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
 $email = "";
 $num_noti = 0;
-$m='';
+$m = '';
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -41,10 +41,10 @@ if (isset($_COOKIE['convo_mail'])) {
         $num_noti = $result->num_rows;
         $result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
     }
-    
+
     if (isset($_GET['m'])) $m = $_GET['m'];
 }
-*/$name ="";
+$name = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +92,7 @@ if (isset($_COOKIE['convo_mail'])) {
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-presentation" data-id="presentation"><span><b>Presentation</b></span></li>
-<!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
+            <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
     </div>
@@ -170,7 +170,8 @@ if (isset($_COOKIE['convo_mail'])) {
             <div class="log_sin">
                 <form action="php/signup.php" method="get" name="signup_form">
                     <label>Change Details</label>
-                    <input required="required" type="password" id="old_password" name="old_password" placeholder="Old Password"/>
+                    <input required="required" type="password" id="old_password" name="old_password"
+                           placeholder="Old Password"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="new_password" placeholder="Password (At least 8 characters long)"/>
                     <input required="required" type="password" id="signup_password_2" name="signup_password_2"
@@ -243,64 +244,115 @@ if (isset($_COOKIE['convo_mail'])) {
 </div>
 
 
-<div id="teamWrapper">
+<div id="teamWrapper" style="display:none">
     <div id="teamDiv">
         <div id="teamClose">&#x2715;</div>
         <div id="teamContents">
 
-            <div class="teamDesignation">Designation</div>
+            <div class="teamDesignation">Website</div>
 
             <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
+                <div class="member_img"><img src="img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Subhashis Bhowmik</div>
             </div>
 
             <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
+                <div class="member_img"><img src="img/contacts/sudipto.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sudipto Banik</div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div> <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
-                <div class="member_name">Paulomi Bhowmick </div>
+                <div class="member_img"><img src="img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Pratik Karmakar</div>
             </div>
 
+            <div class="teamDesignation">Organization</div>
 
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Subhashis Bhowmik</div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Pratik Karmakar</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Biswajit Tikadar</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debapriya Basu</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debarshi Chanda</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/anirjit.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anirjit Mitra</div>
+            </div>
+            <div class="teamDesignation">Algomaniac</div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/anisha.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anisha Bannerjee</div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/nag.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sayan Nag</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/niladri.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Niladri Dutta</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Shounak Biswas</div>
+            </div>
+
+            <div class="teamDesignation">Circuistic</div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/druhin.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Druhin Choudhury</div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/soumee.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Soumee Guha</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/anurag.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anurag Chhetry</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/sadaf.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sadaf Syed</div>
+            </div>
+            <div class="teamDesignation">Decisia</div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debapriya Basu</div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Shounak Biswas</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/anurag.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anurag Chhetry</div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/sadaf.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sadaf Syed</div>
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 <div id="bg"></div>
@@ -369,7 +421,7 @@ if (isset($_COOKIE['convo_mail'])) {
                 </div>
                 <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>
@@ -407,11 +459,11 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div class="shrink">
                         <!--img id="consoleImg" src="img/flat_terminal_bare.svg"/-->
                         <div class="algo_buttons_class pdf" event="algomaniac"
-                           style="position:absolute;width:80px;float: left;top:80%;left:2%">
+                             style="position:absolute;width:80px;float: left;top:80%;left:2%">
                             Details
                         </div>
                         <div class="algo_buttons_class register" event="algomaniac"
-                           style="position:absolute;width:80px;float: right;top:80%;right:2%">
+                             style="position:absolute;width:80px;float: right;top:80%;right:2%">
                             Register
                         </div>
                         <div id="laptop_screen">
@@ -452,7 +504,16 @@ if (isset($_COOKIE['convo_mail'])) {
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Details</div>
                             <div class="noteDetails"
-                                 style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'.Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.</div>
+                                 style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">
+                                Code,create,build and revolutionize in this third edition of eastern India's biggest
+                                Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals
+                                will strive to build a model which caters to the this year's theme of 'Digital
+                                Kolkata'.Engineers, designers and end-users will push their creative brains to the
+                                farthest limit and develop solutions pertinent to the problem statement in the field of
+                                Internet of Things (IOT) as well contribute to the improving medical scenario of this
+                                city. So step your game up this spring as there's a lot to be won.Your idea just might
+                                be the next big thing for this city.
+                            </div>
                         </div>
                     </div>
                     <div id="todoNoteWrapper2">
@@ -507,7 +568,9 @@ if (isset($_COOKIE['convo_mail'])) {
                         <div class="note done_note" id="done2">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Contacts</div>
-                            <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi Chanda<br>+919051677526</div>
+                            <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi
+                                Chanda<br>+919051677526
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -553,16 +616,18 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-<!--            <div id="sponsors" class="item cs">-->
-<!--                <!--            <h1 id="sponsors" class="item">SPONSORS</h1>-->
-<!--                <div class="blankDiv">-->
-<!--                    <div class="progress">-->
-<!--                        <div class="indeterminate"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div id="sponsors" class="item cs">-->
+            <!--                <!--            <h1 id="sponsors" class="item">SPONSORS</h1>-->
+            <!--                <div class="blankDiv">-->
+            <!--                    <div class="progress">-->
+            <!--                        <div class="indeterminate"></div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
             <div id="contact" class="item" style="/*min-height: calc(100vh - 45px);*/">
-                <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;display: block;">CONTACTS</div>
+                <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;display: block;">
+                    CONTACTS
+                </div>
                 <!--                <div class="blankDiv">-->
                 <!--                    <div class="progress">-->
                 <!--                        <div class="indeterminate"></div>-->
@@ -574,39 +639,53 @@ if (isset($_COOKIE['convo_mail'])) {
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/subhashis.jpg"></div>
-                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General Secretary <span class="info_divider"></span> +919836802623</div>
+                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General
+                                Secretary <span class="info_divider"></span> +919836802623
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/pratik.jpeg"></div>
-                            <div class="contact_name">Pratik Karmakar <span class="info_divider"></span> Joint Secretary <span class="info_divider"></span> +919038391915</div>
+                            <div class="contact_name">Pratik Karmakar <span class="info_divider"></span> Joint Secretary
+                                <span class="info_divider"></span> +919038391915
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/biswajit.jpeg"></div>
-                            <div class="contact_name">Biswajit Tikadar <span class="info_divider"></span> Treasurer <span class="info_divider"></span> +918697530045</div>
+                            <div class="contact_name">Biswajit Tikadar <span class="info_divider"></span> Treasurer
+                                <span class="info_divider"></span> +918697530045
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/debarshi.jpg"></div>
-                            <div class="contact_name">Debarshi Chanda <span class="info_divider"></span> Event Coordinator <span class="info_divider"></span> +919051677526</div>
+                            <div class="contact_name">Debarshi Chanda <span class="info_divider"></span> Event
+                                Coordinator <span class="info_divider"></span> +919051677526
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/debapriya.jpeg"></div>
-                            <div class="contact_name">Debapriya Basu <span class="info_divider"></span> Sponsor Lead <span class="info_divider"></span> +918444941108</div>
+                            <div class="contact_name">Debapriya Basu <span class="info_divider"></span> Sponsor Lead
+                                <span class="info_divider"></span> +918444941108
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/paulomi.jpeg"></div>
-                            <div class="contact_name">Paulomi Bhowmick <span class="info_divider"></span> Marketing Lead <span class="info_divider"></span> +918961565172</div>
+                            <div class="contact_name">Paulomi Bhowmick <span class="info_divider"></span> Marketing Lead
+                                <span class="info_divider"></span> +918961565172
+                            </div>
                         </div>
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/shounak.jpeg"></div>
-                            <div class="contact_name">Shounak Biswas <span class="info_divider"></span> Logistics Lead <span class="info_divider"></span> +918001858305</div>
+                            <div class="contact_name">Shounak Biswas <span class="info_divider"></span> Logistics Lead
+                                <span class="info_divider"></span> +918001858305
+                            </div>
                         </div>
-                        
+
                         <div id="know_the_team_btn">Know The Team</div>
                     </div>
                     <div id="div_for_query" style="float: right">
@@ -615,7 +694,7 @@ if (isset($_COOKIE['convo_mail'])) {
                             <textarea placeholder="type here" id="query_input"></textarea>
                             <button id="query_submit">Send</button>
                         </form>
-                    </div>                    
+                    </div>
                 </div>
                 <div id="footer">
                     <div><a href="https://www.facebook.com/convolution.juee">facebook.com/convolution.juee</a></div>
@@ -627,9 +706,6 @@ if (isset($_COOKIE['convo_mail'])) {
         </div>
     </div>
 </div>
-
-
-
 
 
 <script type="text/javascript" src="js/jq.js"></script>

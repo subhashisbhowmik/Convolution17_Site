@@ -135,7 +135,6 @@ var moving = false;
                 }
             }
         });
-
     });
 })(jQuery);
 function viewUpdate() {
