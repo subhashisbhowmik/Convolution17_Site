@@ -379,6 +379,13 @@ if (isset($_COOKIE['convo_mail'])) {
                             <div class="noteDetails" style="display:none"></div>
                         </div>
                     </div>
+                    <div id="inprogressNoteWrapper3" class="noteWrapper">
+                        <div class="note in_progress_note nr" id="in_progress3 register" event="sparkhack">
+                            <div class="note_remove">&#x2715;</div>
+                            <div class="noteContent nr">Register</div>
+                            <div class="noteDetails" style="display:none"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="sh_done">

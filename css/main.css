@@ -1169,6 +1169,8 @@ b {
     width: 100px;
     min-height: 100px;
     min-width: 100px;
+    max-height: 100px;
+    max-width: 100px;
     display: inline-block;
     transform-origin: 50% 5%;
     overflow: hidden !important;
@@ -1232,6 +1234,10 @@ b {
 
 #in_progress2 {
     transform: rotate(5deg);
+}
+
+#in_progress3 {
+    transform: rotate(10deg);
 }
 
 #done1 {
@@ -1486,6 +1492,11 @@ b {
     transform: translate(21vw, 4vw) /*rotate(15deg)*/;
 }
 
+#inprogressNoteWrapper3 {
+    position: absolute;
+    transform: translate(12vw, 15vw) /*rotate(15deg)*/;
+}
+
 #donenotewrapper1 {
     position: absolute;
     transform: translate(2vw, 2vw) /*rotate(-20deg)*/;
@@ -1500,6 +1511,8 @@ b {
 .expandedNote{
     height:auto;
     width: auto;
+    max-height: 50vh;
+    max-width: 50vw;
     transform: translate(0,0) rotate(0deg) !important;
     z-index: 800;
     transition: all 0.2s ease-in-out;
@@ -1516,6 +1529,7 @@ b {
 
 .expandedNote .note_remove{
     display: inline-block;
+
 }
 
 .expandedNote .noteDetails{
