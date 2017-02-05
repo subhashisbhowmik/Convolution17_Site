@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
@@ -44,7 +44,7 @@ if (isset($_COOKIE['convo_mail'])) {
     
     if (isset($_GET['m'])) $m = $_GET['m'];
 }
-
+*/$name ="";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -239,6 +239,67 @@ if (isset($_COOKIE['convo_mail'])) {
     </div>
     <div id="arrow">
         <div id="arrow_a" style="color:white;cursor:pointer;">&#x203A;</div>
+    </div>
+</div>
+
+
+<div id="teamWrapper">
+    <div id="teamDiv">
+        <div id="teamClose">&#x2715;</div>
+        <div id="teamContents">
+
+            <div class="teamDesignation">Designation</div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div> <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/paulomi.jpeg"></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+
+
+        </div>
     </div>
 </div>
 
@@ -561,10 +622,16 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div><a href="mailto:convolution2017@gmail.com">convolution2017@gmail.com</a></div>
                     <div><a href="">www.convolutionjuee.com</a></div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
 <script type="text/javascript" src="js/jq.js"></script>
 <script type="text/javascript" src="js/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>

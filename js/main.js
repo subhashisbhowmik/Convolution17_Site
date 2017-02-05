@@ -271,6 +271,17 @@ $(document).ready(function () {
 
         $("#login_signup_div").fadeOut(100);
     });
+
+
+    $("#know_the_team_btn").on('click', function () {
+        $("#teamWrapper").fadeIn(200);
+    });
+    $("#teamClose").click(function () {
+        $("#teamWrapper").fadeOut(100);
+    });
+
+
+
     var buttonswitch = false;
     $(document).keydown(function (event) {
         // var e = $.Event("keydown", { keyCode: 40});

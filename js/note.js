@@ -4,7 +4,11 @@
 var tv;
 $(document).ready(function () {
     $('.note').click(function (e) {
-        // alert();
+        $(this).addClass("expandedNote");
+
+
+
+        /*
         var x = $(this);
         e.stopPropagation();
         setTimeout(function () {
@@ -16,22 +20,20 @@ $(document).ready(function () {
                 x.addClass('expandedNote');
                 // $('.nr').removeClass('expandedNote');
             }, 8);
-        }
+        }*/
     });
 
     $('.note_remove').click(function (e) {
         // alert();
         // console.log($(this).parent());
-        setTimeout(function () {
-            // tv = $(this).parent().removeClass('expandedNote');
-            $('.expandedNote').removeClass('expandedNote');
-        }, 12);
+        $(this).parent().removeClass('expandedNote');
+
         e.stopPropagation();
     });
-    $(document).click(function () {
+   /* $(document).click(function () {
         setTimeout(function () {
             // tv = $(this).parent().removeClass('expandedNote');
             $('.expandedNote').removeClass('expandedNote');
         }, 0);
-    });
+    });*/
 });
