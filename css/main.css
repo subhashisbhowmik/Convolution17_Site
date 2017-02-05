@@ -1037,6 +1037,11 @@ b {
     background-color: #31708f;
     color: #eeeeee;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#login_signup_div_close:hover {
+    background-color: #3b90b4;
 }
 
 .log_sin {
@@ -1163,6 +1168,10 @@ b {
     color: #e5e5e5;
     user-select: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#detailsDivClose:hover {
+    background-color: #5b7fa8;
 }
 #detailsDivFrame{
     min-height: calc(100% - 40px);
@@ -1452,7 +1461,10 @@ b {
     color: #e5e5e5;
     user-select: none;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease-in-out;
+}
+.notification_remove {
+    background-color: #5f84af;
 }
 
 .message_remove {
@@ -1470,6 +1482,10 @@ b {
     user-select: none;
     cursor: pointer;
     transition: 0.2s;
+    transition: all 0.2s ease-in-out;
+}
+.message_remove:hover {
+    background-color: #a5432d;
 }
 
 .note_remove {
@@ -1487,6 +1503,10 @@ b {
     user-select: none;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.note_remove:hover {
+    background-color: #a5432d;
 }
 
 .notification:hover .notification_remove {
