@@ -1838,7 +1838,7 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 #teamContents{
-    max-height: calc(100vh - 100px);
+    max-height: calc(90vh - 100px);
     overflow-y: scroll;
     overflow-x: hidden;
     margin: 0 auto;
