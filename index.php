@@ -1,4 +1,5 @@
 <?php
+
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
@@ -135,6 +136,8 @@ if (isset($_COOKIE['convo_mail'])) {
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
                            placeholder="E-mail ID"/>
+                    <input required="required" type="number" maxlength="10" id="signup_contact" name="signup_contact"
+                           placeholder="Contact Number"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
                     <input required="required" type="password" id="signup_password_2" name="signup_password_2"
@@ -457,17 +460,48 @@ if (isset($_COOKIE['convo_mail'])) {
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div id="contact" class="item">
-                <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;">
-                    <div id="contact_head" style=" border-bottom: 2px solid white;display: inline-block">CONTACTS</div>
-                </div>
+            <div id="contact" class="item" style="min-height: calc(100vh - 45px);">
+                <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;display: block;">CONTACTS</div>
                 <!--                <div class="blankDiv">-->
                 <!--                    <div class="progress">-->
                 <!--                        <div class="indeterminate"></div>-->
                 <!--                    </div>-->
                 <!--                </div>-->
                 <div id="contacts_container">
-
+                    <div id="contact_list" style="float: left">
+                        <h2 style="text-align: center;padding: 15px;color: #bce8f1;">We Are ...</h2>
+                        <div class="contact">
+                            <div class="contact_img"><img src=""></div>
+                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact_img"><img src=""></div>
+                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact_img"><img src=""></div>
+                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact_img"><img src=""></div>
+                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact_img"><img src=""></div>
+                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                        </div>
+                        
+                        
+                        <div id="know_the_team_btn">Know The Team</div>
+                        
+                    </div>
+                    <div id="div_for_query" style="float: right">
+                        <div style="display: block;padding: 20px;text-align: center;">Have any Query? Ask us..</div>
+                        <form action="" method="post">
+                            <textarea placeholder="type here" id="query_input"></textarea>
+                            <button id="query_submit">Send</button>
+                        </form>
+                    </div>                    
                 </div>
 
             </div>
