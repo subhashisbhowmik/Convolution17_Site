@@ -144,7 +144,8 @@ function checkConvoAuth($loc)
         if ($loc != '') header("Location: $loc");
         return 0;
     } else {
-        $result = sql("SELECT * FROM `cookie` WHERE `mail`=$email AND `token`=$token");
+        $result = sql("SELECT * FROM `cookie` WHERE `mail`='$email' AND `token`='$token'");
+//        echo "SELECT * FROM `cookie` WHERE `mail`=$email AND `token`=$token";
         if ($result->num_rows == 0) {
 //            $_COOKIE['convo_token'] = '';
 //            $_COOKIE['convo_mail'] = '';
@@ -153,17 +154,18 @@ function checkConvoAuth($loc)
             if ($loc != '') header("Location: $loc");
             return -2;
         } else {
-            if($result->fetch_assoc()['confirmation']=='0') {
-                if (!isset($_SESSION['on'])) {
-                    $token = randomString(64);
-                    sql("UPDATE `cookie` SET `token`=$token WHERE `email`=$email");
-                    $_SESSION['on'] = '1';
-                }
-                return 1;
-            }else{
-                if ($loc != '') header("Location: $loc");
-                return -1;
+            $row=$result->fetch_assoc();
+//            if($row['confirmation']=='0') {
+            if (!isset($_SESSION['on'])) {
+                $token = randomString(64);
+                sql("UPDATE `cookie` SET `token`='$token' WHERE `email`='$email'");
+                $_SESSION['on'] = '1';
             }
+            return 1;
+//            }else{
+//                if ($loc != '') header("Location: $loc");
+//                return -1;
+//            }
         }
     }
 }

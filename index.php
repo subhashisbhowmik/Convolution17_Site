@@ -5,6 +5,7 @@ $await_confirm = 0;
 $name = "";
 $email = "";
 $num_noti = 0;
+$m='';
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -40,7 +41,7 @@ if (isset($_COOKIE['convo_mail'])) {
         $num_noti = $result->num_rows;
         $result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
     }
-    $m = '';
+    
     if (isset($_GET['m'])) $m = $_GET['m'];
 }
 
@@ -139,6 +140,39 @@ if (isset($_COOKIE['convo_mail'])) {
                            placeholder="Contact Number"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
+                    <input required="required" type="password" id="signup_password_2" name="signup_password_2"
+                           placeholder="Confirm Password"/>
+                    <input required="required" "type="text" id="signup_institute" name="signup_institute"
+                    placeholder="College or University"/>
+                    <input required="required" type="text" id="signup_dept" name="signup_dept"
+                           placeholder="Department"/>
+                    <select required="required" id="class" name="class">
+                        <optgroup label="class">
+                            <option>CLASS</option>
+                            <option>Still in School</option>
+                            <option>UG 1st yr</option>
+                            <option>UG 2nd yr</option>
+                            <option>UG 3rd yr</option>
+                            <option>UG 4th yr</option>
+                        </optgroup>
+                    </select>
+                    <button id="signup_btn" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="settings_div">
+    <div id="settings_div_content">
+        <div id="login_signup_div_close">&#x2715;</div>
+        <div id="login_signup_div_content_in">
+            <div class="log_sin">
+                <form action="php/signup.php" method="get" name="signup_form">
+                    <label>Change Details</label>
+                    <input required="required" type="password" id="old_password" name="old_password" placeholder="Old Password"/>
+                    <input required="required" pattern=".{8,100}" type="password" id="signup_password"
+                           name="new_password" placeholder="Password (At least 8 characters long)"/>
                     <input required="required" type="password" id="signup_password_2" name="signup_password_2"
                            placeholder="Confirm Password"/>
                     <input required="required" "type="text" id="signup_institute" name="signup_institute"
@@ -274,7 +308,7 @@ if (isset($_COOKIE['convo_mail'])) {
                 </div>
                 <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>
@@ -289,10 +323,10 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div id="circuistic_buttons_wrapper">
                         <div id="circuistic_buttons_wrapper_inner">
                             <a id="circuistic_details_btn" style="text-decoration:none;float: left;">
-                                <div class="circuistic_button">DETAILS</div>
+                                <div class="circuistic_button pdf" event="circuistic">DETAILS</div>
                             </a>
                             <a href="" style="text-decoration:none;float: right;">
-                                <div class="circuistic_button">REGISTER</div>
+                                <div class="circuistic_button register" event="circuistic">REGISTER</div>
                             </a>
                             <div style="clear: both"></div>
                         </div>
@@ -311,14 +345,14 @@ if (isset($_COOKIE['convo_mail'])) {
                 <div id="algo">
                     <div class="shrink">
                         <!--img id="consoleImg" src="img/flat_terminal_bare.svg"/-->
-                        <a class="algo_buttons_class" href=""
+                        <div class="algo_buttons_class pdf" event="algomaniac"
                            style="position:absolute;width:80px;float: left;top:80%;left:2%">
-                            details
-                        </a>
-                        <a class="algo_buttons_class" href=""
+                            Details
+                        </div>
+                        <div class="algo_buttons_class register" event="algomaniac"
                            style="position:absolute;width:80px;float: right;top:80%;right:2%">
-                            register
-                        </a>
+                            Register
+                        </div>
                         <div id="laptop_screen">
                             <div id="termial_titlebar">
                                 <div class="terminal_buttons" style="background-color:red;"></div>
@@ -358,6 +392,13 @@ if (isset($_COOKIE['convo_mail'])) {
                             <div class="noteContent">Details</div>
                             <div class="noteDetails"
                                  style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'.Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.</div>
+                        </div>
+                    </div>
+                    <div id="todoNoteWrapper2">
+                        <div class="note todo_note nr  pdf" id="todo2" event="sparkhack" style="z-index: 950;">
+                            <div class="note_remove">&#x2715;</div>
+                            <div class="noteContent">Rules And Regulations</div>
+                            <div class="noteDetails"></div>
                         </div>
                     </div>
 
@@ -444,7 +485,7 @@ if (isset($_COOKIE['convo_mail'])) {
             <div id="presentation" class="item cs" style="border-color: #931a46">
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
                 <div class="blankDiv" style="background-color: #2b35a6">
-                    Paper Presentations
+                    Paper Presentation
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
@@ -459,7 +500,7 @@ if (isset($_COOKIE['convo_mail'])) {
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div id="contact" class="item" style="min-height: calc(100vh - 45px);">
+            <div id="contact" class="item" style="/*min-height: calc(100vh - 45px);*/">
                 <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;display: block;">CONTACTS</div>
                 <!--                <div class="blankDiv">-->
                 <!--                    <div class="progress">-->
@@ -469,40 +510,57 @@ if (isset($_COOKIE['convo_mail'])) {
                 <div id="contacts_container">
                     <div id="contact_list" style="float: left">
                         <h2 style="text-align: center;padding: 15px;color: #bce8f1;">We Are ...</h2>
+
                         <div class="contact">
-                            <div class="contact_img"><img src=""></div>
-                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                            <div class="contact_img"><img src="img/contacts/subhashis.jpg"></div>
+                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General Secretary <span class="info_divider"></span> +919836802623</div>
                         </div>
+
                         <div class="contact">
-                            <div class="contact_img"><img src=""></div>
-                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                            <div class="contact_img"><img src="img/contacts/pratik.jpeg"></div>
+                            <div class="contact_name">Pratik Karmakar <span class="info_divider"></span> Joint Secretary <span class="info_divider"></span> +919038391915</div>
                         </div>
+
                         <div class="contact">
-                            <div class="contact_img"><img src=""></div>
-                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                            <div class="contact_img"><img src="img/contacts/biswajit.jpeg"></div>
+                            <div class="contact_name">Biswajit Tikadar <span class="info_divider"></span> Treasurer <span class="info_divider"></span> +918697530045</div>
                         </div>
+
                         <div class="contact">
-                            <div class="contact_img"><img src=""></div>
-                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                            <div class="contact_img"><img src="img/contacts/debarshi.jpg"></div>
+                            <div class="contact_name">Debarshi Chanda <span class="info_divider"></span> Event Coordinator <span class="info_divider"></span> +919051677526</div>
                         </div>
+
                         <div class="contact">
-                            <div class="contact_img"><img src=""></div>
-                            <div class="contact_name">Name Surname <span class="info_divider"></span> other info</div>
+                            <div class="contact_img"><img src="img/contacts/debapriya.jpeg"></div>
+                            <div class="contact_name">Debapriya Basu <span class="info_divider"></span> Sponsor Lead <span class="info_divider"></span> +918444941108</div>
                         </div>
-                        
+
+                        <div class="contact">
+                            <div class="contact_img"><img src="img/contacts/paulomi.jpeg"></div>
+                            <div class="contact_name">Paulomi Bhowmick <span class="info_divider"></span> Marketing Lead <span class="info_divider"></span> +918961565172</div>
+                        </div>
+
+                        <div class="contact">
+                            <div class="contact_img"><img src="img/contacts/shounak.jpeg"></div>
+                            <div class="contact_name">Shounak Biswas <span class="info_divider"></span> Logistics Lead <span class="info_divider"></span> +918001858305</div>
+                        </div>
                         
                         <div id="know_the_team_btn">Know The Team</div>
-                        
                     </div>
                     <div id="div_for_query" style="float: right">
-                        <div style="display: block;padding: 20px;text-align: center;">Have any Query? Ask us..</div>
+                        <div style="display: block;padding: 15px;text-align: center;">Have any Query? Ask us..</div>
                         <form action="" method="post">
                             <textarea placeholder="type here" id="query_input"></textarea>
                             <button id="query_submit">Send</button>
                         </form>
                     </div>                    
                 </div>
-
+                <div id="footer">
+                    <div><a href="https://www.facebook.com/convolution.juee">facebook.com/convolution.juee</a></div>
+                    <div><a href="mailto:convolution2017@gmail.com">convolution2017@gmail.com</a></div>
+                    <div><a href="">www.convolutionjuee.com</a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -515,5 +573,6 @@ if (isset($_COOKIE['convo_mail'])) {
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/note.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>
+<script type="text/javascript" src="js/pdf.js"></script>
 </body>
 </html>

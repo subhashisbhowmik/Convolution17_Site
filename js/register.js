@@ -3,8 +3,11 @@
  */
 $(window).on('load',function () {
     $('.register').click(function () {
-        var event=$(this).attr('event_name');
+        var event=$(this).attr('event');
         $(this).find('.spinner').show();
         //TODO: Post
+        $.post('php/register.php',{event:event},function (data) {
+            alert(data);
+        });
     });
 });

@@ -34,6 +34,7 @@ ob_start();
 require_once 'functions.php';
 $name = "";
 $email = "";
+$contact = "";
 $pass = "";
 $inst = "";
 $dept = "";
@@ -44,14 +45,16 @@ if (isset($_REQUEST['signup_name'])) $name = sanitizeString($_REQUEST['signup_na
 if ($name === "") die('1');
 if (isset($_REQUEST['signup_email'])) $email = sanitizeString($_REQUEST['signup_email']);
 if ($email === "") die('2');
+if (isset($_REQUEST['signup_contact'])) $contact = sanitizeString($_REQUEST['signup_contact']);
+if ($contact === "") die('3');
 if (isset($_REQUEST['signup_password'])) $pass = sanitizeString($_REQUEST['signup_password']);
-if ($pass === "") die('3');
+if ($pass === "") die('4');
 if (isset($_REQUEST['class'])) $class = sanitizeString($_REQUEST['class']);
-if ($class === "") die('4');
+if ($class === "") die('5');
 if (isset($_REQUEST['signup_dept'])) $dept = sanitizeString($_REQUEST['signup_dept']);
-if ($dept === "") die('5');
+if ($dept === "") die('6');
 if (isset($_REQUEST['signup_institute'])) $inst = sanitizeString($_REQUEST['signup_institute']);
-if ($inst === "") die('6');
+if ($inst === "") die('7');
 //echo "<br>x$email";
 $mailres=sql("SELECT * FROM `users` WHERE `email`='$email'");
 if($mailres->num_rows>0){
@@ -63,8 +66,8 @@ if($mailres->num_rows>0){
 
 $con=randomString(16);
 $result = sql("INSERT INTO `users` 
-        (`id`, `email`, `name`,`pass`,`class`,`dept`,`inst`,`confirmation`) 
-VALUES (NULL,   '$email','$name','$pass','$class','$dept','$inst','$con')");
+        (`id`, `email`, `name`,`contact`,`pass`,`class`,`dept`,`inst`,`confirmation`) 
+VALUES (NULL,   '$email','$name','$contact','$pass','$class','$dept','$inst','$con')");
 $encodedmail=urlencode($email);
 
 //TODO: Remove /test !!IMPORTANT
