@@ -86,12 +86,12 @@ if (isset($_COOKIE['convo_mail'])) {
             <li id="tab-about" data-id="about"><span><b>About</b></span></li>
             <li id="tab-circuistic" data-id="circuistic"><span><b>Circuistic</b></span></li>
             <li id="tab-algomaniac" data-id="algomaniac"><span><b>Algomaniac</b></span></li>
-            <li id="tab-sparkhack" data-id="sparkhack"><span><b>Sparkhack</b></span></li>
+            <li id="tab-sparkhack" data-id="sparkhack"><span><b>SparkHACK</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
-            <li id="tab-workshops" data-id="workshops"><span><b>Presentation</b></span></li>
-            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>
+            <li id="tab-presentation" data-id="presentation"><span><b>Presentation</b></span></li>
+<!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
     </div>
@@ -354,8 +354,8 @@ if (isset($_COOKIE['convo_mail'])) {
                         <div class="note todo_note" id="todo1" style="z-index: 950;">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Details</div>
-                            <div class="noteDetails" style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'. Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.
-                            </div>
+                            <div class="noteDetails"
+                                 style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'.Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.</div>
                         </div>
                     </div>
 
@@ -394,7 +394,8 @@ if (isset($_COOKIE['convo_mail'])) {
                         <div class="note done_note nr" id="done1">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Prizes</div>
-                            <div class="noteDetails" style="display:none">1st Prize: Rs. 15,000<br>2nd Prize: Rs. 10,000<br>3rd Prize: Rs. 5,000
+                            <div class="noteDetails" style="display:none">1st Prize: Rs. 15,000<br>2nd Prize: Rs. 10,000<br>3rd
+                                Prize: Rs. 5,000
                             </div>
                         </div>
                     </div>
@@ -402,45 +403,60 @@ if (isset($_COOKIE['convo_mail'])) {
                         <div class="note done_note" id="done2">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Contacts</div>
-                            <div class="noteDetails" style="display:none">Paulomi Bhowmick<br>+918961565172</div>
+                            <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi Chanda<br>+919051677526</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <h1 id="controversial" class="item">CONtroversial</h1>
-            <div class="blankDiv">
-                CONtroversial info comming soon
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <div id="controversial" class="item cs" style="border-color: #624293">
+                <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
+                <div class="blankDiv" style="background-color: #c4402d">
+                    CONtroversial
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <h1 id="decisia" class="item">DECISIA</h1>
-            <div class="blankDiv">
-                Decisia info comming soon
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <div id="decisia" class="item cs" style="border-color: #6e2593">
+                <!--            <h1 id="decisia" class="item">DECISIA</h1>-->
+                <div class="blankDiv" style="background-color: #02964b">
+                    Decisia
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
+
                 </div>
             </div>
-            <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>
-            <div class="blankDiv">
-                Inquizzitive info comming soon
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <div id="inquizzitive" class="item cs" style="border-color: #137163">
+                <!--            <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>-->
+                <div class="blankDiv" style="background-color: #cfa518">
+                    Inquizzitive
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <h1 id="workshops" class="item">PRESENTATION</h1>
-            <div class="blankDiv">
-                Presentations will be here soon
-                <div class="progress">
-                    <div class="indeterminate"></div>
+            <div id="presentation" class="item cs" style="border-color: #931a46">
+                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
+                <div class="blankDiv" style="background-color: #2b35a6">
+                    Paper Presentations
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <h1 id="sponsors" class="item">SPONSORS</h1>
-            <div class="blankDiv">
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
-            </div>
+<!--            <div id="sponsors" class="item cs">-->
+<!--                <!--            <h1 id="sponsors" class="item">SPONSORS</h1>-->
+<!--                <div class="blankDiv">-->
+<!--                    <div class="progress">-->
+<!--                        <div class="indeterminate"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div id="contact" class="item">
                 <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;">
                     <div id="contact_head" style=" border-bottom: 2px solid white;display: inline-block">CONTACTS</div>
