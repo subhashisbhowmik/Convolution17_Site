@@ -44,7 +44,6 @@ if (isset($_COOKIE['convo_mail'])) {
     if (isset($_GET['m'])) $m = $_GET['m'];
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,7 +164,7 @@ if (isset($_COOKIE['convo_mail'])) {
 <div id="detailsDivWrapper">
     <div id="detailsDiv">
         <div id="detailsDivClose">&#x2715;</div>
-
+        <iframe id="detailsDivFrame" src=" "></iframe>
     </div>
 </div>
 

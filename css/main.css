@@ -1107,8 +1107,8 @@ b {
     display: block;
     width: 60vw;
     min-width: 600px;
-    padding: 20px;
-    min-height: 600px;
+    padding: 10px;
+    height: 600px;
     z-index: 1200;
     box-sizing: border-box;
     margin: 20px auto;
@@ -1133,6 +1133,13 @@ b {
     color: #e5e5e5;
     user-select: none;
     cursor: pointer;
+}
+#detailsDivFrame{
+    min-height: calc(100% - 40px);
+    margin-top: 42px;
+    width: 100%;
+    display: block;
+    outline: 3px solid #ff6c24;
 }
 
 #sparkhack_wrapper {

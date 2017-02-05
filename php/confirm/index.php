@@ -32,3 +32,4 @@ if($result->num_rows>0){
     die('Invalid confirmation link');
 }
 header('Location: ../../');
+
