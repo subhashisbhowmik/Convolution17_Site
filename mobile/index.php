@@ -1,6 +1,6 @@
 <?php
 
-require_once "php/functions.php";
+require_once "../php/functions.php";
 $await_confirm = 0;
 $name = "";
 $email = "";
@@ -15,36 +15,36 @@ if (isset($_COOKIE['convo_mail'])) {
         if ($result->num_rows > 0) {
 //            $row = $result->fetch_assoc();
 //            $mail = $row['mail'];
-            $row = sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
+$row = sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
 //            print_r($row);
-            $name = $row['name'];
-            if (!isset($_SESSION['on'])) {
-                $token = randomString(64);
-                sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
+$name = $row['name'];
+if (!isset($_SESSION['on'])) {
+$token = randomString(64);
+sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
 //                $_COOKIE['convo_token'] = $token;
-                setcookie('convo_token', $token, time() + (86400 * 30), "/");
-            }
-        } else {
+setcookie('convo_token', $token, time() + (86400 * 30), "/");
+}
+} else {
 //            $_COOKIE['convo_mail'] = '';
 //            $_COOKIE['convo_token'] = '';
-            setcookie('convo_mail', '', time() + (86400 * 30), "/");
-            setcookie('convo_token', '', time() + (86400 * 30), "/");
+setcookie('convo_mail', '', time() + (86400 * 30), "/");
+setcookie('convo_token', '', time() + (86400 * 30), "/");
 
-        }
-    } else {
-        if (isset($_COOKIE['not_confirmed']) && $_COOKIE['not_confirmed'] === '1')
-            $await_confirm = 1;
-        else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
-    }
-    if ($name != '') {
-        $result = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
-        $num_noti = $result->num_rows;
-        $result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
-    }
-
-    if (isset($_GET['m'])) $m = $_GET['m'];
 }
-//$name = "";
+} else {
+if (isset($_COOKIE['not_confirmed']) && $_COOKIE['not_confirmed'] === '1')
+$await_confirm = 1;
+else setcookie('convo_mail', '', time() + (86400 * 30), "/");//$_COOKIE['convo_mail'] = '';
+}
+if ($name != '') {
+$result = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
+$num_noti = $result->num_rows;
+$result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
+}
+
+if (isset($_GET['m'])) $m = $_GET['m'];
+}
+$name = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +110,7 @@ if (isset($_COOKIE['convo_mail'])) {
             } else if ($m == 'nc') {
                 //TODO: Resend.php
                 echo "Please confirm your e-mail ID first. <a id='resend' href='php/resend.php'></a>";
-            }
+        }
         }
         ?></div>
     <div class="message_remove">&#x2715;</div>
@@ -167,7 +167,7 @@ if (isset($_COOKIE['convo_mail'])) {
     <div id="settings_div_content">
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
-            <div class="log_sin settings_log_sin">
+            <div class="log_sin">
                 <form action="php/signup.php" method="get" name="signup_form">
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
@@ -182,8 +182,7 @@ if (isset($_COOKIE['convo_mail'])) {
                            placeholder="Department"/>
                     <select required="required" id="class" name="class">
                         <optgroup label="class">
-                            <option>CLASS</option>     
-                            <option>Still in School</option>
+                            <option>CLASS</option>
                             <option>UG 1st yr</option>
                             <option>UG 2nd yr</option>
                             <option>UG 3rd yr</option>
@@ -206,42 +205,42 @@ if (isset($_COOKIE['convo_mail'])) {
 
 <div id="right_div" class="home">
     <div id="noti_num" style="<?php if ($num_noti == 0) echo "display:none;" ?>">
-        <div style="display: table-cell; vertical-align: middle;">
-            <?php echo $num_noti; ?>
-        </div>
+    <div style="display: table-cell; vertical-align: middle;">
+        <?php echo $num_noti; ?>
     </div>
-    <div class="content" style="display:none; ">
-        <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
+</div>
+<div class="content" style="display:none; ">
+    <div id="close" style="color:white;cursor:pointer;float:right;">&#x2715;</div>
 
-        <div id="content_inside">
+    <div id="content_inside">
 
-            <div <?php if ($name != '') echo 'style="display:none;"'; ?>id="login_signup_btn" class="noSelect">
-                Login / Sign Up
-            </div>
-            <div id="name_show" <?php if ($name == '') echo 'style="display:none;"'; ?> >
-                <?php echo $name; ?>
-
-            </div>
-            <div id="noti_dummy" style="display:none;cursor: pointer">
-                <div class="notification">
-                    random notification
-                    <div class="notification_remove">&#x2715;</div>
-                </div>
-            </div>
-            <div id="notifications_wrapper" <?php if ($name == '') echo 'style="display:none;"'; ?> class="noSelect">
-
-            </div>
-            <div id="notifications_buttons" <?php if ($name == '') echo 'style="display:none;"'; ?> >
-                <div id="settings">Settings</div>
-                <a id="logout" href="php/logout.php">
-                    <div>Logout</div>
-                </a>
-            </div>
-        </div>
+        <div <?php if ($name != '') echo 'style="display:none;"'; ?>id="login_signup_btn" class="noSelect">
+        Login / Sign Up
     </div>
-    <div id="arrow">
-        <div id="arrow_a" style="color:white;cursor:pointer;">&#x203A;</div>
+    <div id="name_show" <?php if ($name == '') echo 'style="display:none;"'; ?> >
+    <?php echo $name; ?>
+
+</div>
+<div id="noti_dummy" style="display:none;cursor: pointer">
+    <div class="notification">
+        random notification
+        <div class="notification_remove">&#x2715;</div>
     </div>
+</div>
+<div id="notifications_wrapper" <?php if ($name == '') echo 'style="display:none;"'; ?> class="noSelect">
+
+</div>
+<div id="notifications_buttons" <?php if ($name == '') echo 'style="display:none;"'; ?> >
+<div id="settings">Settings</div>
+<a id="logout" href="php/logout.php">
+    <div>Logout</div>
+</a>
+</div>
+</div>
+</div>
+<div id="arrow">
+    <div id="arrow_a" style="color:white;cursor:pointer;">&#x203A;</div>
+</div>
 </div>
 
 
@@ -455,10 +454,12 @@ if (isset($_COOKIE['convo_mail'])) {
                 <div style="margin-top: 1.2vw">
                     <div id="circuistic_buttons_wrapper">
                         <div id="circuistic_buttons_wrapper_inner">
-
-                                <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="circuistic">DETAILS</div>
-                                <div style="text-decoration:none;float: right;" class="circuistic_button register" event="circuistic">REGISTER</div>
-
+                            <a id="circuistic_details_btn" style="text-decoration:none;float: left;">
+                                <div class="circuistic_button pdf" event="circuistic">DETAILS</div>
+                            </a>
+                            <a href="" style="text-decoration:none;float: right;">
+                                <div class="circuistic_button register" event="circuistic">REGISTER</div>
+                            </a>
                             <div style="clear: both"></div>
                         </div>
                     </div>
@@ -522,7 +523,16 @@ if (isset($_COOKIE['convo_mail'])) {
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Details</div>
                             <div class="noteDetails"
-                                 style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'.Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.</div>
+                                 style="display:none; white-space: pre-wrap;font-size: 0.9em;  width: 30vw">
+                                Code,create,build and revolutionize in this third edition of eastern India's biggest
+                                Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals
+                                will strive to build a model which caters to the this year's theme of 'Digital
+                                Kolkata'.Engineers, designers and end-users will push their creative brains to the
+                                farthest limit and develop solutions pertinent to the problem statement in the field of
+                                Internet of Things (IOT) as well contribute to the improving medical scenario of this
+                                city. So step your game up this spring as there's a lot to be won.Your idea just might
+                                be the next big thing for this city.
+                            </div>
                         </div>
                     </div>
                     <div id="todoNoteWrapper2">

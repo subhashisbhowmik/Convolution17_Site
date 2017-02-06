@@ -4,10 +4,11 @@
 var tv;
 $(document).ready(function () {
     $('.note').click(function (e) {
-        // $(this).addClass("expandedNote");
+        $(this).addClass("expandedNote");
 
 
 
+        /*
         var x = $(this);
         e.stopPropagation();
         setTimeout(function () {
@@ -19,7 +20,7 @@ $(document).ready(function () {
                 x.addClass('expandedNote');
                 // $('.nr').removeClass('expandedNote');
             }, 8);
-        }
+        }*/
     });
 
     $('.note_remove').click(function (e) {

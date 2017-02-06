@@ -135,6 +135,9 @@ var moving = false;
                 }
             }
         });
+        $('#settings').click(function () {
+            $('#settings_div').fadeIn(500);
+        });
     });
 })(jQuery);
 function viewUpdate() {

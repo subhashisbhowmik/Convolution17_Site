@@ -1296,7 +1296,7 @@ b {
 }
 
 #done2 {
-    transform: rotate(10deg);
+    transform: rotate(-5deg);
 }
 
 .note:hover {
@@ -1470,8 +1470,7 @@ b {
 .message_remove {
     position: absolute;
     display: inline-block;
-    margin-right: 5px;
-    margin-top: 2px;
+    margin: 15px;
     right: 0;
     top: 0;
     font-size: 0.8em;
@@ -1490,8 +1489,7 @@ b {
 .note_remove {
     position: absolute;
     display: none;
-    margin-right: 5px;
-    margin-top: 2px;
+    margin: 15px;
     right: 0;
     top: 0;
     font-size: 0.9em;
@@ -1516,6 +1514,7 @@ b {
     background-color: rgb(44, 73, 135);
     z-index: 900;
     margin: 20px;
+    font-family: 'Josefin Sans', sans-serif;
     max-width: 90vw;
     /*max-height: 10vh;*/
     border-radius: 5px;
@@ -1570,7 +1569,7 @@ b {
 
 #doneNoteWrapper2 {
     position: absolute;
-    transform: translate(12vw, 12vw) /*rotate(30deg)*/;
+    transform: translate(8vw, -30vw) /*rotate(30deg)*/;
 }
 
 .expandedNote {
@@ -1849,7 +1848,7 @@ input[type=number]::-webkit-outer-spin-button {
     /*outline: 3px solid #ff6c24;*/
 }
 .member{
-
+    cursor: default;
     display: inline-block;
     height: 50px;
     margin: 5px;
