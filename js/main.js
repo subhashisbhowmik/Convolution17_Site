@@ -282,6 +282,10 @@ $(document).ready(function () {
         $("#teamWrapper").fadeOut(100);
     });
 
+    $("#settings_close").click(function () {
+        $("#settings_div").fadeOut(100);
+    })
+
 
 
     var buttonswitch = false;

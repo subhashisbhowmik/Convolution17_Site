@@ -969,15 +969,6 @@ b {
     overflow: auto;
 }
 
-#settings_div {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 1200;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none;
-    overflow: auto;
-}
 
 #login_signup_div_content {
     display: block;
@@ -999,12 +990,23 @@ b {
     animation: appearIn 0.3s ease-in-out;
 }
 
+
+#settings_div {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1200;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    overflow: auto;
+}
+
 #settings_div_content {
     display: block;
     width: 60vw;
     min-width: 500px;
     padding: 20px;
-    min-height: 560px;
+    min-height: 480px;
     z-index: 1200;
     box-sizing: border-box;
     margin: 0 auto;
@@ -1017,6 +1019,32 @@ b {
     font-size: 1.1em;
     font-weight: 500;
     animation: appearIn 0.3s ease-in-out;
+}
+.block_{
+    display:block !important;
+    float: left;
+    clear: both;
+    width: auto;
+    box-sizing: border-box;
+    padding: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: left;
+    color: #e2e2e2;
+    margin-top: 10px;
+    font-weight: 500;
+    animation: appearIn 0.3s ease-in-out;
+}
+#settings_close {
+    float: right;
+    clear: left;
+    font-size: 1.1em;
+    padding: 6px 7px;
+    border-radius: 50%;
+    background-color: #31708f;
+    color: #eeeeee;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 #login_signup_div_content_in {
@@ -1040,13 +1068,13 @@ b {
     transition: all 0.2s ease-in-out;
 }
 
+
 #login_signup_div_close:hover {
     background-color: #3b90b4;
 }
 
 .log_sin {
     width: 50%;
-
     display: inline-block;
     float: left;
     height: 100%;

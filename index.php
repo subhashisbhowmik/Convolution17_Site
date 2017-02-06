@@ -1,5 +1,4 @@
 <?php
-
 require_once "php/functions.php";
 $await_confirm = 0;
 $name = "";
@@ -44,7 +43,6 @@ if (isset($_COOKIE['convo_mail'])) {
 
     if (isset($_GET['m'])) $m = $_GET['m'];
 }
-//$name = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,9 +163,16 @@ if (isset($_COOKIE['convo_mail'])) {
 
 <div id="settings_div">
     <div id="settings_div_content">
-        <div id="login_signup_div_close">&#x2715;</div>
+        <div id="settings_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
-            <div class="log_sin settings_log_sin">
+            <div class="log_sin" style="display: table-cell; vertical-align: middle;padding-top: 9vh; ">
+                <div class="block_">Hi</div>
+                <?php
+                    echo '<div class="block_">'.$name.'</div>' ;
+                    echo '<div class="block_" style="text-transform: lowercase">'.$email.'</div>';
+                ?>
+            </div>
+            <div class="log_sin" style="float:right;">
                 <form action="php/signup.php" method="get" name="signup_form">
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
