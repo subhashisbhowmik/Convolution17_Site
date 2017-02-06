@@ -138,6 +138,9 @@ var moving = false;
         $('#settings').click(function () {
             $('#settings_div').fadeIn(500);
         });
+        $('#removeAcct').click(function () {
+            document.location.href = 'php/removeAcct.php';
+        });
     });
 })(jQuery);
 function viewUpdate() {
@@ -199,9 +202,16 @@ $(document).ready(function () {
     if(window.location.hash) {
         var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
         if(hash=='0' && $('#message_div').text()!=''){
-            $('#message_div').show();
-            if($('#message_div').text()=="Wrong Username or Password"){
-                $("#login_signup_div").fadeIn(200);
+            // $('#message_div').show();
+            if($('#message_div').text().toString().includes("Wrong Username or Password")){
+
+                setTimeout(function () {
+                    $("#login_signup_div").fadeIn(200);
+                    // $('#message_div').css('z-index',1000);
+                    setTimeout(function () {
+                        $('#wup').show('fast');
+                    },100);
+                },100);;
             }
         }
         window.location.hash='';

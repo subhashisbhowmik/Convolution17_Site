@@ -5,6 +5,7 @@ $name = "";
 $email = "";
 $num_noti = 0;
 $m = '';
+$info='';
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -39,10 +40,15 @@ if (isset($_COOKIE['convo_mail'])) {
         $result = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=0 ORDER BY `ts` DESC");
         $num_noti = $result->num_rows;
         $result_seen = sql("SELECT * FROM `noti` WHERE `email`='$email' AND `seen`=1 ORDER BY `ts` DESC");
+        $events=sql("SELECT `event` FROM `registration` WHERE `email`='$email'");
+        $eventNames=array();
+        foreach ($events as $eventName){
+            $eventNames[$eventName['event']]=1;
+        }
+        $info=sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
     }
-
-    if (isset($_GET['m'])) $m = $_GET['m'];
 }
+if (isset($_GET['m'])) $m = $_GET['m'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +95,8 @@ if (isset($_COOKIE['convo_mail'])) {
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
-            <li id="tab-presentation" data-id="presentation"><span><b>Presentation</b></span></li>
+            <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
+            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
@@ -108,6 +115,8 @@ if (isset($_COOKIE['convo_mail'])) {
             } else if ($m == 'nc') {
                 //TODO: Resend.php
                 echo "Please confirm your e-mail ID first. <a id='resend' href='php/resend.php'></a>";
+            } else if ($m == 'ar'){
+                echo "Account deleted.";
             }
         }
         ?></div>
@@ -120,6 +129,7 @@ if (isset($_COOKIE['convo_mail'])) {
             <div class="log_sin">
                 <form action="php/login.php" method="get" name="login_form">
                     <label>Login</label>
+                    <div id="wup" style="color: red;display:none;margin:5px">Wrong Username Or Password.</div>
                     <input required="required" type="email" id="login_email" name="login_email"
                            placeholder="E-mail ID"/>
                     <input required="required" type="password" id="login_pass" name="login_pass"
@@ -129,12 +139,12 @@ if (isset($_COOKIE['convo_mail'])) {
             </div>
 
             <div class="log_sin">
-                <form action="php/signup.php" method="get" name="signup_form">
+                <form action="php/signup.php" method="get" name="signup_form" id="signup_form">
                     <label>sign up</label>
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
                            placeholder="E-mail ID"/>
-                    <input required="required" type="number" maxlength="10" id="signup_contact" name="signup_contact"
+                    <input required="required" type="number" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
@@ -146,9 +156,8 @@ if (isset($_COOKIE['convo_mail'])) {
                            placeholder="Department"/>
                     <select required="required" id="class" name="class">
                         <optgroup label="class">
-                            <option>CLASS</option>
                             <option>Still in School</option>
-                            <option>UG 1st yr</option>
+                            <option selected="selected">UG 1st yr</option>
                             <option>UG 2nd yr</option>
                             <option>UG 3rd yr</option>
                             <option>UG 4th yr</option>
@@ -166,36 +175,39 @@ if (isset($_COOKIE['convo_mail'])) {
         <div id="settings_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log_sin" style="display: table-cell; vertical-align: middle;padding-top: 9vh; ">
-                <div class="block_">Hi</div>
+                <div class="block_">Hi,</div>
                 <?php
                     echo '<div class="block_">'.$name.'</div>' ;
-                    echo '<div class="block_" style="text-transform: lowercase">'.$email.'</div>';
+                    echo '<div class="block_" style="text-transform: lowercase">E-Mail: '.$email.'</div>';
                 ?>
+                <div style="clear:both"></div>
+                <div id="removeAcct">Remove Account</div>
             </div>
             <div class="log_sin" style="float:right;">
-                <form action="php/signup.php" method="get" name="signup_form">
+                <form action="php/change.php" method="get" name="update_form" id="update_form">
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
                            placeholder="Old Password"/>
-                    <input required="required" pattern=".{8,100}" type="password" id="signup_password"
+                    <input pattern=".{8,100}" type="password" id="new_password"
                            name="new_password" placeholder="Password (At least 8 characters long)"/>
-                    <input required="required" type="password" id="signup_password_2" name="signup_password_2"
+                    <input type="password" id="new_password_2" name="new_password_2"
                            placeholder="Confirm Password"/>
+                    <input required="required" type="number" maxlength="15" id="signup_contact" name="signup_contact"
+                           placeholder="Contact Number" value="<?php if($info!='') echo $info['contact'];?>"/>
                     <input required="required" "type="text" id="signup_institute" name="signup_institute"
-                    placeholder="College or University"/>
+                    placeholder="College or University" value="<?php if($info!='') echo $info['inst'];?>"/>
                     <input required="required" type="text" id="signup_dept" name="signup_dept"
-                           placeholder="Department"/>
+                           placeholder="Department" value="<?php if($info!='') echo $info['dept'];?>"/>
                     <select required="required" id="class" name="class">
                         <optgroup label="class">
-                            <option>CLASS</option>     
-                            <option>Still in School</option>
-                            <option>UG 1st yr</option>
-                            <option>UG 2nd yr</option>
-                            <option>UG 3rd yr</option>
-                            <option>UG 4th yr</option>
+                            <option <?php if($info!='' &&$info['class']=='Still in School') echo 'selected="selected"';?>>Still in School</option>
+                            <option <?php if($info!='' &&$info['class']=='UG 1st yr') echo 'selected="selected"';?>>UG 1st yr</option>
+                            <option <?php if($info!='' &&$info['class']=='UG 2nd yr') echo 'selected="selected"';?>>UG 2nd yr</option>
+                            <option <?php if($info['class']=='UG 3rd yr') echo 'selected="selected"';?>>UG 3rd yr</option>
+                            <option <?php if($info!='' &&$info['class']=='UG 4th yr') echo 'selected="selected"';?>>UG 4th yr</option>
                         </optgroup>
                     </select>
-                    <button id="signup_btn" type="submit">Sign up</button>
+                    <button id="signup_btn" type="submit">Update</button>
                 </form>
             </div>
         </div>
@@ -415,7 +427,7 @@ if (isset($_COOKIE['convo_mail'])) {
                     </p>
 
                     <div class="end">
-                        <i class="fa fa-calendar-check-o"></i><span>March</span><span>Jadavpur University</span><i
+                        <i class="fa fa-calendar-check-o"></i><span>3-5th March</span><span>Jadavpur University</span><i
                             class="fa fa-university"></i>
                     </div>
                 </div>
@@ -462,7 +474,7 @@ if (isset($_COOKIE['convo_mail'])) {
                         <div id="circuistic_buttons_wrapper_inner">
 
                                 <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="circuistic">DETAILS</div>
-                                <div style="text-decoration:none;float: right;" class="circuistic_button register" event="circuistic">REGISTER</div>
+                                <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="circuistic"><div class="tx">Register<?php if(isset($eventNames['circuistic'])) echo "ed"; ?></div></div>
 
                             <div style="clear: both"></div>
                         </div>
@@ -482,12 +494,12 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div class="shrink">
                         <!--img id="consoleImg" src="img/flat_terminal_bare.svg"/-->
                         <div class="algo_buttons_class pdf" event="algomaniac"
-                             style="position:absolute;width:80px;float: left;top:80%;left:2%">
+                             style="position:absolute;float: left;top:80%;left:2%">
                             Details
                         </div>
                         <div class="algo_buttons_class register" event="algomaniac"
-                             style="position:absolute;width:80px;float: right;top:80%;right:2%">
-                            Register
+                             style="position:absolute;float: right;top:80%;right:2%;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>">
+                            <div class="tx">Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div>
                         </div>
                         <div id="laptop_screen">
                             <div id="termial_titlebar">
@@ -559,9 +571,9 @@ if (isset($_COOKIE['convo_mail'])) {
                         </div>
                     </div>
                     <div id="inprogressNoteWrapper3" class="noteWrapper">
-                        <div class="note in_progress_note nr" id="in_progress3 register" event="sparkhack">
+                        <div class="note in_progress_note nr register" id="in_progress3" event="sparkhack" style="<?php if(isset($eventNames['sparkhack'])) echo "cursor:default;"; ?>">
                             <div class="note_remove">&#x2715;</div>
-                            <div class="noteContent nr">Register</div>
+                            <div class="noteContent nr tx">Register<?php if(isset($eventNames['sparkhack'])) echo "ed"; ?></div>
                             <div class="noteDetails" style="display:none"></div>
                         </div>
                     </div>
@@ -593,6 +605,7 @@ if (isset($_COOKIE['convo_mail'])) {
                 <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
                     CONtroversial
+                    <div style="display:block; font-size: 4vw">The Convolution Parlamentary Debate</div>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
@@ -620,10 +633,20 @@ if (isset($_COOKIE['convo_mail'])) {
                     <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <div id="presentation" class="item cs" style="border-color: #931a46">
+            <div id="papier" class="item cs" style="border-color: #931a46">
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
                 <div class="blankDiv" style="background-color: #2b35a6">
-                    Paper Presentation
+                    Papier - Paper Presentation
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
+                </div>
+            </div>
+            <div id="seminar" class="item cs" style="border-color: #624293">
+                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
+                <div class="blankDiv" style="background-color: #c4402d">
+                    Seminar - Guest Lecture
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
@@ -730,6 +753,8 @@ if (isset($_COOKIE['convo_mail'])) {
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/note.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
 <script type="text/javascript" src="js/pdf.js"></script>
+<script type="text/javascript" src="js/query.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 require_once "../php/functions.php";
+header('Location: ../Coming Soon/');
 $await_confirm = 0;
 $name = "";
 $email = "";

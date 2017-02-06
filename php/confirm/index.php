@@ -16,7 +16,6 @@ $sql="SELECT `id` FROM `users` WHERE `email`='$email' AND (`confirmation` = '$co
 $result=sql($sql);
 if($result->num_rows>0){
     $sql="UPDATE `users` SET `confirmation`='0' WHERE `email`='$email'";
-    //TODO:Make login
     sql($sql);
     $token=randomString(64);
 //    sql("DELETE FROM `cookie` WHERE 'email'='$email'");
