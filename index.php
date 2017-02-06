@@ -732,7 +732,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     </div>
                     <div id="div_for_query" style="float: right">
                         <div style="display: block;padding: 15px;text-align: center;">Have any Query? Ask us..</div>
-                        <form action="" method="post">
+                        <form id="queryForm" action="" method="post">
                             <textarea placeholder="type here" id="query_input"></textarea>
                             <button id="query_submit">Send</button>
                         </form>
