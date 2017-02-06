@@ -9,8 +9,12 @@ $(window).on('load', function () {
             var $spinner = $(this).find('.spinner');
             $spinner.show();
             //TODO: Post
-            $.get('php/register.php', {event: eventName}, function (data) {
+            $.post('php/register.php', {event: eventName}, function (data) {
                 if (data == '2') alert('Already Register in ' + eventName.toString()+'.');
+                else if (data=='10'){
+                    $('#login_signup_div').fadeIn(500);
+                    $('#lif').show('fast');
+                }
                 else if (data != '1') alert('Registration Failed');
                 else if (data == '1') {
                     alert('Registration for ' + eventName.toString() + ' succeeded!');

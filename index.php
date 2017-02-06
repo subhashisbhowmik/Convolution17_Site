@@ -127,9 +127,10 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log_sin">
-                <form action="php/login.php" method="get" name="login_form">
+                <form action="php/login.php" method="post" name="login_form">
                     <label>Login</label>
                     <div id="wup" style="color: red;display:none;margin:5px">Wrong Username Or Password.</div>
+                    <div id="lif" style="color: red;display:none;margin:5px">Login or Signup First.</div>
                     <input required="required" type="email" id="login_email" name="login_email"
                            placeholder="E-mail ID"/>
                     <input required="required" type="password" id="login_pass" name="login_pass"
@@ -184,7 +185,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div id="removeAcct">Remove Account</div>
             </div>
             <div class="log_sin" style="float:right;">
-                <form action="php/change.php" method="get" name="update_form" id="update_form">
+                <form action="php/change.php" method="post" name="update_form" id="update_form">
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
                            placeholder="Old Password"/>
@@ -313,7 +314,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <div class="teamDesignation">Algomaniac</div>
 
             <div class="member">
-                <div class="member_img"><img src="img/contacts/anisha.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_img"><img src="img/contacts/anisha.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Anisha Bannerjee </div>
             </div>
 
@@ -334,11 +335,11 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
             <div class="member">
                 <div class="member_img"><img src="img/contacts/druhin.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Druhin Choudhury </div>
+                <div class="member_name">Druhin Chowdhury </div>
             </div>
 
             <div class="member">
-                <div class="member_img"><img src="img/contacts/soumee.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_img"><img src="img/contacts/soumee.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Soumee Guha </div>
             </div>
             <div class="member">
@@ -346,7 +347,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div class="member_name">Anurag Chhetry </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="img/contacts/sadaf.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_img"><img src="img/contacts/sadaf.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Sadaf Syed </div>
             </div>
             <div class="teamDesignation">Decisia</div>
@@ -382,6 +383,10 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <div class="member">
                 <div class="member_img"><img src="img/contacts/sanmoy.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Sanmoy Chakrabarty </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="img/contacts/sanjoy.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sanjoy Poddar </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>
@@ -458,7 +463,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 </div>
                 <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
-                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233</div>
+                        <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
                         <div> Anurag Chhetry- +919732812683</div>
                     </div>
                 </div>

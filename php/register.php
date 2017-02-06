@@ -18,4 +18,5 @@ if ($x == 1) {
         echo '1';
     }else echo '2';
     
-} else echo -1;
+}else if($x==0)echo "10";
+else echo -1;
