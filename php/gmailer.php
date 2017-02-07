@@ -18,7 +18,9 @@ function sendGMail($to,$sub,$msg)
     $headers = array(
         'From' => $from,
         'To' => $to,
-        'Subject' => $subject
+        'Subject' => $subject,
+        'MIME-Version' => 1,
+        'Content-type' => 'text/html;charset=iso-8859-1'
     );
 
     $smtp = Mail::factory('smtp', array(
