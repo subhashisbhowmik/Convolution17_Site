@@ -80,4 +80,4 @@ echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on C
 //header("Location: ../");
 ob_end_flush();
 flush();
-sendMail($email,"Confirmation Email",$body);
+sendGMail($email,"Confirmation Email",$body);

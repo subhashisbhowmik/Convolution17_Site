@@ -8,9 +8,9 @@
 require_once "../functions.php";
 $email="";
 $con="";
-if (isset($_REQUEST['id'])) $email = sanitizeString($_REQUEST['id']);
+if (isset($_REQUEST['id'])) $email = sanitizeString(sanitizeString($_REQUEST['id']));
 if ($email === "") die('Invalid Request');
-if (isset($_REQUEST['con'])) $con = urldecode($_REQUEST['con']);
+if (isset($_REQUEST['con'])) $con = urldecode(sanitizeString($_REQUEST['con']));
 if ($con === "") die('Invalid Request');
 $sql="SELECT `id` FROM `users` WHERE `email`='$email' AND (`confirmation` = '$con' OR `confirmation` = '0')";
 $result=sql($sql);

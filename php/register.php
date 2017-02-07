@@ -7,7 +7,7 @@
  */
 require_once "functions.php";
 $event = '';
-if (isset($_REQUEST['event'])) $event = $_REQUEST['event'];
+if (isset($_REQUEST['event'])) $event = sanitizeString($_REQUEST['event']);
 if ($event == '') die('0');
 $x = checkConvoAuth('');
 if ($x == 1) {

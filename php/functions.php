@@ -1,5 +1,5 @@
 <?php
-require_once "mailer.php";
+require_once "gmailer.php";
 $conn = NULL;
 connect();
 session_start();
