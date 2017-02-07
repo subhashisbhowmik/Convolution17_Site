@@ -26,9 +26,9 @@ if($result->num_rows>0){
     setcookie('convo_token',$token,time() + (86400 * 30), "/");
 
     $_SESSION['on']='1';
-//    header("Location: ../");
+    header("Location: ../../?m=li#0");
 }else{
     die('Invalid confirmation link');
 }
-header('Location: ../../');
+//header('Location: ../../');
 
