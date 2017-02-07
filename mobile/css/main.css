@@ -145,16 +145,17 @@ hr {
     /*-webkit-filter: saturate(500%); !* Safari 6.0 - 9.0 *!*/
     /*filter: saturate(500%);*/
     background-size: cover;
-    height: 100vh;
+    height: auto;
     margin-top: -50px;
+    margin-bottom:-2px;
     overflow: visible;
 }
 
 .bg {
-    background: fixed url("../img/parallax/bg4.png") center center;
+    background: url("../../img/mobile/home.jpg") center center;
     /*filter:!*blur(25px)*! sepia(113%) brightness(130%);*/
     /*-webkit-filter:  !*blur(25px)*! sepia(113%) */
-brightness(130 %);
+    brightness(130 %);
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -181,6 +182,7 @@ brightness(130 %);
 
 #second.foreground {
     padding-top: 2%;
+    max-width: 85%;
     -webkit-transition: transform 0.5s ease-in 0.4s, opacity 0.5s ease-in 0.8s;
     -moz-transition: transform 0.5s ease-in 0.4s, opacity 0.5s ease-in 0.8s;
     -o-transition: transform 0.5s ease-in 0.4s, opacity 0.5s ease-in 0.8s;
@@ -191,7 +193,7 @@ brightness(130 %);
     position: relative;
     margin: auto;
     display: block;
-    max-width: 75vw;
+    max-width: 100%;
 }
 
 .line {
@@ -216,6 +218,7 @@ brightness(130 %);
 
 #second.foreground {
     max-width: 60vw;
+    width:85%;
 }
 
 #first.foreground.hidden {
@@ -257,7 +260,9 @@ brightness(130 %);
     /*z-index: 18;*/
     scroll-snap-type: mandatory;
     padding-top: 5vh;
-    background-color: #000008;
+    box-sizing: border-box;
+    height:95vh;
+    background-color: #000000;
     /*background-color: #020a1a;*/
     color: gainsboro;
 }
@@ -276,7 +281,7 @@ brightness(130 %);
 }
 
 #events {
-    background-color: #000008;
+    background-color: #000000;
     /*background-color: #020a1a;*/
     color: white;
 }
@@ -316,7 +321,7 @@ b {
 
 #about #logo {
     display: block;
-    height: 25vh;
+    height: 20vh;
     margin: auto;
     padding: 5%;
 }
@@ -327,7 +332,7 @@ b {
     display: block;
     /*background-color: #000008;*/
     color: gainsboro;
-    font-size: 1.5em;
+    /*font-size: 1.1em;*/
     text-align: center;
     padding: 20px 10%;
     line-height: 2em;
@@ -371,7 +376,7 @@ b {
 
 .rotator {
     animation: rotation linear 15s infinite;
-    transform-origin: 18.75% 34.45%;
+    transform-origin: 18.75% 71.11%;
 }
 
 .noSelect {
@@ -396,10 +401,10 @@ b {
     }
 
     .text {
-        font-size: 1.3em;
+        font-size: 3vh;
         text-align: center;
         padding: 3%;
-        line-height: 1.2em;
+        line-height: 1.5em;
         font-family: 'Josefin Sans';
 
         /*transform: translateY(50%);*/
@@ -619,8 +624,8 @@ b {
     color: #2A2E39;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
-    border: solid rgba(69, 19, 172, 1) 1.4vw;
-    border-bottom: solid rgba(69, 19, 172, 1) 15px;
+    /*border: solid rgba(69, 19, 172, 1) 1.4vw;*/
+    /*border-bottom: solid rgba(69, 19, 172, 1) 15px;*/
 }
 
 #circuistic_text {
@@ -629,13 +634,13 @@ b {
     transition: all 0.5s ease-in-out;
     padding: 14px;
     background-color: #eeeeee;
-    width: 60vw;
+    width: auto;
     float: right;
     margin: 10px;
     font-size: 1.2em;
     line-height: 105%;
     color: #222;
-    margin-right: 20px;
+    /*margin-right: 20px;*/
     font-weight: 500;
     text-decoration: none;
     margin-bottom: 30px;
@@ -647,16 +652,16 @@ b {
 #circuistic_buttons_wrapper {
     width: 100%;
     z-index: 102;
-    display: flex;
+    display: block;
     text-align: center;
-    margin-left: -4.3%;
-    position: absolute;
-    margin-bottom: 3vw;
+    /*margin: 5% auto;*/
+    padding-bottom: 5%;
+    margin-left: 5%;
 }
 
 #circuistic_buttons_wrapper_inner {
-    margin: auto;
-    width: 35%;
+    margin: 0 auto 0 0;
+    width: 90%;
 }
 
 .circuistic_button {
@@ -676,16 +681,16 @@ b {
     padding: 15px;
     text-align: center;
     width: 100%;
+    margin: 0 -15px;
 }
 
 #circuistic_contacts_inner {
-    display: flex;
+    display: block;
     padding: 15px;
     text-align: center;
     margin: auto;
-    border-radius: 100px;
-    margin-bottom: -5px;
-    white-space: pre;
+    border-radius: 5px;
+    /*white-space: pre;*/
     font-size: 1.1em;
     box-shadow: 0 0 3px #555;
     background-color: #eeeeee;
@@ -891,6 +896,22 @@ b {
     transition: 0.2s;
 }
 
+#removeAcct{
+    padding: 14px 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 10%;
+    background-color: rgba(76, 133, 239, 1);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
 #login_signup_btn:hover {
     background-color: rgba(76, 133, 239, 0.8);
 }
@@ -969,6 +990,30 @@ b {
     overflow: auto;
 }
 
+
+#login_signup_div_content {
+    display: block;
+    /*width: 60vw;*/
+    /*min-width: 500px;*/
+    padding: 20px;
+    overflow-y: scroll;
+
+    min-height: 560px;
+    z-index: 1200;
+    box-sizing: border-box;
+    margin: 0 20px 10px;
+    margin-top: calc(50vh - 280px);
+    background-color: #33475E;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-transform: capitalize;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    animation: appearIn 0.3s ease-in-out;
+}
+
+
 #settings_div {
     height: 100vh;
     width: 100vw;
@@ -979,15 +1024,22 @@ b {
     overflow: auto;
 }
 
-#login_signup_div_content {
+/*#settings_div input{*/
+    /*margin-left:5px;*/
+    /*margin-right:5px;*/
+/*}*/
+
+
+#settings_div_content {
     display: block;
-    width: 60vw;
-    min-width: 500px;
+    width: 90vw;
+    /*min-width: 500px;*/
     padding: 20px;
-    min-height: 560px;
+    min-height: 80vh;
     z-index: 1200;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 20px auto;
+    overflow: auto;
     margin-top: calc(50vh - 280px);
     background-color: #33475E;
     border-radius: 4px;
@@ -998,25 +1050,31 @@ b {
     font-weight: 500;
     animation: appearIn 0.3s ease-in-out;
 }
-
-#settings_div_content {
-    display: block;
-    width: 60vw;
-    min-width: 500px;
-    padding: 20px;
-    min-height: 560px;
-    z-index: 1200;
+.block_{
+    display:block !important;
+    float: left;
+    clear: both;
+    width: auto;
     box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: calc(50vh - 280px);
-    background-color: #33475E;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    text-transform: capitalize;
+    padding: 10px;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    text-align: left;
+    color: #e2e2e2;
+    margin-top: 10px;
     font-weight: 500;
     animation: appearIn 0.3s ease-in-out;
+}
+#settings_close {
+    float: right;
+    clear: left;
+    font-size: 1.1em;
+    padding: 6px 7px;
+    border-radius: 50%;
+    background-color: #31708f;
+    color: #eeeeee;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 #login_signup_div_content_in {
@@ -1040,13 +1098,13 @@ b {
     transition: all 0.2s ease-in-out;
 }
 
+
 #login_signup_div_close:hover {
     background-color: #3b90b4;
 }
 
 .log_sin {
-    width: 50%;
-
+    width: 100%;
     display: inline-block;
     float: left;
     height: 100%;
@@ -1054,10 +1112,6 @@ b {
     text-align: center;
 }
 
-.log_sin:nth-child(2) {
-    width: calc(50% - 1px);
-    border-left: 1px solid #2a2e39;
-}
 
 .log_sin label {
     text-decoration: none;
@@ -1489,8 +1543,7 @@ b {
 .note_remove {
     position: absolute;
     display: none;
-    margin-right: 5px;
-    margin-top: 2px;
+    margin: 15px;
     right: 0;
     top: 0;
     font-size: 0.9em;
@@ -1619,11 +1672,12 @@ b {
 
 #contact_list {
     /*min-height: calc(90vh - 80px);*/
-    width: 50%;
+    width: 100%;
     padding: 15px;
     /*padding-bottom: 30px;*/
     color: whitesmoke;
     box-sizing: border-box;
+    background-color: black;
     display: inline-block;
 }
 
@@ -1656,10 +1710,11 @@ b {
 
 .contact_name {
     font-family: 'Josefin Sans', sans-serif;
-    padding: 12px;
+    padding: 2px;
     display: inline-block;
-    text-align: left;
-    font-size: 1.3vw;
+    font-size: 4vw;
+    text-align: center;
+    line-height: 1.5em;
     font-weight: 700;
     color: #2a2e39;
     height: 100%;
@@ -1699,11 +1754,12 @@ b {
 
 #div_for_query{
     /*min-height: calc(90vh - 80px);*/
-    width: 50%;
+    width: 100%;
     padding: 15px;
     display: inline-block;
     box-sizing: border-box;
-    background-color: #000008
+    background-color: black;
+    padding-bottom: 120px;
 }
 
 #query_input {
@@ -1770,18 +1826,21 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #footer{
-    display: table;
+    display: block;
     /*min-height: 5vh;*/
     /*height:50px;*/
     width: 100vw;
+    /*height:20vw;*/
+    position: absolute;
+    bottom:0;
     box-shadow: 0 -5px 5px 0 rgba(30, 144, 255, 0.52);
     background-color: rgba(30, 144, 255, 0.52);
     color: white;
 }
 
 #footer>div{
-    display: table-cell;
-    width: 30vw;
+    display: block;
+    width: 100vw;
     text-align: center;
     padding: 10px;
     cursor: pointer;
@@ -1809,12 +1868,12 @@ input[type=number]::-webkit-outer-spin-button {
     width: 84vw;
     overflow-y: hidden;
     overflow-x: hidden;
-    min-width: 600px;
+    /*min-width: 600px;*/
     padding: 10px;
-    min-height: 600px;
+    /*min-height: 600px;*/
     z-index: 1200;
     box-sizing: border-box;
-    margin: 20px auto;
+    margin: 10px auto;
     margin-top: 40px;
     background-color: rgba(180, 190, 200, 1);
     border-radius: 4px;
@@ -1894,4 +1953,35 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 600;
     color: #d9534f;
 
+}
+
+.eventPattern{
+    background: url('../../img/mobile/event_bg.svg');
+    text-align: center;
+}
+
+#events .item{
+    overflow: hidden;
+}
+
+.eventGrad{
+    background: radial-gradient(circle at 0 0,#ffb630, #ff8200);
+}
+
+.eventImg{
+    width: 100%;
+}
+
+#circuistic{
+    border: solid 10px #c32002;
+}
+
+#algomaniac{
+    margin-top:-1px;
+    border: solid 10px #2f5cc5;
+}
+
+#sparkhack{
+    margin-top:-1px;
+    border: solid 10px #c57d00;
 }

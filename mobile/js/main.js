@@ -2,11 +2,8 @@
  * Created by Subhashis on 19-11-2016.
  */
 var prev='home';
-if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-    location.replace("mobile/");
-}
-if (screen.width < 700) {
-    document.location = "mobile/";
+if ((!(navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)))&&(screen.width > 700) ) {
+    location.replace("../");
 }
 var vbn = null;
 function filterUpdate(v) {
@@ -45,7 +42,7 @@ var moving = false;
                 scrollAmount: 250
             },
             keyboard: {
-                scrollAmount: 200
+                scrollAmount: 50
             },
             scrollButtons: {
                 tabindex: 10
@@ -92,7 +89,7 @@ var moving = false;
                     });
                     // $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
                     //TODO: This scales and translates the top Convo header
-                    $('#home').find('.inner').css('transform', 'translate(0px,' + (markMain) + 'px) scale(' + scale + ',' + scale + ')');
+                    //$('#home').find('.inner').css('transform', 'translate(0px,' + (markMain) + 'px) scale(' + scale + ',' + scale + ')');
                     var item = null;
                     $('.item').each(function () {
                         if (v + $(window).height() / 3 >= $(this).position().top || (item == null)/* || (v-item.offset().top)>(v-$(this).offset().top))*/) item = $(this);
@@ -134,6 +131,12 @@ var moving = false;
                     }, 200);
                 }
             }
+        });
+        $('#settings').click(function () {
+            $('#settings_div').fadeIn(500);
+        });
+        $('#removeAcct').click(function () {
+            document.location.href = 'php/removeAcct.php';
         });
     });
 })(jQuery);
@@ -193,12 +196,28 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
+    $('#sign_up_open').click(function () {
+        $('.log').fadeOut(500);
+        $('.sin').fadeIn(500);
+    });
+    $('#login_open').click(function () {
+        $('.log').fadeIn(500);
+        $('.sin').fadeOut(500);
+    });
+
     if(window.location.hash) {
         var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
         if(hash=='0' && $('#message_div').text()!=''){
-            $('#message_div').show();
-            if($('#message_div').text()=="Wrong Username or Password"){
-                $("#login_signup_div").fadeIn(200);
+            // $('#message_div').show();
+            if($('#message_div').text().toString().includes("Wrong Username or Password")){
+
+                setTimeout(function () {
+                    $("#login_signup_div").fadeIn(200);
+                    // $('#message_div').css('z-index',1000);
+                    setTimeout(function () {
+                        $('#wup').show('fast');
+                    },100);
+                },100);;
             }
         }
         window.location.hash='';
@@ -278,6 +297,10 @@ $(document).ready(function () {
     $("#teamClose").click(function () {
         $("#teamWrapper").fadeOut(100);
     });
+
+    $("#settings_close").click(function () {
+        $("#settings_div").fadeOut(100);
+    })
 
 
 

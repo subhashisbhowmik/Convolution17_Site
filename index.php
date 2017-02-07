@@ -114,7 +114,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 echo "Wrong Username or Password";
             } else if ($m == 'nc') {
                 //TODO: Resend.php
-                echo "Please confirm your e-mail ID first. <a id='resend' href='php/resend.php'></a>";
+                echo "Please confirm your e-mail ID first.";// <a id='resend' href='php/resend.php'></a>
             } else if ($m == 'ar'){
                 echo "Account deleted.";
             }
@@ -283,34 +283,34 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div class="member_img"><img src="img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Pratik Karmakar </div>
             </div>
-
-            <div class="teamDesignation">Organization</div>
-
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Subhashis Bhowmik </div>
-            </div>
-
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Pratik Karmakar </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Biswajit Tikadar </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Debapriya Basu </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Debarshi Chanda </div>
-            </div>
-            <div class="member">
-                <div class="member_img"><img src="img/contacts/anirjit.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Anirjit Mitra </div>
-            </div>
+<!---->
+<!--            <div class="teamDesignation">Organization</div>-->
+<!---->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Subhashis Bhowmik </div>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Pratik Karmakar </div>-->
+<!--            </div>-->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Biswajit Tikadar </div>-->
+<!--            </div>-->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Debapriya Basu </div>-->
+<!--            </div>-->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Debarshi Chanda </div>-->
+<!--            </div>-->
+<!--            <div class="member">-->
+<!--                <div class="member_img"><img src="img/contacts/anirjit.jpg" onerror='$(this).parent().hide();'></div>-->
+<!--                <div class="member_name">Anirjit Mitra </div>-->
+<!--            </div>-->
             <div class="teamDesignation">Algomaniac</div>
 
             <div class="member">
@@ -464,7 +464,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div id="circuistic_contacts" style="cursor: default;">
                     <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
                         <div style="border-right: solid 2px dodgerblue">Soumee Guha- +919477784233 </div>
-                        <div> Anurag Chhetry- +919732812683</div>
+                        <div> Anurag Chhetri- +919732812683</div>
                     </div>
                 </div>
                 <!--<div id="circuistic_buttons_wrapper">-->
@@ -590,17 +590,14 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                         <div class="note done_note nr" id="done1">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Prizes</div>
-                            <div class="noteDetails" style="display:none">1st Prize: Rs. 15,000<br>2nd Prize: Rs. 10,000<br>3rd
-                                Prize: Rs. 5,000
-                            </div>
+                            <div class="noteDetails" style="display:none">1st Prize: Rs. 15,000<br>2nd Prize: Rs. 10,000<br>3rd Prize: Rs. 5,000</div>
                         </div>
                     </div>
                     <div id="doneNoteWrapper2" class="noteWrapper">
                         <div class="note done_note" id="done2">
                             <div class="note_remove">&#x2715;</div>
                             <div class="noteContent">Contacts</div>
-                            <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi
-                                Chanda<br>+919051677526
+                            <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi Chanda<br>+919051677526
                             </div>
                         </div>
                     </div>

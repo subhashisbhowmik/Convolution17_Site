@@ -45,7 +45,7 @@ var moving = false;
                 scrollAmount: 250
             },
             keyboard: {
-                scrollAmount: 200
+                scrollAmount: 50
             },
             scrollButtons: {
                 tabindex: 10
