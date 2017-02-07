@@ -61,7 +61,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
           content="event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17"/>
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
-
+    <link rel="shortcut icon" href="img/favicon.svg" />
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
