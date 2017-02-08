@@ -663,5 +663,6 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/query.js"></script>
 </body>
 </html>
