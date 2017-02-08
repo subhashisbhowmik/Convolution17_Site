@@ -98,6 +98,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-presentation" data-id="presentation"><span><b>Presentation</b></span></li>
+            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
@@ -562,6 +563,16 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
                 <div class="blankDiv" style="background-color: #2b35a6">
                     Paper Presentation
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div class="comingSoon">Coming Soon</div>
+                </div>
+            </div>
+            <div id="seminar" class="item cs" style="border-color: #624293">
+                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
+                <div class="blankDiv" style="background-color: #c4402d">
+                    Seminar - Guest Lecture
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
