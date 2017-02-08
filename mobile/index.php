@@ -591,8 +591,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
                         <div class="contact">
                             <div class="contact_img"><img src="../img/contacts/subhashis.jpg"></div>
-                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General
-                                Secretary<br>+919836802623
+                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General Secretary<br>+919836802623
                             </div>
                         </div>
 
@@ -612,8 +611,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
                         <div class="contact">
                             <div class="contact_img"><img src="../img/contacts/debarshi.jpg"></div>
-                            <div class="contact_name">Debarshi Chanda <span class="info_divider"></span> Event
-                                Coordinator<br> +919051677526
+                            <div class="contact_name">Debarshi Chanda <span class="info_divider"></span> Event Coordinator<br> +919051677526
                             </div>
                         </div>
 
