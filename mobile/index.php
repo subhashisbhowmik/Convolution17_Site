@@ -351,7 +351,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/soumee.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_img"><img src="../img/contacts/soumee.jpeg" onerror='$(this).parent().hide();'></div>
                 <div class="member_name">Soumee Guha</div>
             </div>
             <div class="member">
@@ -530,6 +530,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
                     CONtroversial
+                    <div style="display:block; font-size: 4vw">The Convolution Parliamentary Debate</div>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>

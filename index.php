@@ -607,7 +607,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
                     CONtroversial
-                    <div style="display:block; font-size: 4vw">The Convolution Parlamentary Debate</div>
+                    <div style="display:block; font-size: 4vw">The Convolution Parliamentary Debate</div>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
