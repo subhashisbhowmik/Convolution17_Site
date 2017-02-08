@@ -678,7 +678,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
                         <div class="contact">
                             <div class="contact_img"><img src="img/contacts/subhashis.jpg"></div>
-                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> General Secretary <span class="info_divider"></span> +919836802623
+                            <div class="contact_name">Subhashis Bhowmik <span class="info_divider"></span> Secretary <span class="info_divider"></span> +919836802623
                             </div>
                         </div>
 
