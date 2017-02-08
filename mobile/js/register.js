@@ -10,7 +10,7 @@ $(window).on('load', function () {
             var $spinner = $(this).find('.spinner');
             $spinner.show();
             //TODO: Post
-            $.post('php/register.php', {event: eventName}, function (data) {
+            $.post('../php/register.php', {event: eventName}, function (data) {
                 if (data == '2') alert('Already Register in ' + eventName.toString()+'.');
                 else if (data=='10'){
                     $('#login_signup_div').fadeIn(500);

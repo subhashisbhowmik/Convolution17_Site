@@ -9,7 +9,7 @@ $('document').ready(function () {
         if ($('#query_input').val() == '')alert('PLease Fill up the query first!');
         else{
             var query=$('#query_input').val();
-            $.post('php/query.php',{query:query},function (data) {
+            $.post('../php/query.php',{query:query},function (data) {
                 if(data=='1'){
                     alert('Query Submitted.');
                     $('#query_input').val('');

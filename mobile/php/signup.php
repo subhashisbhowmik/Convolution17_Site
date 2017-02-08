@@ -17,11 +17,6 @@ ob_start();
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
 
-    <link rel="stylesheet" type="text/css" href="css/loader.css"/>
-    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css"/>
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
 </head>
 <body>
 <?php

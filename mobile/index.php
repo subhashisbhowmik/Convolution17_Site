@@ -126,7 +126,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log log_sin">
-                <form action="php/login.php" method="get" name="login_form">
+                <form action="../php/login.php" method="get" name="login_form">
                     <label>Login</label>
                     <div id="wup" style="color: red;display:none;margin:5px">Wrong Username Or Password.</div>
                     <div id="lif" style="color: red;display:none;margin:5px">Login or Signup First.</div>
@@ -141,7 +141,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
 
             <div class="sin log_sin" style="display:none">
-                <form action="php/signup.php" method="get" name="signup_form">
+                <form action="../php/signup.php" method="get" name="signup_form">
                     <label>sign up</label>
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
@@ -189,7 +189,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div id="removeAcct">Remove Account</div>
             </div>
             <div class="log_sin" style="float:right;">
-                <form action="php/change.php" method="post" name="update_form" id="update_form">
+                <form action="../php/change.php" method="post" name="update_form" id="update_form">
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
                            placeholder="Old Password"/>
@@ -506,7 +506,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="eventPattern" style="filter:hue-rotate(190deg);">
                         <div class="eventContainer" style="filter:hue-rotate(80deg);">
                             <img class="eventImg" src="../img/mobile/sparkhack.png" style="filter:hue-rotate(285deg) brightness(150%)"/>
-                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: left;">Code,create,build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Digital Kolkata'.Engineers, designers and end-users will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT) as well contribute to the improving medical scenario of this city. So step your game up this spring as there's a lot to be won.Your idea just might be the next big thing for this city.</div>
+                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: left;">Code, create, build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Internet of Things'.Internet of Things (IOT) is one of the most trending technical jargons in today's world.Engineers, designers and researchers will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT). So step your game up this spring as there's a lot to be won.Compete with some of the best people of India and your idea just might be the next big thing for this society.</div>
                             <div id="circuistic_contacts" style="cursor: default;white-space: normal">
                                 <div id="circuistic_contacts_inner" style="color: black;filter:hue-rotate(-210deg)"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                     <div style="display: block">Paulomi Bhowmick- +918961565172 </div>
