@@ -68,7 +68,11 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>    
+    <link rel="stylesheet" type="text/css" href="../css/spinner.css"/>
+
+    <script type="text/javascript" src="js/jq.js"></script>
+
 </head>
 <body>
 <noscript>
@@ -94,10 +98,10 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-circuistic" data-id="circuistic"><span><b>Circuistic</b></span></li>
             <li id="tab-algomaniac" data-id="algomaniac"><span><b>Algomaniac</b></span></li>
             <li id="tab-sparkhack" data-id="sparkhack"><span><b>SparkHACK</b></span></li>
+            <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
-            <li id="tab-presentation" data-id="presentation"><span><b>Presentation</b></span></li>
             <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
@@ -147,7 +151,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
                            placeholder="E-mail ID"/>
-                    <input required="required" type="number" maxlength="10" id="signup_contact" name="signup_contact"
+                    <input required="required" type="tel" maxlength="10" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
@@ -176,6 +180,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     </div>
 </div>
 
+<div id="nameDummy" style="display:none;"><?php echo $name;?></div>
 <div id="settings_div">
     <div id="settings_div_content">
         <div id="settings_close">&#x2715;</div>
@@ -198,7 +203,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                            name="new_password" placeholder="Password (At least 8 characters long)"/>
                     <input type="password" id="new_password_2" name="new_password_2"
                            placeholder="Confirm Password"/>
-                    <input required="required" type="number" maxlength="15" id="signup_contact" name="signup_contact"
+                    <input required="required" type="tel" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number" value="<?php if($info!='') echo $info['contact'];?>"/>
                     <input required="required" "type="text" id="signup_institute" name="signup_institute"
                     placeholder="College or University" value="<?php if($info!='') echo $info['inst'];?>"/>
@@ -348,7 +353,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/druhin.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Druhin Choudhury</div>
+                <div class="member_name">Druhin Chowdhury</div>
             </div>
 
             <div class="member">
@@ -357,7 +362,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/anurag.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Anurag Chhetry</div>
+                <div class="member_name">Anurag Chhetri</div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/sadaf.jpg" onerror='$(this).parent().hide();'></div>
@@ -458,11 +463,11 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div class="eventGrad">
                     <div class="eventPattern">
                         <img class="eventImg" src="../img/mobile/circuistic.png"/>
-                        <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: left;">Tired of reading only text books? Have an inherent love for circuits? Then this is the event you were looking for. CONVOLUTION 2017 presents CIRCUISTIC 4.0, the circuit building event of the year. To all the enthusiasts and hobbyists out there here is your chance to create magic with circuits and walk away with awesome prizes.<br> The contestants will be given a problem statement, which has to be analysed and practically realised by building a prototype circuit. The prototype must be both efficient and economical. Come. Build. Win.</div>
+                        <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">Tired of reading only text books? Have an inherent love for circuits? Then this is the event you were looking for. CONVOLUTION 2017 presents CIRCUISTIC 4.0, the circuit building event of the year. To all the enthusiasts and hobbyists out there here is your chance to create magic with circuits and walk away with awesome prizes.<br> The contestants will be given a problem statement, which has to be analysed and practically realised by building a prototype circuit. The prototype must be both efficient and economical. Come. Build. Win.</div>
                         <div id="circuistic_contacts" style="cursor: default;white-space: normal">
                             <div id="circuistic_contacts_inner"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                 <div style="display: block">Soumee Guha- +919477784233 </div>
-                                <div> Anurag Chhetry- +919732812683</div>
+                                <div> Anurag Chhetri- +919732812683</div>
                             </div>
                         </div>
                         <div id="circuistic_buttons_wrapper">
@@ -470,7 +475,12 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                                 <a href="../pdf/circuistic.pdf" target="_blank" style="text-decoration:none;float: left;">
                                     <div class="circuistic_button">DETAILS</div>
                                 </a>
-                                <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="circuistic"><div class="tx">Register<?php if(isset($eventNames['circuistic'])) echo "ed"; ?></div></div>
+                                <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="circuistic">
+                                    <div class="spinner" style="display:none">
+                                        <div class="bounce1"></div>
+                                        <div class="bounce2"></div>
+                                        <div class="bounce3"></div>
+                                    </div><div class="tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['circuistic'])) echo "ed"; ?></div></div>
                                 <div style="clear: both"></div>
                             </div>
                         </div>
@@ -482,7 +492,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="eventPattern" style="filter:hue-rotate(170deg);">
                         <div class="eventContainer" style="filter:hue-rotate(80deg);">
                             <img class="eventImg" src="../img/mobile/algomaniac.png" style="filter:hue-rotate(-5deg) brightness(200%)"/>
-                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: left;">Coding has never been so awesome before. So you think you can tame an wild territory of algorithms, data structure and AI techniques under shortage of time and space? Then this is the place you deserve! What's more? This year, the format ensures that you get to battle it out with the bests even if you call yourself a novice (we know you aren't). So get ready to become the maniac! </div>
+                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">Coding has never been so awesome before. So you think you can tame an wild territory of algorithms, data structure and AI techniques under shortage of time and space? Then this is the place you deserve! What's more? This year, the format ensures that you get to battle it out with the bests even if you call yourself a novice (we know you aren't). So get ready to become the maniac! </div>
                             <div id="circuistic_contacts" style="cursor: default;white-space: normal">
                                 <div id="circuistic_contacts_inner" style="color: black;filter:hue-rotate(-210deg)"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                     <div style="display: block">Anisha Bannerjee- +919474656643 </div>
@@ -494,7 +504,12 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                                     <a href="../pdf/algomaniac.pdf" target="_blank" style="text-decoration:none;float: left;">
                                         <div class="circuistic_button">DETAILS</div>
                                     </a>
-                                    <div style="text-decoration:none;float: right;<?php if(isset($eventNames['algomaniac'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="algomaniac"><div class="tx">Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div></div>
+                                    <div style="text-decoration:none;float: right;<?php if(isset($eventNames['algomaniac'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="algomaniac">
+                                        <div class="spinner" style="display:none">
+                                            <div class="bounce1"></div>
+                                            <div class="bounce2"></div>
+                                            <div class="bounce3"></div>
+                                        </div><div class="tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div></div>
                                     <div style="clear: both"></div>
                                 </div>
                             </div>
@@ -507,7 +522,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="eventPattern" style="filter:hue-rotate(190deg);">
                         <div class="eventContainer" style="filter:hue-rotate(80deg);">
                             <img class="eventImg" src="../img/mobile/sparkhack.png" style="filter:hue-rotate(285deg) brightness(150%)"/>
-                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: left;">Code, create, build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Internet of Things'.Internet of Things (IOT) is one of the most trending technical jargons in today's world.Engineers, designers and researchers will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT). So step your game up this spring as there's a lot to be won.Compete with some of the best people of India and your idea just might be the next big thing for this society.</div>
+                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">Code, create, build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Internet of Things'.Internet of Things (IOT) is one of the most trending technical jargons in today's world.Engineers, designers and researchers will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT). So step your game up this spring as there's a lot to be won.Compete with some of the best people of India and your idea just might be the next big thing for this society.</div>
                             <div id="circuistic_contacts" style="cursor: default;white-space: normal">
                                 <div id="circuistic_contacts_inner" style="color: black;filter:hue-rotate(-210deg)"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                     <div style="display: block">Paulomi Bhowmick- +918961565172 </div>
@@ -519,7 +534,38 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                                     <a href="../pdf/sparkhack.pdf" target="_blank" style="text-decoration:none;float: left;">
                                         <div class="circuistic_button">DETAILS</div>
                                     </a>
-                                    <div style="text-decoration:none;float: right;<?php if(isset($eventNames['sparkhack'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="sparkhack"><div class="tx">Register<?php if(isset($eventNames['sparkhack'])) echo "ed"; ?></div></div>
+                                    <div style="text-decoration:none;float: right;<?php if(isset($eventNames['sparkhack'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="sparkhack">
+                                        <div class="spinner" style="display:none">
+                                            <div class="bounce1"></div>
+                                            <div class="bounce2"></div>
+                                            <div class="bounce3"></div>
+                                        </div><div class="tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['sparkhack'])) echo "ed"; ?></div></div>
+                                    <div style="clear: both"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="papier" class="item cs" style="border-color: #931a46">
+                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
+                <div class="eventGrad" style="">
+                    <div class="eventPattern" style="">
+                        <div class="eventContainer" style="">
+                            <img class="eventImg" src="../img/mobile/papier.png" style="margin-top: 15%"/>
+                            <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">By 2029, computers will have emotional intelligence and be convincing as people' -Ray Kurzweil,computer scientist. These advancements are possible with quality research works and innovative ideas.<br>Have you performed any interesting experiment or do you have any such idea? Have you made any new model or prototypes?<br>This year Convolution 4.0, organised by Department of Electrical Engineering, Jadavpur University brings you a brand new event of Paper Presentation/Power Point Presentation. We encourage you to take part in this exciting event and place your innovative ideas.<br>Make a write-up of 400 words about your own idea/experiments/prototypes and mail us at <a href="mailto:pconvolution@gmail.com">pconvolution@gmail.com</a> on or before 20th February.<br>Notification of selection for final: 25th February.</div>
+                            <div id="circuistic_contacts" style="cursor: default;white-space: normal">
+                                <div id="circuistic_contacts_inner" style="color: black;"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
+                                    <div style="display: block">Sourya Sengupta: +919874899365 </div>
+                                    <div>Sayan Biswas: +918981608554 </div>
+                                </div>
+                            </div>
+                            <div id="circuistic_buttons_wrapper" style="filter:hue-rotate(-210deg)">
+                                <div id="circuistic_buttons_wrapper_inner">
+                                    <a href="../pdf/papier.pdf" target="_blank" style="text-decoration:none;">
+                                        <div class="circuistic_button">DETAILS</div>
+                                    </a>
                                     <div style="clear: both"></div>
                                 </div>
                             </div>
@@ -559,20 +605,11 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <div id="presentation" class="item cs" style="border-color: #931a46">
-                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="blankDiv" style="background-color: #2b35a6">
-                    Paper Presentation
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <div class="comingSoon">Coming Soon</div>
-                </div>
-            </div>
             <div id="seminar" class="item cs" style="border-color: #624293">
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
-                    Seminar - Guest Lecture
+                    Seminar
+                    <div style="display:block; font-size: 4vw">Guest Lecture</div>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
@@ -669,7 +706,6 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 </div>
 
 
-<script type="text/javascript" src="js/jq.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>

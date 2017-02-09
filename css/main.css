@@ -1301,7 +1301,7 @@ b {
 }
 
 #sh_in_progress {
-    margin-top: 214px;
+    margin-top: 16%;
     margin-left: 14px;
     height: 63vh;
     display: inline-block;
@@ -1940,5 +1940,169 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.2em;
     font-weight: 600;
     color: #d9534f;
+}
+
+.container{
+    background-color: white;
+    color:black;
+    margin-top: 20px;
+}
+#papier{
+    min-height: 706px;
+    background-color: white;
+}
+#papier #header{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: "Times New Roman", Arial;
+    font-size: 2em;
+}
+
+#papier #body{
 
 }
+
+#papier #header>div{
+    transition: all 0.4s ease-in-out;
+    opacity: 1;
+}
+
+#papier #header>div.hide{
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+#papier #header>{
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+#papier #header>.hide{
+    transform: translate(0,1.5%);
+    opacity: 0;
+}
+
+#papier #body{
+    /*display: table;*/
+    width: 100%;
+
+    font-size: 1.2em;
+    line-height: 1.5em;
+    table-layout: fixed;
+}
+
+#papier #left{
+    white-space: pre-wrap;
+    width:49.7%;
+    box-sizing: border-box;
+    padding:0.5%;
+    padding-left: 1.5%;
+    float: left;
+    text-align: justify;
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#papier #right{
+    box-sizing: border-box;
+    padding:0.5%;
+    padding-right: 1.5%;
+    width:49.7%;
+    float: right;
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#papier #left.hide{
+    transform:translate(20%,0);
+    opacity: 0;
+}
+
+#papier #right.hide{
+    transform:translate(-20%,0);
+    opacity: 0;
+}
+
+#convo_papier{
+    font-size: 1.5em;
+}
+
+#papier p{
+    line-height: normal;
+    padding:5px;
+    font-size: 1.2em;
+    transition: all 0.2s ease-in-out;
+}
+
+#papier p.hide{
+    opacity: 0;
+    transform:translate(0,20%);
+}
+
+#papier #convo_papier.hide{
+    transform:translate(0,20vh);
+    opacity: 0;
+
+}
+
+
+#papier #contacts_papier{
+    font-size: 0.8em;
+}
+
+
+
+.papier_buttons_class {
+    /*margin-top: 45%;*/
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+
+    background-color: white;
+    /*box-shadow: 0 4px 3px #000;*/
+    outline: solid 4px black;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 25px;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.papier_buttons_class:hover{
+    background-color: black;
+    color: white;
+}
+
+#papier #button_wrapper{
+    padding-top: calc(500px - 50%);
+}
+
+.item img {
+    transform: translateZ(0); /*for older browsers*/
+    will-change: transform;
+}
+
+#seminar_canvas{
+    background-color: #000008;
+    display: block;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /*position: absolute;*/
+    /*z-index: -100;*/
+}
+
+#seminar{
+    border:none;
+}
+
+#seminar .blankDiv{
+    background: none;
+}
+
+#matrixWrapper{
+    position: absolute;
+}
+

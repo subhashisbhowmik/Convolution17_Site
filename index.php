@@ -61,12 +61,15 @@ if (isset($_GET['m'])) $m = $_GET['m'];
           content="event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17"/>
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
-    <link rel="shortcut icon" href="img/favicon.svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css"/>
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/spinner.css"/>
+    <script type="text/javascript" src="js/jq.js"></script>
+
 </head>
 <body>
 <noscript>
@@ -92,10 +95,10 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-circuistic" data-id="circuistic"><span><b>Circuistic</b></span></li>
             <li id="tab-algomaniac" data-id="algomaniac"><span><b>Algomaniac</b></span></li>
             <li id="tab-sparkhack" data-id="sparkhack"><span><b>SparkHACK</b></span></li>
+            <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
-            <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
             <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
@@ -145,7 +148,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
                            placeholder="E-mail ID"/>
-                    <input required="required" type="number" maxlength="15" id="signup_contact" name="signup_contact"
+                    <input required="required" type="tel" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number"/>
                     <input required="required" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
@@ -170,7 +173,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         </div>
     </div>
 </div>
-
+<div id="nameDummy" style="display:none;"><?php echo $name;?></div>
 <div id="settings_div">
     <div id="settings_div_content">
         <div id="settings_close">&#x2715;</div>
@@ -193,7 +196,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                            name="new_password" placeholder="Password (At least 8 characters long)"/>
                     <input type="password" id="new_password_2" name="new_password_2"
                            placeholder="Confirm Password"/>
-                    <input required="required" type="number" maxlength="15" id="signup_contact" name="signup_contact"
+                    <input required="required" type="tel" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number" value="<?php if($info!='') echo $info['contact'];?>"/>
                     <input required="required" "type="text" id="signup_institute" name="signup_institute"
                     placeholder="College or University" value="<?php if($info!='') echo $info['inst'];?>"/>
@@ -344,7 +347,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
             <div class="member">
                 <div class="member_img"><img src="img/contacts/anurag.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Anurag Chhetry </div>
+                <div class="member_name">Anurag Chhetri </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="img/contacts/sadaf.jpeg" onerror='$(this).parent().hide();'></div>
@@ -423,7 +426,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                         <img class="rotator" src="img/parallax/1wfan.svg">
                     </div>
                 </div>
-                <div id="content">
+                <div id="content" style="margin-top:-2px">
                     <img src="img/logo2.png" id="logo"/>
                     <p class="text">The annual technical meet organized by the students of the Department of Electrical
                         Engineering, Jadavpur University. It is aimed at providing a platform for engineering students
@@ -479,7 +482,11 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                         <div id="circuistic_buttons_wrapper_inner">
 
                                 <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="circuistic">DETAILS</div>
-                                <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="circuistic"><div class="tx">Register<?php if(isset($eventNames['circuistic'])) echo "ed"; ?></div></div>
+                                <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="circuistic"><div class="spinner" style="display:none">
+                                        <div class="bounce1"></div>
+                                        <div class="bounce2"></div>
+                                        <div class="bounce3"></div>
+                                    </div><div class="tx" <?php if(isset($eventNames['circuistic'])) echo "status='done'"; ?>>Register<?php if(isset($eventNames['circuistic'])) echo "ed"; ?></div></div>
 
                             <div style="clear: both"></div>
                         </div>
@@ -503,8 +510,12 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                             Details
                         </div>
                         <div class="algo_buttons_class register" event="algomaniac"
-                             style="position:absolute;float: right;top:80%;right:2%;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>">
-                            <div class="tx">Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div>
+                             style="position:absolute;float: right;top:80%;right:2%;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>"><div class="spinner" style="display:none">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                            <div class="tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div>
                         </div>
                         <div id="laptop_screen">
                             <div id="termial_titlebar">
@@ -577,8 +588,14 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     </div>
                     <div id="inprogressNoteWrapper3" class="noteWrapper">
                         <div class="note in_progress_note nr register" id="in_progress3" event="sparkhack" style="<?php if(isset($eventNames['sparkhack'])) echo "cursor:default;"; ?>">
+
                             <div class="note_remove">&#x2715;</div>
-                            <div class="noteContent nr tx">Register<?php if(isset($eventNames['sparkhack'])) echo "ed"; ?></div>
+                            <div class="spinner" style="display:none">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                            <div class="noteContent nr tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['sparkhack'])) echo "ed"; ?></div>
                             <div class="noteDetails" style="display:none"></div>
                         </div>
                     </div>
@@ -600,6 +617,28 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                             <div class="noteDetails" style="display:none; text-align: end">Paulomi Bhowmick<br>+918961565172<br><br>Debarshi Chanda<br>+919051677526
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="papier" class="item cs" style="border-color: #931a46">
+                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
+                <div class="container">
+                    <div id="header">
+                        <div class="hide">Papier - Paper/Power Point Presentation</div>
+                        <p class="hide" id="convo_papier">Convolution 2017</p>
+                        <p class="hide" id="contacts_papier">Sourya Sengupta: +919874899365, Sayan Biswas: +918981608554</p>
+                    </div>
+                    <div id="body">
+                        <div class="hide" id="left"><b style="font-weight: bold;text-decoration: underline">Abstract:</b></div>
+                        <div class="hide" id="right">
+                            
+                            <div id="button_wrapper">
+                            <div class="papier_buttons_class pdf" event="papier"
+                                 >
+                                Details
+                            </div></div>
+                        </div>
+                        <div style="clear:both"></div>
                     </div>
                 </div>
             </div>
@@ -628,31 +667,27 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <div id="inquizzitive" class="item cs" style="border-color: #137163">
                 <!--            <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>-->
                 <div class="blankDiv" style="background-color: #cfa518">
-                    Inquizzitive
+                    <div>Inquizzitive</div>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
                     <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <div id="papier" class="item cs" style="border-color: #931a46">
-                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="blankDiv" style="background-color: #2b35a6">
-                    Papier - Paper Presentation
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <div class="comingSoon">Coming Soon</div>
+            <div id="seminar" class="item cs" style="border-color: #624293;background-color: none">
+
+                <div id="matrixWrapper">
+                    <canvas id="seminar_canvas"></canvas>
                 </div>
-            </div>
-            <div id="seminar" class="item cs" style="border-color: #624293">
-                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="blankDiv" style="background-color: #c4402d">
-                    Seminar - Guest Lecture
+                <div class="blankDiv" style="background: none">
+                    <!--Seminar - Guest Lecture-->
+                    <img style="width:80%" src="img/seminar.svg"/>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
-                    <div class="comingSoon">Coming Soon</div>
+<!--                    <div class="comingSoon">Coming Soon</div>-->
+                    <img style="width:45%" class="comingSoon" src="img/cs.svg"/>
+
                 </div>
             </div>
             <!--            <div id="sponsors" class="item cs">-->
@@ -744,16 +779,17 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 </div>
 
 
-<script type="text/javascript" src="js/jq.js"></script>
 <script type="text/javascript" src="js/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/circuistic.js"></script>
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/note.js"></script>
+<script type="text/javascript" src="js/paper.js"></script>
 <script type="text/javascript" src="js/login_signup.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
 <script type="text/javascript" src="js/pdf.js"></script>
 <script type="text/javascript" src="js/query.js"></script>
+<script type="text/javascript" src="js/matrix.js"></script>
 </body>
 </html>

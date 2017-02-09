@@ -16,12 +16,6 @@ ob_start();
           content="event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17"/>
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
-
-    <link rel="stylesheet" type="text/css" href="css/loader.css"/>
-    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css"/>
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
 </head>
 <body>
 <?php
@@ -73,7 +67,7 @@ VALUES (NULL,   '$email','$name','$contact','$pass','$class','$dept','$inst','$c
 $encodedmail=urlencode($email);
 
 //TODO: Remove /test !!IMPORTANT
-$body="Click <b></b><a href='http://www.convolutionjuee.com/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>For any question, query or issues, contact <b>Subhashis Bhowmik (General Secretary)- <i>+919836802623</i></b>";
+$body="Click <b></b><a href='http://www.convolutionjuee.com/php/confirm/index.php?id=$encodedmail&con=$con'>here</a></b> to confirm your email address.<br>For any question, query or issues, contact <b>Subhashis Bhowmik (Secretary)- <i>+919836802623</i></b>";
 //$_COOKIE['convo_mail']=$email;
 //$_COOKIE['not_confirmed']=1;
 setcookie('convo_mail',$email,time() + (86400 * 30), "/");

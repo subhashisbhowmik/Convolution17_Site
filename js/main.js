@@ -2,6 +2,8 @@
  * Created by Subhashis on 19-11-2016.
  */
 var prev='home';
+var papier_not_started=true;
+var matrix_not_started=true;
 if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
     location.replace("mobile/");
 }
@@ -105,6 +107,19 @@ var moving = false;
                         if(item.attr('id')=='algomaniac'){
                             go();
                         }
+
+                        if(papier_not_started&&prev!='papier')
+                        if(item.attr('id')=='papier'){
+                            papier_not_started=false;
+                            setTimeout(papierGo,50);
+                        }
+                        if(matrix_not_started&&prev!='seminar')
+                        if(item.attr('id')=='seminar'){
+                            matrix_not_started=false;
+                            setTimeout(matrixStart,20);
+                        }
+
+
                         prev=item.attr('id');
                         if (item.attr('id') != 'home')$('#right_div').removeClass('home');
                         $target.addClass('active');
