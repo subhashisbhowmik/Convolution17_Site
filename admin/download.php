@@ -98,7 +98,7 @@ foreach($export as $row)
         else
         {
             $value = str_replace( '"' , '""' , $value );
-//            $value = str_replace( ',' , '","' , $value );
+            $value = str_replace( ',' , '-.' , $value );
             $value = '"' . $value . '"' . ",";
             if(strpos(",",$value)){}else $value="=".$value;
         }
