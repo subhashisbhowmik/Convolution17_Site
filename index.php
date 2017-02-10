@@ -698,7 +698,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <!--                    </div>-->
             <!--                </div>-->
             <!--            </div>-->
-            <div id="contact" class="item" style="/*min-height: calc(100vh - 45px);*/">
+            <div id="contact" class="item" style="margin-top:2%/*min-height: calc(100vh - 45px);*/">
                 <div style="text-align: center;font-size: 1.5em;color: white;padding:20px 0 0;display: block;">
                     CONTACTS
                 </div>
@@ -762,7 +762,12 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div id="div_for_query" style="float: right">
                         <div style="display: block;padding: 15px;text-align: center;">Have any Query? Ask us..</div>
                         <form id="queryForm" action="" method="post">
-                            <textarea placeholder="type here" id="query_input"></textarea>
+<!--                            <textarea placeholder="type here" id="query_input"></textarea>-->
+                            <?php
+                                if($name=="") echo "<textarea placeholder=\"type here [If you expect a reply from us, please Log In, or put your contact details in the query]\" id=\"query_input\"></textarea>";
+                                else echo "<textarea placeholder=\"type here\" id=\"query_input\"></textarea>";
+                            
+                            ?>
                             <button id="query_submit">Send</button>
                         </form>
                     </div>

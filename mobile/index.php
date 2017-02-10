@@ -689,7 +689,10 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div id="div_for_query" style="float: right">
                         <div style="display: block;padding: 15px;text-align: center;">Have any Query? Ask us..</div>
                         <form action="" method="post" id='queryForm'>
-                            <textarea placeholder="type here" id="query_input"></textarea>
+                            <?php
+                            if($name=="") echo "<textarea placeholder=\"type here [If you expect a reply from us, please Log In, or put your contact details in the query]\" id=\"query_input\"></textarea>";
+                            else echo "<textarea placeholder=\"type here\" id=\"query_input\"></textarea>";
+                            ?>
                             <button id="query_submit">Send</button>
                         </form>
                     </div>
