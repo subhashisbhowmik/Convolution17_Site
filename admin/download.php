@@ -92,8 +92,8 @@ foreach($export as $row)
         }
         else
         {
-            $value = str_replace( '"' , '""' , $value );
             $value = str_replace( ',' , '","' , $value );
+            $value = str_replace( '"' , '""' , $value );
             $value = '="' . $value . '"' . ",";
         }
         $line .= $value;
