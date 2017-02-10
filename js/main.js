@@ -211,6 +211,15 @@ $(window).on('load', function () {
     setTimeout(function () {
         $('.hidden').removeClass('hidden');
     }, 100);
+    setTimeout(function () {
+        var $scrollDragContainer=$('.mCSB_draggerContainer');
+        $scrollDragContainer.eq(0).css('display','none');
+        $scrollDragContainer.eq(2).css('z-index','10000');
+        $('#mCSB_3_scrollbar_horizontal').hide();
+        var $scrollContainer=$('.mCSB_draggerContainer');
+        $scrollContainer.eq(0).css('display','none');
+        $scrollContainer.eq(2).css('z-index','10000');
+    },500);
 });
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
