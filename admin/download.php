@@ -28,7 +28,7 @@ if($event==""||$user==""||$pass=="") die( "<script>window.close()</script>");
 $tag='';
 $error='';
 $selector="`users`.`id` AS SignupID, `registration`.`id` AS RegID, event,`users`.`email`, `name` as `Name`, contact as Phone,class AS Class, dept AS Department, inst AS Institution, confirmation";
-$filename='Convo17 '.str_replace(" ","_",$event).' '.date(" g:iA d_M_Y");
+$filename='Convo17 '.str_replace(" ","_",$event).' '.date(' g:iA d_M_Y',strtotime('+5 hour +30 minutes',strtotime(date("Y-m-d H:i:s"))));
 if($event=="All Users"){
     $tag='users';
     $select = "SELECT * FROM `$tag`";
@@ -92,9 +92,10 @@ foreach($export as $row)
         }
         else
         {
-            $value = str_replace( ',' , '","' , $value );
             $value = str_replace( '"' , '""' , $value );
-            $value = '="' . $value . '"' . ",";
+//            $value = str_replace( ',' , '","' , $value );
+            $value = '"' . $value . '"' . ",";
+            if(!strpos(",",$value))$value="=".$value;
         }
         $line .= $value;
     }
