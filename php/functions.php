@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors','off');
+//ini_set('display_errors','off');
 $conn = NULL;
 connect();
 session_start();

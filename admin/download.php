@@ -27,11 +27,11 @@ if(isset($_REQUEST['event']))$event=urldecode(sanitizeString($_REQUEST['event'])
 if($event==""||$user==""||$pass=="") die( "<script>window.close()</script>");
 $tag='';
 $error='';
-$selector="`users`.`id` AS SignupID, `registration`.`id` AS RegID, event,`users`.`email`, `name` as `Name`, contact as Phone,class AS Class, dept AS Department, inst AS Institution, confirmation";
+$selector="`users`.`id` AS SignupID, `registration`.`id` AS RegID, event AS Event,`users`.`email`, `name` as `Name`, contact as Phone,class AS Class, dept AS Department, inst AS Institution, confirmation";
 $filename='Convo17 '.str_replace(" ","_",$event).' '.date(' g:iA d_M_Y',strtotime('+5 hour +30 minutes',strtotime(date("Y-m-d H:i:s"))));
 if($event=="All Users"){
     $tag='users';
-    $select = "SELECT * FROM `$tag`";
+    $select = "SELECT `id` AS SignupID, email, `name` AS `Name`, contact AS Phone,class AS Class, dept AS Department, inst AS Institution, confirmation  FROM `$tag`";
 }else if($event=="All Registrations"){
     $tag='registration';
     $select = "SELECT $selector FROM `registration` JOIN `users` ON `users`.`email`=`registration`.`email`;";
@@ -71,7 +71,12 @@ if($export->num_rows==0) die( "
 <a href=\"./\" id=\"back\"><img src=\"img/back.png\"/></a>
 </body>
 </html>");
-
+//$value=" essfe";
+//$value2=" essfe";
+//print_r( strpos(",",$value)!="");
+//die();
+//if(strpos(",",$value))die('0');
+//if(!strpos(",",$value2))die('1');
 $fields = $export->fetch_fields();
 //print_r($export);
 $header='';
@@ -95,7 +100,7 @@ foreach($export as $row)
             $value = str_replace( '"' , '""' , $value );
 //            $value = str_replace( ',' , '","' , $value );
             $value = '"' . $value . '"' . ",";
-            if(!strpos(",",$value))$value="=".$value;
+            if(strpos(",",$value)){}else $value="=".$value;
         }
         $line .= $value;
     }
