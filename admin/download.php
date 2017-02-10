@@ -40,9 +40,9 @@ if($event=="All Users"){
     $tag='team';
     $select = "SELECT * FROM `$tag`";
 
-}else if($event=="All Users & Registrations"){
+}else if($event=="All Users and Registrations"){
     $select = "SELECT $selector FROM `registration` RIGHT JOIN `users` ON `users`.`email`=`registration`.`email`;";
-    die($select);
+//    die($select);
 }else{
     $tag=str_replace(" ","",strtolower($event));
     $select = "SELECT $selector FROM `registration`  JOIN `users` ON `users`.`email`=`registration`.`email` WHERE `registration`.`event`='$tag'";
