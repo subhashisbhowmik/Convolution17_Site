@@ -8,7 +8,7 @@
 require_once "../php/functions.php";
 $user="";
 $pass="";
-print_r($_SESSION);
+//print_r($_SESSION);
 if(isset($_SESSION['convo_admin_user']))$user=sanitizeString($_SESSION['convo_admin_user']);
 if(isset($_SESSION['convo_admin_pass']))$pass=sanitizeString($_SESSION['convo_admin_pass']);
 $result=sql("SELECT * FROM `admin` WHERE `user`='$user' AND `pass`='$pass'");
