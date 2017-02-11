@@ -185,6 +185,7 @@ var holder;
 
 $(window).on('load', function () {
     // console.log('ok');
+    $('#bg').show();
     var $loader = $('#loader');
     $loader.css('opacity', '0');
     setTimeout(function () {

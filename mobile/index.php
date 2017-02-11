@@ -416,7 +416,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 </div>
 </div>
 
-<div id="bg"></div>
+<div style="display:none" id="bg"></div>
 <div id="wrapper">
     <div id="main">
         <div id="convo">
