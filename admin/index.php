@@ -5,6 +5,7 @@
  * Date: 10-02-2017
  * Time: 20:18
  */
+
 require_once "../php/functions.php";
 $user="";
 $pass="";
@@ -35,10 +36,8 @@ if($result->num_rows==0) {
     <meta name="description" content="Admin Page for Convolution 2017"/>
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution Admin</title>
-
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
-
 </head>
 <body>
 <a id="logout" href="logout.php">LOGOUT</a>

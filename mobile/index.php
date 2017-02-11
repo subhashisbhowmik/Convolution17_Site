@@ -131,7 +131,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         <div id="login_signup_div_close">&#x2715;</div>
         <div id="login_signup_div_content_in">
             <div class="log log_sin">
-                <form action="../php/login.php" method="get" name="login_form">
+                <form action="../php/login.php" method="post" name="login_form">
                     <label>Login</label>
                     <div id="wup" style="color: red;display:none;margin:5px">Wrong Username Or Password.</div>
                     <div id="lif" style="color: red;display:none;margin:5px">Login or Signup First.</div>
@@ -146,7 +146,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
 
             <div class="sin log_sin" style="display:none">
-                <form action="../php/signup.php" method="get" name="signup_form">
+                <form action="../php/signup.php" method="post" name="signup_form">
                     <label>sign up</label>
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
