@@ -143,7 +143,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             </div>
 
             <div class="log_sin">
-                <form action="php/signup.php" method="get" name="signup_form" id="signup_form">
+                <form action="php/signup.php" method="post" name="signup_form" id="signup_form">
                     <label>sign up</label>
                     <input required="required" type="text" id="signup_name" name="signup_name" placeholder="Name"/>
                     <input required="required" type="email" id="signup_email" name="signup_email"
