@@ -12,7 +12,7 @@ var moving = false;
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
-            scrollInertia: 'auto',
+            scrollInertia: 99999,
             // snapAmount: wh/20,
             // snapOffset:50,
             mouseWheel: {
@@ -26,7 +26,7 @@ var moving = false;
                 tabindex: 10
             },
 
-            contentTouchScroll: 1,
+            contentTouchScroll: 0,
             advanced: {
                 autoUpdateTimeout: 200
             },
