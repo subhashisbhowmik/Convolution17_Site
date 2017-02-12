@@ -99,10 +99,14 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    FB.AppEvents.logEvent("pageHit");
+    <?php
+        if($email!="") echo "FB.AppEvents.logEvent(\"pageHitUser: $email\");";
+    ?>
 </script>
 <noscript>
     Javascript is disabled. Redirecting...
-    <meta HTTP-EQUIV="REFRESH" content="0; url=lite/">
+    <meta HTTP-EQUIV="REFRESH" content="0; url=../lite/">
 </noscript>
 
 <div id="fb-root"></div>
