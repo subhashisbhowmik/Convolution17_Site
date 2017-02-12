@@ -72,7 +72,7 @@ $body="Click <b></b><a href='http://www.convolutionjuee.com/php/confirm/index.ph
 //$_COOKIE['not_confirmed']=1;
 setcookie('convo_mail',$email,time() + (86400 * 30), "/");
 setcookie('not_confirmed','1',time() + (86400 * 30), "/");
-echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><a href='../'>Click here to get back to the site.</a></div>";
+echo "<div style='text-align: center;width: 100%;height:100vh;display: block;font-family: cursive;box-sizing: border-box;padding:20px;background-color:#00897B;color:white;font-size: 1.5em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><br><br><br><a style='text-decoration:none;padding:14px;background-color:#eee;color:#333;margin:30px auto;' href='../'>Click here to get back to the site.</a></div>";
 //header("Location: ../");
 ob_end_flush();
 flush();

@@ -17,7 +17,7 @@ thead{
     background-color: rgba(255,255,255,0.3);
 }
 .tbl-content{
-    height:80vh;
+    height:75vh;
     overflow-x:auto;
     margin-top: 0;
     border: 1px solid rgba(255,255,255,0.3);
