@@ -21,7 +21,7 @@ if($result->num_rows==0) {
     $_SESSION['convo_admin_user']='';
     $_SESSION['convo_admin_pass']='';
 }else{
-    sql("UPDATE `admin` SET ts=CURRENT_TIMESTAMP WHERE `user`='$user' AND `pass`='$pass'");
+    sql("UPDATE `admin` SET ts=TIMESTAMPADD(MINUTE,30,TIMESTAMPADD(HOUR,5,CURRENT_TIMESTAMP)) WHERE `user`='$user' AND `pass`='$pass'");
     $_SESSION['convo_admin_user']=$user;
     $_SESSION['convo_admin_pass']=$pass;
 }

@@ -52,6 +52,7 @@ if (isset($_COOKIE['convo_mail'])) {
         $info=sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
     }
 }
+pageHit($email);
 if (isset($_GET['m'])) $m = $_GET['m'];
 ?>
 <!DOCTYPE html>

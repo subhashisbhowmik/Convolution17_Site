@@ -264,4 +264,8 @@ function clearAllCookies()
     }
 }
 
+function pageHit($email){
+    sql("INSERT INTO `hit` (`email`,`ts`) VALUE ('$email',TIMESTAMPADD(MINUTE,30,TIMESTAMPADD(HOUR,5,CURRENT_TIMESTAMP)))");
+}
+
 ?>
