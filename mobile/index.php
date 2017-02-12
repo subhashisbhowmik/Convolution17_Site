@@ -551,7 +551,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
             <div id="papier" class="item cs" style="border-color: #931a46">
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="eventGrad" style="background: radial-gradient(circle at 0 0,#c700f1,#0300a8);">
+                <div class="eventGrad" style="background: radial-gradient(circle at 0 0,#8000f1,#0300a8);">
                     <div class="eventPattern" style="">
                         <div class="eventContainer" style="">
                             <img class="eventImg" src="../img/mobile/papier.png" style="margin-top: 15%"/>
