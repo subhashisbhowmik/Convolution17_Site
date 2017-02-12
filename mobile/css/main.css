@@ -1957,9 +1957,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .eventPattern{
-    background: url('../../img/mobile/mobile_bg.png');
+    background-image: url('../../img/mobile/mobile_bg.png');
     background-size: cover;
     text-align: center;
+
 }
 
 #events .item{
