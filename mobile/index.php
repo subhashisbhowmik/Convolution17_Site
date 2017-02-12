@@ -53,7 +53,9 @@ if (isset($_COOKIE['convo_mail'])) {
 if (isset($_GET['m'])) $m = $_GET['m'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
@@ -65,6 +67,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
 
+    <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
+    <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <link rel="stylesheet" type="text/css" href="../css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
@@ -80,6 +84,15 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     Javascript is disabled. Redirecting...
     <meta HTTP-EQUIV="REFRESH" content="0; url=lite/">
 </noscript>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div id="loader">
     <div id="animatedlogo">
         <img src="../img/animatedlogo.svg">
@@ -254,6 +267,13 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div class="notification">
                     random notification
                     <div class="notification_remove">&#x2715;</div>
+                </div>
+            </div>
+            <div id="fbWrapper" >
+                <div id="noti" >
+                    <div class="notification" style="background-color: rgb(255, 190, 74);margin:2px; height:100px;border-radius: 2px">
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fconvolution.juee&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="236" height="95" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
                 </div>
             </div>
             <div id="notifications_wrapper" <?php if ($name == '') echo 'style="display:none;"'; ?> class="noSelect">

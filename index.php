@@ -51,7 +51,9 @@ if (isset($_COOKIE['convo_mail'])) {
 if (isset($_GET['m'])) $m = $_GET['m'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
@@ -63,6 +65,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <title>Convolution 2017</title>
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
+    <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
+    <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css"/>
@@ -247,6 +251,13 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 <div class="notification">
                     random notification
                     <div class="notification_remove">&#x2715;</div>
+                </div>
+            </div>
+            <div id="fbWrapper" >
+                <div id="noti" >
+                    <div class="notification" style="background-color: rgb(255, 190, 74);margin:2px; height:100px;border-radius: 2px">
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fconvolution.juee&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="236" height="95" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
                 </div>
             </div>
             <div id="notifications_wrapper" <?php if ($name == '') echo 'style="display:none;"'; ?> class="noSelect">
@@ -787,6 +798,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <script type="text/javascript" src="js/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
 <script type="text/javascript" src="js/circuistic.js"></script>
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/note.js"></script>

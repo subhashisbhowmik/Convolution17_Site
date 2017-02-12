@@ -1490,6 +1490,15 @@ b {
     font-size: 1.1em;
     font-weight: 500;
 }
+#fbWrapper {
+    width: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+}
 
 .notification {
     display: inherit;
