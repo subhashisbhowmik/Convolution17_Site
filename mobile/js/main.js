@@ -5,36 +5,14 @@ var prev='home';
 if ((!(navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)))&&(screen.width > 700) ) {
     location.replace("../");
 }
-var vbn = null;
-function filterUpdate(v) {
-    // var thres3=700;
-    // var maxBlur = 25, maxSaturation = 350,minBlur=5;
-    // var blur = (thres3 - v)*maxBlur / thres3;
-    // blur = blur > maxBlur ? maxBlur : blur;
-    // blur = blur < minBlur ? minBlur : blur;
-    // var saturation = 100 + (v / thres3) * (maxSaturation - 100);
-    // saturation = saturation > maxSaturation ? maxSaturation : saturation;
-    // saturation = saturation < 100 ? 100 : saturation;
-    // $('.bg').each(function () {
-    //     console.log( 'saturate(' + saturation + '%) blur(' + blur + 'px) sepia(113%) brightness(130%)');
-    //     //$(this).css('filter', 'saturate(' + saturation + '%) blur(' + blur + 'px) sepia(113%) brightness(130%)').css('filter', 'saturate(' + saturation + '%) blur(' + blur + 'px) sepia(113%) brightness(130%)');
-    // });
-}
 var scale = 1;
 var moving = false;
 (function ($) {
     $(window).on("load", function () {
-        var wh = $('body').height();
-        // console.log(wh);
-        // setTimeout(function () {
-        //     multimeter();
-        //     osc_update();
-        //     loop(-2);
-        // }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
-            scrollInertia: 10000,
+            scrollInertia: 'auto',
             // snapAmount: wh/20,
             // snapOffset:50,
             mouseWheel: {
