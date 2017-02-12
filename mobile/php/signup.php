@@ -56,7 +56,7 @@ if ($dept === "") die('6');
 if (isset($_REQUEST['signup_institute'])) $inst = sanitizeString($_REQUEST['signup_institute']);
 if ($inst === "") die('7');
 //echo "<br>x$email";
-$mailres=sql("SELECT * FROM `users` WHERE `email`='$email' AND `confirmation`='0'");
+$mailres=sql("SELECT * FROM `users` WHERE `email`='$email'");
 if($mailres->num_rows>0){
     if($mailres->fetch_assoc()['confirmation']=='0')
     die("<div style='text-align: center;font-size: 2em'>User with the same e-mail Already exists.<hr><a href='../'>Click here to get back to the site.</a></div>");
@@ -81,3 +81,7 @@ echo "<div id='sentContainer'>Thanks for registering on Convolution 2017. Please
 ob_end_flush();
 flush();
 sendGMail($email,"Confirmation Email",$body);
+
+?>
+</body>
+</html>

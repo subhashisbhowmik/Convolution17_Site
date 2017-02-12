@@ -22,11 +22,34 @@ if($result->num_rows>0){
     $result=sql("INSERT INTO `cookie` (`mail`,`token`) VALUES ('$email','$token')");
 //    $_COOKIE['convo_mail']=$email;
 //    $_COOKIE['convo_token']=$token;
-    setcookie('convo_mail',$email,time() + (86400 * 30), "/");
-    setcookie('convo_token',$token,time() + (86400 * 30), "/");
+//    setcookie('convo_mail',$email,time() + (86400 * 30), "/");
+//    setcookie('convo_token',$token,time() + (86400 * 30), "/");
+//
+//    $_SESSION['on']='1';
+//    header("Location: ../../?m=li#0");
+    echo "
 
-    $_SESSION['on']='1';
-    header("Location: ../../?m=li#0");
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta http-equiv=\"X-UA-COMPATIBLE\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta name=\"description\" content=\"Website for Convolution 2017\"/>
+    <meta name=\"keywords\"
+          content=\"event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17\"/>
+    <meta name=\"author\" content=\"Subhashis Bhowmik\"/>
+    <title>Convolution 2017</title>
+
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/reset.css\"/>
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/mailsent.css\"/>
+
+</head>
+<body>
+<div id='sentContainer'>Your E-Mail ID has been Confirmed. Now you can get back to <a href='http://www.convolutionjuee.com'>www.convolutionjuee.com</a> and Log in with your E-mail ID and Password.</div>
+</body>
+</html>";
+
 }else{
     die('Invalid confirmation link');
 }

@@ -59,7 +59,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Website for Convolution 2017"/>
-    <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg"/>
     <meta name="keywords"
           content="event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17"/>
     <meta name="author" content="Subhashis Bhowmik"/>
