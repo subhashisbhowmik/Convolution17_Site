@@ -63,6 +63,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
           content="event, fest, convolution, 2017, jadavpur university, electrical engineering, 17, 2k17"/>
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
+    <meta property=”og:title” content=”Convolution 2017” />
+    <meta property=”og:description” content=”The Annual Techno-Management Fest of Jadavpur University Electrical Engineering Department” />
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
     <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
