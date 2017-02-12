@@ -79,7 +79,24 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <script type="text/javascript" src="js/jq.js"></script>
 
 </head>
-<body>
+<body><script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : 'your-app-id',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <noscript>
     Javascript is disabled. Redirecting...
     <meta HTTP-EQUIV="REFRESH" content="0; url=lite/">
