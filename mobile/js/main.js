@@ -10,53 +10,53 @@ var moving = false;
 (function ($) {
     $(window).on("load", function () {
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
-        // $("#wrapper").mCustomScrollbar({
-        //     theme: 'minimal-dark',
-        //     scrollInertia: 1,
-        //     // snapAmount: wh/20,
-        //     // snapOffset:50,
-        //     mouseWheel: {
-        //         deltaFactor: 'auto',
-        //         scrollAmount: 250
-        //     },
-        //     keyboard: {
-        //         scrollAmount: 50
-        //     },
-        //     scrollButtons: {
-        //         tabindex: 10
-        //     },
-        //
-        //     contentTouchScroll: 1,
-        //     advanced: {
-        //         autoUpdateTimeout: 200
-        //     },
-        //     callbacks: {
-        //         whileScrolling: function () {
-        //             var v = -$('#mCSB_2_container').offset().top;
-        //
-        //             var item = null;
-        //             $('.item').each(function () {
-        //                 if (v + $(window).height() / 3 >= $(this).position().top || (item == null)/* || (v-item.offset().top)>(v-$(this).offset().top))*/) item = $(this);
-        //             });
-        //             if (!item.hasClass('active') && !moving) {
-        //                 $('li.active').removeClass('active');
-        //                 var $target = $('#tab-' + item.attr('id'));
-        //                 // console.log(item.attr('id'));
-        //                 prev=item.attr('id');
-        //                 if (item.attr('id') != 'home')$('#right_div').removeClass('home');
-        //                 $target.addClass('active');
-        //                 $('#nav').mCustomScrollbar("scrollTo", $target.position().left - 50 < 0 ? 0 : $target.position().left - 30, {
-        //                     scrollInertia: 500
-        //                 });
-        //             }
-        //         },
-        //         onInit: function () {
-        //             setTimeout(function () {
-        //                 $('#main').click();
-        //             }, 100);
-        //         }
-        //     }
-        // });
+        $("#wrapper").mCustomScrollbar({
+            theme: 'minimal-dark',
+            scrollInertia: 1,
+            // snapAmount: wh/20,
+            // snapOffset:50,
+            mouseWheel: {
+                deltaFactor: 'auto',
+                scrollAmount: 250
+            },
+            keyboard: {
+                scrollAmount: 50
+            },
+            scrollButtons: {
+                tabindex: 10
+            },
+
+            contentTouchScroll: 1,
+            advanced: {
+                autoUpdateTimeout: 200
+            },
+            callbacks: {
+                whileScrolling: function () {
+                    var v = -$('#mCSB_2_container').offset().top;
+
+                    var item = null;
+                    $('.item').each(function () {
+                        if (v + $(window).height() / 3 >= $(this).position().top || (item == null)/* || (v-item.offset().top)>(v-$(this).offset().top))*/) item = $(this);
+                    });
+                    if (!item.hasClass('active') && !moving) {
+                        $('li.active').removeClass('active');
+                        var $target = $('#tab-' + item.attr('id'));
+                        // console.log(item.attr('id'));
+                        prev=item.attr('id');
+                        if (item.attr('id') != 'home')$('#right_div').removeClass('home');
+                        $target.addClass('active');
+                        $('#nav').mCustomScrollbar("scrollTo", $target.position().left - 50 < 0 ? 0 : $target.position().left - 30, {
+                            scrollInertia: 500
+                        });
+                    }
+                },
+                onInit: function () {
+                    setTimeout(function () {
+                        $('#main').click();
+                    }, 100);
+                }
+            }
+        });
         $("#nav").mCustomScrollbar({
             theme: 'minimal-dark',
             autoHideScrollbar: true,
