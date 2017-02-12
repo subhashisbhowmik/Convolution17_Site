@@ -7,7 +7,7 @@ $('document').ready(function () {
         e.preventDefault();
         var event=$(this).attr('event');
         // console.log($(this).find('#detailsDivFrame'));
-        $('#detailsDivFrame').attr('src','pdf/'+event+'.pdf');
+        $('#detailsDivFrame').attr('src','php/pdf.php?pdf='+event);
         $("#detailsDivWrapper").fadeIn(100);
     });
     $("#detailsDivClose").click(function () {
