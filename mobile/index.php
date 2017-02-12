@@ -70,6 +70,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta property="og:description" content="The Annual Techno-Management Fest of Jadavpur University Electrical Engineering Department" />
     <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
     <meta property="og:url" content="http://www.convolutionjuee.com"/>
+    <meta property="fb:admins" content="subhashis_b96"/>
     <link rel="stylesheet" type="text/css" href="../css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
