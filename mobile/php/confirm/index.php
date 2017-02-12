@@ -46,7 +46,7 @@ if($result->num_rows>0){
 
 </head>
 <body>
-<div id='sentContainer'>Your E-Mail ID has been Confirmed. Now you can get back to <a href='http://www.convolutionjuee.com'>www.convolutionjuee.com</a> and Log in with your E-mail ID and Password.</div>
+<div id='sentContainer'>Your E-Mail ID has been Confirmed. Now you can get back to <a href='http://www.convolutionjuee.com'>www.convolutionjuee.com</a> and Log in with your E-mail ID and Password.<br>You and all of your team members (if applicable) have to register on the events you are willing to participate.</div>
 </body>
 </html>";
 
