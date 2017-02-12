@@ -26,7 +26,7 @@ var moving = false;
                 tabindex: 10
             },
 
-            contentTouchScroll: 1,
+            contentTouchScroll: 1000,
             advanced: {
                 autoUpdateTimeout: 200
             },
