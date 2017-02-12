@@ -154,9 +154,9 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
                     <input required="required" type="password" id="signup_password_2" name="signup_password_2"
                            placeholder="Confirm Password"/>
-                    <input required="required" "type="text" id="signup_institute" name="signup_institute"
+                    <input required="required" autocomplete="new-password" "type="text" id="signup_institute" name="signup_institute"
                     placeholder="College or University"/>
-                    <input required="required" type="text" id="signup_dept" name="signup_dept"
+                    <input required="required" autocomplete="new-password" type="text" id="signup_dept" name="signup_dept"
                            placeholder="Department"/>
                     <select required="required" id="class" name="class">
                         <optgroup label="class">
@@ -193,8 +193,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <input required="required" type="password" id="old_password" name="old_password"
                            placeholder="Old Password"/>
                     <input pattern=".{8,100}" type="password" id="new_password"
-                           name="new_password" placeholder="Password (At least 8 characters long)"/>
-                    <input type="password" id="new_password_2" name="new_password_2"
+                           name="new_password" autocomplete="new-password" placeholder="Password (At least 8 characters long)"/>
+                    <input type="password" autocomplete="new-password" id="new_password_2" name="new_password_2"
                            placeholder="Confirm Password"/>
                     <input required="required" type="tel" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number" value="<?php if($info!='') echo $info['contact'];?>"/>

@@ -153,19 +153,18 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                            placeholder="E-mail ID"/>
                     <input required="required" type="tel" maxlength="10" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number"/>
-                    <input required="required" pattern=".{8,100}" type="password" id="signup_password"
+                    <input required="required"  autocomplete="new-password" pattern=".{8,100}" type="password" id="signup_password"
                            name="signup_password" placeholder="Password (At least 8 characters long)"/>
-                    <input required="required" type="password" id="signup_password_2" name="signup_password_2"
+                    <input required="required" autocomplete="new-password" type="password" id="signup_password_2" name="signup_password_2"
                            placeholder="Confirm Password"/>
-                    <input required="required" "type="text" id="signup_institute" name="signup_institute"
+                    <input required="required" autocomplete="new-password" "type="text" id="signup_institute" name="signup_institute"
                     placeholder="College or University"/>
                     <input required="required" type="text" id="signup_dept" name="signup_dept"
                            placeholder="Department"/>
                     <select required="required" id="class" name="class">
                         <optgroup label="class">
-                            <option>CLASS</option>
                             <option>Still in School</option>
-                            <option>UG 1st yr</option>
+                            <option selected="selected">UG 1st yr</option>
                             <option>UG 2nd yr</option>
                             <option>UG 3rd yr</option>
                             <option>UG 4th yr</option>
@@ -199,13 +198,13 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <label>Change Details</label>
                     <input required="required" type="password" id="old_password" name="old_password"
                            placeholder="Old Password"/>
-                    <input pattern=".{8,100}" type="password" id="new_password"
+                    <input pattern=".{8,100}" autocomplete="new-password" type="password" id="new_password"
                            name="new_password" placeholder="Password (At least 8 characters long)"/>
-                    <input type="password" id="new_password_2" name="new_password_2"
+                    <input type="password" autocomplete="new-password" id="new_password_2" name="new_password_2"
                            placeholder="Confirm Password"/>
                     <input required="required" type="tel" maxlength="15" id="signup_contact" name="signup_contact"
                            placeholder="Contact Number" value="<?php if($info!='') echo $info['contact'];?>"/>
-                    <input required="required" "type="text" id="signup_institute" name="signup_institute"
+                    <input required="required" autocomplete="new-password" "type="text" id="signup_institute" name="signup_institute"
                     placeholder="College or University" value="<?php if($info!='') echo $info['inst'];?>"/>
                     <input required="required" type="text" id="signup_dept" name="signup_dept"
                            placeholder="Department" value="<?php if($info!='') echo $info['dept'];?>"/>
