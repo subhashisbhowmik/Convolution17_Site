@@ -34,7 +34,7 @@ var moving = false;
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
-            scrollInertia: 500,
+            scrollInertia: 10000,
             // snapAmount: wh/20,
             // snapOffset:50,
             mouseWheel: {
