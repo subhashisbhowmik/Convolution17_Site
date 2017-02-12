@@ -1,0 +1,22 @@
+#sentContainer {
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    font-family: cursive;
+    box-sizing: border-box;
+    padding: 20px;
+    color: white;
+    font-size: 1.5em
+}
+
+#sentButton {
+    text-decoration: none;
+    padding: 14px;
+    background-color: #eee;
+    color: #333;
+    margin: 30px auto;
+    background-color: rgba(255,255,255,0.3);
+}

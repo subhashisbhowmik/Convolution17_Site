@@ -17,6 +17,9 @@ ob_start();
     <meta name="author" content="Subhashis Bhowmik"/>
     <title>Convolution 2017</title>
 
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/mailsent.css"/>
+
 </head>
 <body>
 <?php
@@ -73,7 +76,7 @@ $body="Click <b></b><a href='http://www.convolutionjuee.com/test/php/confirm/ind
 //$_COOKIE['not_confirmed']=1;
 setcookie('convo_mail',$email,time() + (86400 * 30), "/");
 setcookie('not_confirmed','1',time() + (86400 * 30), "/");
-echo "<div style='text-align: center;font-size: 2em'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><a href='../'>Click here to get back to the site.</a></div>";
+echo "<div id='sentContainer'>Thanks for registering on Convolution 2017. Please check your mail to confirm your e-mail address. Check the Spam/Trash folder if you didn't find a mail in the inbox, and unmark it as spam/trash.<br><br><br><br><a id='sentButton' href='../'>Click here to get back to the site.</a></div>";
 //header("Location: ../");
 ob_end_flush();
 flush();
