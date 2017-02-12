@@ -68,7 +68,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <title>Convolution 2017</title>
     <meta property=”og:title” content=”Convolution 2017” />
     <meta property=”og:description” content=”The Annual Techno-Management Fest of Jadavpur University Electrical Engineering Department” />
-
+    <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
+    <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <link rel="stylesheet" type="text/css" href="../css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
