@@ -26,11 +26,11 @@ var moving = false;
     $(window).on("load", function () {
         var wh = $('body').height();
         // console.log(wh);
-        setTimeout(function () {
-            multimeter();
-            osc_update();
-            loop(-2);
-        }, 0);
+        // setTimeout(function () {
+        //     multimeter();
+        //     osc_update();
+        //     loop(-2);
+        // }, 0);
         $.mCustomScrollbar.defaults.scrollButtons.enable = true;
         $("#wrapper").mCustomScrollbar({
             theme: 'minimal-dark',
@@ -98,10 +98,6 @@ var moving = false;
                         $('li.active').removeClass('active');
                         var $target = $('#tab-' + item.attr('id'));
                         // console.log(item.attr('id'));
-                        if(prev!='algomaniac')
-                        if(item.attr('id')=='algomaniac'){
-                            go();
-                        }
                         prev=item.attr('id');
                         if (item.attr('id') != 'home')$('#right_div').removeClass('home');
                         $target.addClass('active');
@@ -153,7 +149,7 @@ function viewUpdate() {
     $('.bg').each(function () {
         $(this).height($(this).parent().height());
     });
-    $('#algo').css("height", $("#consoleImg").height() + "px");
+    // $('#algo').css("height", $("#consoleImg").height() + "px");
     homeUpdate();
 }
 
@@ -196,11 +192,11 @@ $(window).on('load', function () {
     }, 100);
     setTimeout(function () {
         var $scrollDragContainer=$('.mCSB_draggerContainer');
-        $scrollDragContainer.eq(0).css('display','none');
+        $scrollDragContainer.eq(0).css('z-index','-100');
         $scrollDragContainer.eq(2).css('z-index','10000');
-        $('#mCSB_3_scrollbar_horizontal').hide();
+        // $('#mCSB_3_scrollbar_horizontal').hide();
         var $scrollContainer=$('.mCSB_draggerContainer');
-        $scrollContainer.eq(0).css('display','none');
+        $scrollContainer.eq(0).css('z-index','-100');
         $scrollContainer.eq(2).css('z-index','10000');
     },500);
 });

@@ -68,10 +68,10 @@ body {
 }
 
 #nav ul li:hover {
-    background-color: brown;
-    color: white;
-    border-bottom: inset #eb3d3d 2px;
-    box-shadow: 0 3px 3px -1px rgba(208, 48, 48, 0.5);
+    /*background-color: brown;*/
+    /*color: white;*/
+    /*border-bottom: inset #eb3d3d 2px;*/
+    /*box-shadow: 0 3px 3px -1px rgba(208, 48, 48, 0.5);*/
 }
 
 #nav ul li.active {
@@ -1957,7 +1957,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .eventPattern{
-    background: url('../../img/mobile/event_bg.svg');
+    background: url('../../img/mobile/mobile_bg.png');
+    background-size: cover;
     text-align: center;
 }
 
@@ -1966,7 +1967,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .eventGrad{
-    background: radial-gradient(circle at 0 0,#ffb630, #ff8200);
+    /*background-image:url('../../img/mobile/event_bg.svg');*/
+    /*background-repeat: no-repeat, no-repeat, no-repeat;*/
+    /*background-position: bottom right, left, right;*/
+    background: radial-gradient(circle at 0 0, #ffc462, #eb6109);
+    text-align: center;
+
 }
 
 .eventImg{

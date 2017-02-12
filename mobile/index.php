@@ -487,19 +487,20 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     </div>
                 </div>
             </div>
+            
             <div id="algomaniac" class="item">
-                <div class="eventGrad" style="filter:hue-rotate(-40deg);">
-                    <div class="eventPattern" style="filter:hue-rotate(170deg);">
-                        <div class="eventContainer" style="filter:hue-rotate(80deg);">
-                            <img class="eventImg" src="../img/mobile/algomaniac.png" style="filter:hue-rotate(-5deg) brightness(200%)"/>
+                <div class="eventGrad" style="background: radial-gradient(circle at 0 0,#55eeff, #303cdd);">
+                    <div class="eventPattern" style="">
+                        <div class="eventContainer" style="">
+                            <img class="eventImg" src="../img/mobile/algomaniac.png" style=""/>
                             <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">Coding has never been so awesome before. So you think you can tame an wild territory of algorithms, data structure and AI techniques under shortage of time and space? Then this is the place you deserve! What's more? This year, the format ensures that you get to battle it out with the bests even if you call yourself a novice (we know you aren't). So get ready to become the maniac! </div>
                             <div id="circuistic_contacts" style="cursor: default;white-space: normal">
-                                <div id="circuistic_contacts_inner" style="color: black;filter:hue-rotate(-210deg)"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
+                                <div id="circuistic_contacts_inner" style="color: black;"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                     <div style="display: block">Anisha Bannerjee- +919474656643 </div>
                                     <div>Sayan Nag- +919674753183 </div>
                                 </div>
                             </div>
-                            <div id="circuistic_buttons_wrapper" style="filter:hue-rotate(-210deg)">
+                            <div id="circuistic_buttons_wrapper" style="">
                                 <div id="circuistic_buttons_wrapper_inner">
                                     <a href="../pdf/algomaniac.pdf" target="_blank" style="text-decoration:none;float: left;">
                                         <div class="circuistic_button">DETAILS</div>
@@ -518,18 +519,18 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                 </div>
             </div>
             <div id="sparkhack" class="item">
-                <div class="eventGrad" style="filter:hue-rotate(-175deg);">
-                    <div class="eventPattern" style="filter:hue-rotate(190deg);">
-                        <div class="eventContainer" style="filter:hue-rotate(80deg);">
-                            <img class="eventImg" src="../img/mobile/sparkhack.png" style="filter:hue-rotate(285deg) brightness(150%)"/>
+                <div class="eventGrad" style="background: radial-gradient(circle at 0 0,#fdff9c, #ff8200);">
+                    <div class="eventPattern" style="">
+                        <div class="eventContainer" style="">
+                            <img class="eventImg" src="../img/mobile/sparkhack.png" style=""/>
                             <div id="circuistic_text" style="cursor: default;white-space: normal;text-align: justify;">Code, create, build and revolutionize in this third edition of eastern India's biggest Hackathon, SparkHACK. In this 3-Day hackathon, college students as well professionals will strive to build a model which caters to the this year's theme of 'Internet of Things'.Internet of Things (IOT) is one of the most trending technical jargons in today's world.Engineers, designers and researchers will push their creative brains to the farthest limit and develop solutions pertinent to the problem statement in the field of Internet of Things (IOT). So step your game up this spring as there's a lot to be won.Compete with some of the best people of India and your idea just might be the next big thing for this society.</div>
                             <div id="circuistic_contacts" style="cursor: default;white-space: normal">
-                                <div id="circuistic_contacts_inner" style="color: black;filter:hue-rotate(-210deg)"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
+                                <div id="circuistic_contacts_inner" style="color: black;"><i style="color: dodgerblue;text-align: center;white-space: normal">Contacts</i>
                                     <div style="display: block">Paulomi Bhowmick- +918961565172 </div>
                                     <div>Debarshi Chanda- +919051677526 </div>
                                 </div>
                             </div>
-                            <div id="circuistic_buttons_wrapper" style="filter:hue-rotate(-210deg)">
+                            <div id="circuistic_buttons_wrapper" style="">
                                 <div id="circuistic_buttons_wrapper_inner">
                                     <a href="../pdf/sparkhack.pdf" target="_blank" style="text-decoration:none;float: left;">
                                         <div class="circuistic_button">DETAILS</div>
@@ -550,7 +551,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 
             <div id="papier" class="item cs" style="border-color: #931a46">
                 <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="eventGrad" style="">
+                <div class="eventGrad" style="background: radial-gradient(circle at 0 0,#c700f1,#0300a8);">
                     <div class="eventPattern" style="">
                         <div class="eventContainer" style="">
                             <img class="eventImg" src="../img/mobile/papier.png" style="margin-top: 15%"/>
@@ -561,7 +562,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                                     <div>Sayan Biswas: +918981608554 </div>
                                 </div>
                             </div>
-                            <div id="circuistic_buttons_wrapper" style="filter:hue-rotate(-210deg)">
+                            <div id="circuistic_buttons_wrapper" style="">
                                 <div id="circuistic_buttons_wrapper_inner">
                                     <a href="../pdf/papier.pdf" target="_blank" style="text-decoration:none;">
                                         <div class="circuistic_button">DETAILS</div>
