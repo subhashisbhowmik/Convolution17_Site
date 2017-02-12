@@ -73,7 +73,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta property="og:image" content="http://www.convolutionjuee.com/img/og.jpg"/>
     <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <meta property="og:type" content="website"/>
-    <meta property="fb:admins" content="644591695643607"/>
+    <meta property="fb:admins" content="100002783466920"/>
     <meta property="fb:app_id" content="190504778098387"/>
     <link rel="stylesheet" type="text/css" href="../css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
