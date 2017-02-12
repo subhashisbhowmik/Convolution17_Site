@@ -53,43 +53,7 @@ var moving = false;
             callbacks: {
                 whileScrolling: function () {
                     var v = -$('#mCSB_2_container').offset().top;
-                    var wh = $('body').height();
-                    var $element = $('#home').find('.inner');
-                    var marks = [0, 0, 0, 0, 0];
-                    var thres = 645;
-                    var thres2 = 600;
-                    var thres3 = 650;
-                    var thres4 = 700;
-                    //var colours = ['#000008', '#000008', '0D182D', '2E3C58', '637392'];
-                    marks[0] = v / 15 - 80;
-                    // marks[1]=-v/5+125.4;
-                    marks[2] = -v / 5 + 125.4;
-                    marks[3] = -v / 3 + 209.3;
-                    marks[4] = -(v * 11 / 20) + 325;
-                    scale = (thres - v) * 0.6 / thres + 0.6;
-                    scale = scale > 1 ? 1 : (scale < 0.6 ? 0.6 : scale);
-                    var markMain = v * 17 / 20;
-                    markMain = markMain > thres2 ? [(thres2) + (((markMain - thres2) * 12) / 20)] : markMain;
-                    markMain = markMain > thres3 ? [(thres3) + (((markMain - thres3) * 9) / 20)] : markMain;
-                    markMain = markMain > thres4 ? [(thres4) + (((markMain - thres4) * 5) / 20)] : markMain;
-                    markMain = markMain < 0 ? 0 : markMain;
 
-                    var $parallax = $('.parallax');
-
-                    //Blocking
-                    marks[3] = marks[3] > -$parallax.height() * 0.0013462 ? -$parallax.height() * 0.0013462 : marks[3];
-                    marks[2] = marks[2] > -$parallax.height() * 0.0013462 ? -$parallax.height() * 0.0013462 : marks[2];
-                    marks[2] = marks[2] > $parallax.height() * 0.01846154 ? $parallax.height() * 0.01846154 : marks[2];
-
-                    $('#about').find('.inner').each(function (i) {
-                        // if (marks[4 - i] < 0 || (4 - i) != 2 || (4 - i) != 3 || (4 - i) != 4)
-                        // if((marks[4 - i])>0)
-                        //TODO: Creates the parallax
-                        $(this).css('transform', 'translate(0px,' + (-marks[4 - i]) + 'px)');
-                    });
-                    // $element.css('padding-top', wh / 2 + 25 - $element.height() / scale / 2);
-                    //TODO: This scales and translates the top Convo header
-                    //$('#home').find('.inner').css('transform', 'translate(0px,' + (markMain) + 'px) scale(' + scale + ',' + scale + ')');
                     var item = null;
                     $('.item').each(function () {
                         if (v + $(window).height() / 3 >= $(this).position().top || (item == null)/* || (v-item.offset().top)>(v-$(this).offset().top))*/) item = $(this);
