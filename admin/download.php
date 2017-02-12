@@ -45,6 +45,8 @@ if($event=="All Users"){
 //    die($select);
 }else if($event=="Queries") {
     $select= "SELECT id AS QueryID,email, query as Query FROM `query`";
+} else if($event=="admin"){
+    $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else{
     $tag=str_replace(" ","",strtolower($event));
     $select = "SELECT $selector FROM `registration`  JOIN `users` ON `users`.`email`=`registration`.`email` WHERE `registration`.`event`='$tag'";
