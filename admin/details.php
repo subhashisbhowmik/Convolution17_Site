@@ -98,7 +98,7 @@ $fields = $export->fetch_fields();
 <body style="height:100vh">
 <!--<div id="content">This page is under construction!!</div>-->
 <div id="superWrapper">
-    <h1>Total Entries:<?php echo $num; ?></h1>
+    <h1><div style="border-right: solid 2px #6fffe7;display: inline-block;white-space: pre-wrap"><?php echo urldecode($_GET['event'])."  ";?></div> Total Entries: <?php echo $num; ?></h1>
     <div id="tableWrapper">
 
             <div class="tbl-content">
@@ -126,7 +126,8 @@ $fields = $export->fetch_fields();
     </div>
 </div>
 <a href="./" id="back"><img src="img/back.png"/></a>
-<script type="text/javascript" src="js/table.js"></script>
+<a href="download.php?event=<?php echo $_GET['event']?>" style="left:auto;right:2px;opacity:0.9" id="back"><img src="img/download.png"/></a>
+<!--<script type="text/javascript" src="js/table.js"></script>-->
 <script type="text/javascript" src="../js/jq.js"></script>
 
 </body>
