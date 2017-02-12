@@ -25,6 +25,8 @@ var moving = false;
             scrollButtons: {
                 tabindex: 10
             },
+
+            contentTouchScroll: 1,
             advanced: {
                 autoUpdateTimeout: 200
             },
