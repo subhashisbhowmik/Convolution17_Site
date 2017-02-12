@@ -8,6 +8,7 @@ $email = "";
 $num_noti = 0;
 $m = '';
 $info='';
+$id=0;
 if (isset($_COOKIE['convo_mail'])) {
     $email = $_COOKIE['convo_mail'];
     if (isset($_COOKIE['convo_token'])) {
@@ -20,6 +21,7 @@ if (isset($_COOKIE['convo_mail'])) {
             $row = sql("SELECT * FROM `users` WHERE `email`='$email'")->fetch_assoc();
 //            print_r($row);
             $name = $row['name'];
+            $id=$row['id'];
             if (!isset($_SESSION['on'])) {
                 $token = randomString(64);
                 sql("UPDATE `cookie` SET `token`='$token' WHERE `mail`='$email'");
@@ -91,6 +93,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             version    : 'v2.8'
         });
         FB.AppEvents.logPageView();
+        $(document).trigger('fbload');
+
     };
 
     (function(d, s, id){
@@ -100,10 +104,13 @@ if (isset($_GET['m'])) $m = $_GET['m'];
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    FB.AppEvents.logEvent("pageHit");
-    <?php
-        if($email!="") echo "FB.AppEvents.logEvent(\"pageHitUser: $email\");";
-    ?>
+    $(document).on('fbload',function () {
+
+        FB.AppEvents.logEvent("pageHit");
+        <?php
+        if($id!=0) echo "FB.AppEvents.logEvent(\"pageHitUser_$id\");";
+        ?>
+    });
 </script>
 <noscript>
     Javascript is disabled. Redirecting...
