@@ -69,6 +69,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <meta property="og:type" content="website"/>
     <meta property="fb:admins" content="subhashis.b96"/>
+    <meta property="fb:app_id" content="190504778098387"/>
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
