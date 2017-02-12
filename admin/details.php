@@ -98,7 +98,7 @@ $fields = $export->fetch_fields();
 <body style="height:100vh">
 <!--<div id="content">This page is under construction!!</div>-->
 <div id="superWrapper">
-    <h1><div style="border-right: solid 2px #6fffe7;display: inline-block;white-space: pre-wrap"><?php echo urldecode($_GET['event'])."  ";?></div> Total Entries: <?php echo $num; ?></h1>
+    <h1 style="text-shadow: 2px 2px rgba(0,0,0,0.3);"><div style="border-right: solid 2px #6fffe7;display: inline-block;white-space: pre-wrap"><?php echo urldecode($_GET['event'])."  ";?></div> Total Entries: <?php echo $num; ?></h1>
     <div id="tableWrapper">
 
             <div class="tbl-content">
