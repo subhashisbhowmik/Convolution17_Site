@@ -666,7 +666,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                         <p class="hide" id="contacts_papier">Sourya Sengupta: +919874899365, Sayan Biswas: +918981608554</p>
                     </div>
                     <div id="body">
-                        <div class="hide" id="left"><b style="font-weight: bold;text-decoration: underline">Abstract:</b></div>
+                        <div class="hide" id="left"><b style="font-weight: bold;text-decoration: underline">Abstract:</b><div id="typer"></div></div>
                         <div class="hide" id="right">
                             
                             <div id="button_wrapper">

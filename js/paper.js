@@ -12,7 +12,7 @@ function papierGo() {
     var $papier=$('#papier');
     var $header=$papier.find('#header');
     $header.find('div').removeClass('hide');
-    console.log($header);
+    // console.log($header);
     setTimeout(function () {
         $header.find('#convo_papier').removeClass('hide');
     },400);
@@ -42,7 +42,7 @@ function papierType(s) {
  function pbufferType() {
 //     var x=buffer.charAt(posi++);
 //     // buffer=buffer.substr(1);
-    var $left=$('#left');
+    var $left=$('#typer');
     $left.html(bufferP.substring(0,x+1));
     if(bufferP.length>posi){
         setTimeout(pbufferType,10);
