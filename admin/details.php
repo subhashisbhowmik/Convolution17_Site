@@ -48,8 +48,9 @@ if ($event == "All Users") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
 } else if($event=="Analytics"){
     $sum=sql("SELECT * FROM `hit`")->num_rows;
-    $select="SELECT DAY(ts) AS `Day` FROM hit GROUP BY Day";
-    
+    $select="SELECT DAY(ts) AS `Day`,COUNT(Day) AS Hits FROM hit GROUP BY Day";
+    $select2="SELECT WEEK(ts) AS `Week`,COUNT(Week) AS Hits FROM hit GROUP BY Week";
+
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else {
