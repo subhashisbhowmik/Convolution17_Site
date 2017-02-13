@@ -133,8 +133,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-algomaniac" data-id="algomaniac"><span><b>Algomaniac</b></span></li>
             <li id="tab-sparkhack" data-id="sparkhack"><span><b>SparkHACK</b></span></li>
             <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
-            <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
+            <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
@@ -559,7 +559,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                                 <div class="bounce2"></div>
                                 <div class="bounce3"></div>
                             </div>
-                            <div class="tx" <?php if(isset($eventNames['circuistic'])) echo "ed"; ?>>Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div>
+                            <div class="tx" <?php if(isset($eventNames['algomaniac'])) echo "status='done'"; ?>>Register<?php if(isset($eventNames['algomaniac'])) echo "ed"; ?></div>
                         </div>
                         <div id="laptop_screen">
                             <div id="termial_titlebar">
@@ -686,6 +686,36 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     </div>
                 </div>
             </div>
+            <div id="decisia" class="item cs" style="border-color: #6e2593">
+                <div id="circuistic_buttons_wrapper" style="padding-top: 10vh; transform:scale(1.5  , 1.5);transform-origin: 50%50%;">
+                    <div id="circuistic_buttons_wrapper_inner" style="width:45%;transform:translate(3.5% , 0)">
+
+                        <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="decisia">DETAILS</div>
+                        <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="decisia"><div class="spinner" style="display:none">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div><div class="tx" <?php if(isset($eventNames['decisia'])) echo "status='done'"; ?>>Register<?php if(isset($eventNames['decisia'])) echo "ed"; ?></div></div>
+
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <!--            <h1 id="decisia" class="item">DECISIA</h1>-->
+                <div class="blankDiv" style="background-color: #02964b; min-height:676px;padding-top:10vh">
+                    Decisia
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div id="decisiaDetails">Decisia, a nascent decision making event which evaluates your views about all aspects of life to the very core of your thoughts. The uniqueness of the event lies in the multidimensional plethora of layers in the making of this event. Its a simple event of making decisions which will test your analytical skills in dissecting the questions given to you and at the same time your confidence to validate your answers with solid scripted facts which hi-lighten your logic and planning. The questions will be an amalgamation of various primary topics at hand and will have several facets like engineering, economics, medicine, psychology, law, business, sociology ,to it. The rules after that are very simple. The answer that has a brief viewpoint from each of the above fields and is the most simple, logical and elegant wins it all and takes the money home. We rest our case ! Hope to see you soon !</div>
+
+                    <div id="circuistic_contacts" style="cursor: default;color:black;margin-top:1%;font-size:0.3em">
+                        <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
+                            <div style="border-right: solid 2px dodgerblue">Debapriya Basu: +918444941108 </div>
+                            <div> Shounak Biswas: +918001858305</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="controversial" class="item cs" style="border-color: #624293">
                 <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
@@ -695,17 +725,6 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                         <div class="indeterminate"></div>
                     </div>
                     <div class="comingSoon">Coming Soon</div>
-                </div>
-            </div>
-            <div id="decisia" class="item cs" style="border-color: #6e2593">
-                <!--            <h1 id="decisia" class="item">DECISIA</h1>-->
-                <div class="blankDiv" style="background-color: #02964b">
-                    Decisia
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <div class="comingSoon">Coming Soon</div>
-
                 </div>
             </div>
             <div id="inquizzitive" class="item cs" style="border-color: #137163">
