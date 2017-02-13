@@ -17,7 +17,7 @@ $(document).ready(function () {
         data2.push([$tds.eq(0).text(), $tds.eq(1).text()]);
     });
     data2.shift();
-    
+
     console.log(data2);
 });
 
@@ -29,14 +29,17 @@ $(window).on('load resize', function () {
             lines: {
                 show: true,
                 fill: false,
-            }
+            },
+            points: { show: true }
 
         },
         yaxis: {
-            min: 0
+            min: 0,
+            minTickSize: 1
         },
         xaxis: {
-            show: true
+            show: true,
+            minTickSize: 1
         }
     });
     plot2 = $.plot("#plot2", [data2], {
@@ -45,13 +48,18 @@ $(window).on('load resize', function () {
             lines: {
                 show: true,
                 fill: false,
-            }
+            },
+            points: { show: true }
 
         },
         yaxis: {
+
+            minTickSize: 1,
             min: 0
         },
         xaxis: {
+
+            minTickSize: 1,
             show: true
         }
     });
