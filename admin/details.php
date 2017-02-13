@@ -122,7 +122,7 @@ $fields = $export->fetch_fields();
                     $export = sql($select2);
                     $fields = $export->fetch_fields();
                     echo "
-                    <div id='plot1' style=\"width=100%\"></div>
+                    <div id='plot1' style=\"width=100%;height:300px;\"></div>
                     <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='table-layout: fixed'>
                     <thead>
                 ";
@@ -139,7 +139,7 @@ $fields = $export->fetch_fields();
                     }
 
                     echo "</tbody>
-                    <div id='plot2' style=\"width=100%\"></div>";
+                    <div id='plot2' style=\"width=100%;height:300px;\"></div>";
                 }
                 ?>
         </div>
@@ -148,8 +148,11 @@ $fields = $export->fetch_fields();
 </div>
 <a href="./" id="back"><img src="img/back.png"/></a>
 <a href="download.php?event=<?php echo $_GET['event']?>" style="left:auto;right:2px;opacity:0.9" id="back"><img src="img/download.png"/></a>
-<!--<script type="text/javascript" src="js/table.js"></script>-->
 <script type="text/javascript" src="../js/jq.js"></script>
-
+<script type="text/javascript" src="js/table.js"></script>
+<?php
+if($event=="Analytics") echo "</script><script type=\"text/javascript\" src=\"../js/jquery.flot.js\"></script>
+<script type=\"text/javascript\" src=\"js/plot.js\"></script>";
+?>
 </body>
 </html>
