@@ -10,11 +10,20 @@ $(document).ready(function () {
         var $tds = $(this).find('td');
         data1.push([$tds.eq(0).text(), $tds.eq(1).text()]);
     });
+    data1.shift();
     console.log(data1);
     $tables.eq(0).find('tr').each(function () {
         var $tds = $(this).find('td');
         data2.push([$tds.eq(0).text(), $tds.eq(1).text()]);
     });
+    data2.shift();
+    data2.push([14,5]);
+    data2.push([15,5]);
+    data2.push([16,10]);
+    data2.push([17,6]);
+    data2.push([18,2]);
+    data2.push([19,5]);
+    data2.push([20,18]);
     console.log(data2);
 });
 

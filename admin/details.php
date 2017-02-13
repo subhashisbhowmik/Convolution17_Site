@@ -59,10 +59,10 @@ if ($event == "All Users") {
 }
 $export = sql($select);
 if ($conn->errno) $texts = "Database Doesn't exist yet!";
-    if($event=="Analytics") $texts.="<br>".$conn->errno;
 else $texts = "This Database is EMPTY!!";
+if($event=="Analytics") $texts.="<br>".$conn->errno;
 if($sum==0)
-    $num = $export->num_rows;
+$num = $export->num_rows;
 else
     $num=$sum;
 

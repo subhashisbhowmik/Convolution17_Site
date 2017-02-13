@@ -35,36 +35,7 @@ function multimeter() {
 var data = [], data2 = [],
     totalPoints = 300;
 var updateInterval = 10;
-function getRandomData() {
 
-    if (data.length > 0)
-        data = data.slice(1);
-
-    // Do a random walk
-
-    while (data.length < totalPoints) {
-
-        var prev = data.length > 0 ? data[data.length - 1] : 50,
-            y = prev + Math.random() * 10 - 5;
-
-        if (y < 0) {
-            y = 0;
-        } else if (y > 100) {
-            y = 100;
-        }
-
-        data.push(y);
-    }
-
-    // Zip the generated y values with the x values
-
-    var res = [];
-    for (var i = 0; i < data.length; ++i) {
-        res.push([i, data[i]])
-    }
-
-    return res;
-}
 var t = 1, t2 = 1.5;
 
 function getData() {
@@ -72,15 +43,11 @@ function getData() {
     if (data.length > 0)
         data = data.slice(1);
 
-    // Do a random walk
-
     while (data.length < totalPoints) {
         var y = 5 * Math.sin(2 * Math.PI * 0.5 * t) - Math.sin(6 * Math.PI * 0.5 * t) + 0.5 * Math.sin(10 * Math.PI * 0.5 * t);
         data.push(y);
         t += 0.01;
     }
-
-    // Zip the generated y values with the x values
 
     var res = [];
     for (var i = 0; i < data.length; ++i) {
@@ -94,15 +61,11 @@ function getData2() {
     if (data2.length > 0)
         data2 = data2.slice(1);
 
-    // Do a random walk
-
     while (data2.length < totalPoints) {
         var y = 5 * Math.sin(2 * Math.PI * 0.5 * t2 + Math.PI / 4) + Math.sin(6 * Math.PI * 0.5 * t2 + Math.PI * 3 / 2) + 0.5 * Math.sin(4 * Math.PI * 0.5 * t2 + Math.PI);
         data2.push(y);
         t2 += 0.01;
     }
-
-    // Zip the generated y values with the x values
 
     var res = [];
     for (var i = 0; i < data2.length; ++i) {
