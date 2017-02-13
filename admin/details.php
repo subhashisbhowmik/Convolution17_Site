@@ -8,6 +8,7 @@
 require_once "../php/functions.php";
 $user = "";
 $pass = "";
+$sum=0;
 //print_r($_SESSION);
 if (isset($_SESSION['convo_admin_user'])) $user = sanitizeString($_SESSION['convo_admin_user']);
 if (isset($_SESSION['convo_admin_pass'])) $pass = sanitizeString($_SESSION['convo_admin_pass']);
@@ -46,7 +47,7 @@ if ($event == "All Users") {
 } else if ($event == "Queries") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
 } else if($event=="Analytics"){
-    
+    $sum=sql("SELECT * FROM `hits`")->num_rows;
     $select2="SELECT id AS ID, email, COUNT(email) AS Hits FROM `hit` GROUP BY email";
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
@@ -57,7 +58,10 @@ if ($event == "All Users") {
 $export = sql($select);
 if ($conn->errno) $texts = "Database Doesn't exist yet!";
 else $texts = "This Database is EMPTY!!";
-$num = $export->num_rows;
+if($sum==0)
+    $num = $export->num_rows;
+else
+    $num=$sum;
 if ($export->num_rows == 0) die("
 
 <!DOCTYPE html>
