@@ -12,6 +12,7 @@ $(window).on('load', function () {
         if($(this).find('.tx').text().toLowerCase()=='register' && ($(this).attr('status')==null||$(this).attr('status')=='')) {
             $(this).attr('status','doing');
             $(this).css('cursor','default');
+            var $this=$(this);
             eventName = $(this).attr('event');
             var $spinner = $(this).find('.spinner');
             $spinner.show();
@@ -39,8 +40,8 @@ $(window).on('load', function () {
                 }
             }).fail(function () {
                 alert('Something went wrong! Please Try Again.');
-                $(this).attr('status','');
-                $(this).css('cursor','pointer');
+                $this.attr('status','');
+                $this.css('cursor','pointer');
                 $spinner.hide();
                 $tx.show();
             }).always(function () {
