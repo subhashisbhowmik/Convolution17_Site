@@ -45,6 +45,9 @@ if ($event == "All Users") {
 //    die($select);
 } else if ($event == "Queries") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
+} else if($event=="Analytics"){
+    
+    $select2="SELECT id AS ID, email, COUNT(email) AS Hits FROM `hit` GROUP BY email";
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else {

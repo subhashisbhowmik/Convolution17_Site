@@ -27,6 +27,7 @@ if(isset($_REQUEST['event']))$event=urldecode(sanitizeString($_REQUEST['event'])
 if($event==""||$user==""||$pass=="") die( "<script>window.close()</script>");
 $tag='';
 $error='';
+$select2="";
 $selector="`users`.`id` AS SignupID, `registration`.`id` AS RegID, event AS Event,`users`.`email`, `name` as `Name`, contact as Phone,class AS Class, dept AS Department, inst AS Institution, confirmation";
 $filename='Convo17 '.str_replace(" ","_",$event).' '.date(' g:iA d_M_Y',strtotime('+5 hour +30 minutes',strtotime(date("Y-m-d H:i:s"))));
 if($event=="All Users"){
@@ -45,6 +46,8 @@ if($event=="All Users"){
 //    die($select);
 }else if($event=="Queries") {
     $select= "SELECT id AS QueryID,email, query as Query FROM `query`";
+}else if($event=="Analytics"){
+    $select="SELECT id AS ID, email, COUNT(email) AS Hits FROM `hit` GROUP BY email";
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else{
