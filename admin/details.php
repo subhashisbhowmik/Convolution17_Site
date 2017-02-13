@@ -139,12 +139,11 @@ $fields = $export->fetch_fields();
                         echo "</tr>";
                     }
 
-                    echo "</tbody>
+                    echo "</tbody></table>
                     <div id='plot2' style=\"width=100%;height:300px;\"></div>";
                 }
                 ?>
         </div>
-        </table>
     </div>
 </div>
 <a href="./" id="back"><img src="img/back.png"/></a>
