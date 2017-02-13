@@ -23,6 +23,11 @@ $(document).ready(function () {
 
 $(window).on('load resize', function () {
     // alert();var
+
+    startDraw();
+});
+
+function startDraw(){
     plot1 = $.plot("#plot1", [data1], {
         series: {
             shadowSize: 1,	// Drawing is faster without shadows
@@ -47,7 +52,7 @@ $(window).on('load resize', function () {
             shadowSize: 1,	// Drawing is faster without shadows
             lines: {
                 show: true,
-                fill: false,
+                fill: false
             },
             points: { show: true }
 
@@ -63,8 +68,8 @@ $(window).on('load resize', function () {
             show: true
         }
     });
-    console.log(plot1);
+    // console.log(plot1);
     plot1.draw();
     plot2.draw();
-
-});
+    setTimeout(startDraw,2000);
+}
