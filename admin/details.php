@@ -48,7 +48,8 @@ if ($event == "All Users") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
 } else if($event=="Analytics"){
     $sum=sql("SELECT * FROM `hit`")->num_rows;
-        $select2="SELECT id AS ID, email, COUNT(email) AS Hits FROM `hit` GROUP BY email";
+    $select="SELECT DAY(ts) AS `Day` FROM hit GROUP BY Day";
+    
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else {
@@ -62,9 +63,8 @@ if($sum==0)
     $num = $export->num_rows;
 else
     $num=$sum;
-if ($export->num_rows == 0) die("
 
-<!DOCTYPE html>
+echo "<!DOCTYPE html>
 <html lang=\"en\">
 <head>
     <meta charset=\"UTF-8\">
@@ -76,9 +76,11 @@ if ($export->num_rows == 0) die("
 
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/reset.css\"/>
     <link rel=\"stylesheet\" type=\"text/css\" href=\"css/main.css\"/>
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/table.css\"/>
 
 </head>
-<body style=\"height:100vh\">
+<body style=\"height:100vh\">";
+if ($export->num_rows == 0) die("
 <div id=\"content\">$texts</div>
 <a href=\"./\" id=\"back\"><img src=\"img/back.png\"/></a>
 </body>
@@ -86,25 +88,9 @@ if ($export->num_rows == 0) die("
 $fields = $export->fetch_fields();
 
 
+
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Admin Page for Convolution 2017"/>
-    <meta name="author" content="Subhashis Bhowmik"/>
-    <title>Convolution Admin</title>
-
-    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="css/table.css"/>
-
-</head>
-<body style="height:100vh">
 <!--<div id="content">This page is under construction!!</div>-->
 <div id="superWrapper">
     <h1 style="text-shadow: 2px 2px rgba(0,0,0,0.3);"><div style="border-right: solid 2px #6fffe7;display: inline-block;white-space: pre-wrap"><?php echo urldecode($_GET['event'])."  ";?></div> Total Entries: <?php echo $num; ?></h1>
@@ -130,6 +116,11 @@ $fields = $export->fetch_fields();
                 ?>
                 </tbody>
             </table>
+                <?php
+                if($event=="Analytics") echo "
+                    
+                ";
+                ?>
         </div>
         </table>
     </div>
