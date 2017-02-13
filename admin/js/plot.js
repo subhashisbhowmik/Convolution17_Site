@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
     data1.shift();
     console.log(data1);
-    $tables.eq(0).find('tr').each(function () {
+    $tables.eq(1).find('tr').each(function () {
         var $tds = $(this).find('td');
         data2.push([$tds.eq(0).text(), $tds.eq(1).text()]);
     });
