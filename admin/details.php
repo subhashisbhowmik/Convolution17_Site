@@ -48,8 +48,8 @@ if ($event == "All Users") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
 } else if($event=="Analytics"){
     $sum=sql("SELECT * FROM `hit`")->num_rows;
-    $select="SELECT DAY(ts) AS `Day`,COUNT(Day) AS Hits FROM hit GROUP BY Day";
-    $select2="SELECT WEEK(ts) AS `Week`,COUNT(Week) AS Hits FROM hit GROUP BY Week";
+    $select="SELECT DAY(ts) AS `Day`,COUNT(*) AS Hits FROM `hit` GROUP BY Day";
+    $select2="SELECT WEEK(ts) AS `Week`, COUNT(*) AS `Hits` FROM `hit` GROUP BY Week";
 
 } else if($event=="admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
@@ -98,7 +98,7 @@ $fields = $export->fetch_fields();
     <div id="tableWrapper">
 
             <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
+                <table cellpadding="0" cellspacing="0" border="0" style="<?php if($event=="Analytics") echo "table-layout:fixed";?>">
                 <thead>
                 <?php
                 foreach ($fields as $field) {
@@ -106,7 +106,7 @@ $fields = $export->fetch_fields();
                 }
                 ?>
                 </thead>
-            
+
                 <tbody>
                 <?php
                 foreach ($export as $row) {
@@ -118,9 +118,29 @@ $fields = $export->fetch_fields();
                 </tbody>
             </table>
                 <?php
-                if($event=="Analytics") echo "
-                    
+                if($event=="Analytics") {
+                    $export = sql($select2);
+                    $fields = $export->fetch_fields();
+                    echo "
+                    <div id='plot1' style=\"width=100%\"></div>
+                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='table-layout: fixed'>
+                    <thead>
                 ";
+                    foreach ($fields as $field) {
+                        echo "<th>" . $field->name . "</th>";
+                    }
+                    echo "</thead>
+                        <tbody>";
+
+                    foreach ($export as $row) {
+                        echo "<tr>";
+                        foreach ($row as $data) echo "<td>" . $data . "</td>";
+                        echo "</tr>";
+                    }
+
+                    echo "</tbody>
+                    <div id='plot2' style=\"width=100%\"></div>";
+                }
                 ?>
         </div>
         </table>
