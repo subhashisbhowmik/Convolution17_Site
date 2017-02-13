@@ -538,7 +538,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <img class="ckt_image" src="img/circuistic/Circuits_2.png"/>
                 </div>
                 <div>
-                    <div id="multitext" style="float:left">23.7</div>
+                    <div id="multitext" style="float:left; text-shadow: 2px 2px 3px rgba(0,0,0,0.5)">23.7</div>
                     <div id="oscillograph" style="float:right"></div>
                     <div style="clear: both"></div>
                 </div>

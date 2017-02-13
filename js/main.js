@@ -333,7 +333,7 @@ $(document).ready(function () {
                     $('#nav').find('.active').prev().click();
                     setTimeout(function () {
                         buttonswitch=false;
-                    },1200);
+                    },1000);
                 }
             } else if (event.keyCode == 39) {
                 //Right
@@ -342,7 +342,7 @@ $(document).ready(function () {
                     $('#nav').find('.active').next().click();
                     setTimeout(function () {
                         buttonswitch=false;
-                    },1200);
+                    },1000);
                 }
             } else
                 $('#main').trigger(event);
@@ -383,7 +383,7 @@ $(document).ready(function () {
         var isAbout = $('#tab-about').hasClass('active');
         $('li.active').removeClass('active');
         $(this).addClass('active');
-
+        time=500;
         if ($(this).attr('id').replace("tab-", "") == "home") time = 1000;
         if ($(this).attr('id').replace("tab-", "") == "about") {
             // console.log(-$('body').height() + $('#events').offset().top);
