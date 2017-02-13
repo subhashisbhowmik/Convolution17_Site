@@ -37,7 +37,7 @@ $(window).on('load', function () {
                         }
                     });
                 }
-            }).error(function () {
+            }).fail(function () {
                 alert('Something went wrong! Please Try Again.');
                 $(this).attr('status','');
                 $(this).css('cursor','pointer');
