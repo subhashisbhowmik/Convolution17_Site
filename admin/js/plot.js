@@ -17,19 +17,13 @@ $(document).ready(function () {
         data2.push([$tds.eq(0).text(), $tds.eq(1).text()]);
     });
     data2.shift();
-    data2.push([14,5]);
-    data2.push([15,5]);
-    data2.push([16,10]);
-    data2.push([17,6]);
-    data2.push([18,2]);
-    data2.push([19,5]);
-    data2.push([20,18]);
+    
     console.log(data2);
 });
 
 $(window).on('load resize', function () {
     // alert();var
-    plot1 = $.plot("#plot1", data1, {
+    plot1 = $.plot("#plot1", [data1], {
         series: {
             shadowSize: 1,	// Drawing is faster without shadows
             lines: {
@@ -45,7 +39,7 @@ $(window).on('load resize', function () {
             show: true
         }
     });
-    plot2 = $.plot("#plot2", data2, {
+    plot2 = $.plot("#plot2", [data2], {
         series: {
             shadowSize: 1,	// Drawing is faster without shadows
             lines: {
