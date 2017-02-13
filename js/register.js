@@ -41,6 +41,8 @@ $(window).on('load', function () {
                 alert('Something went wrong! Please Try Again.');
                 $(this).attr('status','');
                 $(this).css('cursor','pointer');
+                $spinner.hide();
+                $tx.show();
             }).always(function () {
                 $spinner.hide();
                 $tx.show();
