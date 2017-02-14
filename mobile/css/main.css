@@ -988,6 +988,8 @@ b {
     background-color: rgba(0, 0, 0, 0.9);
     display: none;
     overflow: auto;
+    overflow-y: scroll;
+
 }
 
 
@@ -996,12 +998,12 @@ b {
     /*width: 60vw;*/
     /*min-width: 500px;*/
     padding: 20px;
-    overflow-y: scroll;
-    transform:translate(0 , 50%);
+    overflow: hidden;
+    transform:translate(0 , 10%);
     z-index: 1200;
     box-sizing: border-box;
     margin: 0 20px 10px;
-    margin-top: calc(50vh - 280px);
+    /*margin-top: calc(50vh - 280px);*/
     background-color: #33475E;
     border-radius: 4px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);

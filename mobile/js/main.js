@@ -147,12 +147,12 @@ $(window).on('load', function () {
 $(document).ready(function () {
     // setTimeout(homeUpdate, 0);
     $('#sign_up_open').click(function () {
-        $('.log').fadeOut(500);
-        $('.sin').fadeIn(500);
+        $('.log').slideUp(500);
+        $('.sin').slideDown(500);
     });
     $('#login_open').click(function () {
-        $('.log').fadeIn(500);
-        $('.sin').fadeOut(500);
+        $('.log').slideDown(500);
+        $('.sin').slideUp(500);
     });
 
     if(window.location.hash) {
