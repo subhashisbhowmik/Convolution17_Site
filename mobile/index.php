@@ -89,7 +89,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <body><script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '190504778098387',
+            appId      : '748958801934087',
             xfbml      : true,
             version    : 'v2.8'
         });
