@@ -997,8 +997,7 @@ b {
     /*min-width: 500px;*/
     padding: 20px;
     overflow-y: scroll;
-
-    min-height: 560px;
+    transform:translate(0 , 50%);
     z-index: 1200;
     box-sizing: border-box;
     margin: 0 20px 10px;
