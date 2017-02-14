@@ -72,7 +72,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
     <meta property="og:url" content="http://www.convolutionjuee.com"/>
     <meta property="og:type" content="website"/>
     <meta property="fb:admins" content="100002783466920"/>
-    <meta property="fb:app_id" content="190504778098387"/>
+    <meta property="fb:app_id" content="748958801934087"/>
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
     <link rel="stylesheet" type="text/css" href="css/loader.css"/>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -850,7 +850,6 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <script type="text/javascript" src="js/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
 <script type="text/javascript" src="js/circuistic.js"></script>
 <script type="text/javascript" src="js/console.js"></script>
 <script type="text/javascript" src="js/note.js"></script>
