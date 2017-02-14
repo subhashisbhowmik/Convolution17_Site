@@ -25,7 +25,7 @@ $event = "";
 if (isset($_REQUEST['event'])) $event = urldecode(sanitizeString($_REQUEST['event']));
 //die( $event." ".$user. ' '.$pass);
 if ($event == "" || $user == "" || $pass == "") header("Location: ./");
-
+if ($event=="Admin" && $user!="sb")header("Location: ./");
 $tag = '';
 $error = '';
 $selector = "`users`.`id` AS SignupID, `registration`.`id` AS RegID, event AS Event,`users`.`email`, `name` as `Name`, contact as Phone,class AS Class, dept AS Department, inst AS Institution, confirmation";
@@ -51,7 +51,7 @@ if ($event == "All Users") {
     $select="SELECT DAY(ts) AS `Day`,COUNT(*) AS Hits FROM `hit` GROUP BY Day";
     $select2="SELECT WEEK(ts) AS `Week`, COUNT(*) AS `Hits` FROM `hit` GROUP BY Week";
 
-} else if($event=="admin"){
+} else if($event=="Admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else {
     $tag = str_replace(" ", "", strtolower($event));

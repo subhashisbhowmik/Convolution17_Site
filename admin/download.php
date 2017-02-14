@@ -25,6 +25,8 @@ $event="";
 if(isset($_REQUEST['event']))$event=urldecode(sanitizeString($_REQUEST['event']));
 //die( $event." ".$user. ' '.$pass);
 if($event==""||$user==""||$pass=="") die( "<script>window.close()</script>");
+if ($event=="Admin" && $user!="sb")die( "<script>window.close()</script>");
+
 $tag='';
 $error='';
 $select2="";
@@ -48,7 +50,7 @@ if($event=="All Users"){
     $select= "SELECT id AS QueryID,email, query as Query FROM `query`";
 }else if($event=="Analytics"){
     $select="SELECT id AS ID, email, COUNT(email) AS Hits FROM `hit` GROUP BY email";
-} else if($event=="admin"){
+} else if($event=="Admin"){
     $select="SELECT * FROM `admin` ORDER BY `ts` DESC";
 }else{
     $tag=str_replace(" ","",strtolower($event));

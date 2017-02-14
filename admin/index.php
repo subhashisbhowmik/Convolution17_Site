@@ -51,6 +51,7 @@ if($user==''||$pass==""){
 }else{
     echo "<div id='links'>";
     $links=array("All Users","All Registrations","All Users and Registrations","Algomaniac","Circuistic","Sparkhack","Decisia","Inquizzitive","Seminar","Controversial","Workshop","Sponsors","Analytics","Queries","Convolution Team");
+    if($user=="sb")array_push($links,"Admin");
     foreach ($links as $link) {
         echo "<span class='link'><div class='text'>$link</div><a class='download' title=\"Download .csv file.\" target='_blank' href='download.php?event=$link'><img src='img/download.png'></a><a class='details' title=\"Edit Event Details\" href='details.php?event=$link'><img src='img/details.png'></a></span>";
     }
