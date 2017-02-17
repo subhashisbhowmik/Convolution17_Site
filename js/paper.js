@@ -2,7 +2,7 @@
  * Created by Subhashis on 09-02-2017.
  */
 var papierGone=false;
-var papierDetails=" By 2029, computers will have emotional intelligence and be convincing as people' -Ray Kurzweil,computer scientist. These advancements are possible with quality research works and innovative ideas.\nHave you performed any interesting experiment or do you have any such idea? Have you made any new model or prototypes?\nThis year Convolution 4.0, organised by Department of Electrical Engineering, Jadavpur University brings you a brand new event of Paper Presentation/Power Point Presentation. We encourage you to take part in this exciting event and place your innovative ideas.\nMake a write-up of 400 words about your own idea/experiments/prototypes and mail us at pconvolution@gmail.com on or before 20th February.\nNotification of selection for final: 25th February.";
+var papierDetails=" By 2029, computers will have emotional intelligence and be convincing as people' -Ray Kurzweil,computer scientist. These advancements are possible with quality research works and innovative ideas.\nHave you performed any interesting experiment or do you have any such idea? Have you made any new model or prototypes?\nThis year Convolution 4.0, organised by Department of Electrical Engineering, Jadavpur University brings you a brand new event of Paper Presentation/Power Point Presentation. We encourage you to take part in this exciting event and place your innovative ideas.\nMake a write-up of 500 words about your own idea/experiments/prototypes and mail us at pconvolution@gmail.com on or before 20th February.\nNotification of selection for final: 25th February.";
 // var bufferP="";
 var posi=0;
 
