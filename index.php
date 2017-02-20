@@ -135,8 +135,8 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-sparkhack" data-id="sparkhack"><span><b>SparkHACK</b></span></li>
             <li id="tab-papier" data-id="papier"><span><b>Papier</b></span></li>
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
-            <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
+            <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
@@ -692,7 +692,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div id="circuistic_buttons_wrapper_inner" style="width:45%;transform:translate(3.5% , 0)">
 
                         <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="decisia">DETAILS</div>
-                        <div style="text-decoration:none;float: right;<?php if(isset($eventNames['circuistic'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="decisia"><div class="spinner" style="display:none">
+                        <div style="text-decoration:none;float: right;<?php if(isset($eventNames['decisia'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="decisia"><div class="spinner" style="display:none">
                                 <div class="bounce1"></div>
                                 <div class="bounce2"></div>
                                 <div class="bounce3"></div>
@@ -717,6 +717,35 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     </div>
                 </div>
             </div>
+            <div id="inquizzitive" class="item cs" style="border-color: #352793">
+                <div id="circuistic_buttons_wrapper" style="padding-top: 10vh; transform:scale(1.5  , 1.5);transform-origin: 50%50%;">
+                    <div id="circuistic_buttons_wrapper_inner" style="width:45%;transform:translate(3.5% , 0)">
+
+                        <div class="circuistic_details_btn circuistic_button pdf"  style="text-decoration:none;float: left;" event="inquizzitive">DETAILS</div>
+                        <div style="text-decoration:none;float: right;<?php if(isset($eventNames['inquizzitive'])) echo "cursor:default;"; ?>" class="circuistic_button register" event="inquizzitive"><div class="spinner" style="display:none">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div><div class="tx" <?php if(isset($eventNames['inquizzitive'])) echo "status='done'"; ?>>Register<?php if(isset($eventNames['inquizzitive'])) echo "ed"; ?></div></div>
+
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <!--            <h1 id="decisia" class="item">DECISIA</h1>-->
+                <div class="blankDiv" style="background-color: #042fc3; min-height:676px;padding-top:10vh">
+                    Inquizzitive
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <div id="decisiaDetails">Let your intellect shine, let the rolling of brain race with every passing of minute. Convolution  is coming up with a distinctive quiz competition for school and college students on 3rd March from 4pm-7pm named  Inquizzitive. The Quiz is going to be based on General knowledge to make it more practicable for participants.<br>We also boast on bringing one of the best quizmaster in the kolkata quizzing circuit Mr Somnath Chanda and apart from this we have cash prizes for the top 3 teams worth Rs 14K. Hurry up and register your names!!!</div>
+
+                    <div id="circuistic_contacts" style="cursor: default;color:black;margin-top:1%;font-size:0.3em">
+                        <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
+                            <div>Anirjit Mitra: +918902178622 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="controversial" class="item cs" style="border-color: #624293">
                 <!--            <h1 id="controversial" class="item">CONtroversial</h1>-->
                 <div class="blankDiv" style="background-color: #c4402d">
@@ -728,16 +757,16 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="comingSoon">Coming Soon</div>
                 </div>
             </div>
-            <div id="inquizzitive" class="item cs" style="border-color: #137163">
-                <!--            <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>-->
-                <div class="blankDiv" style="background-color: #cfa518">
-                    <div>Inquizzitive</div>
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <div class="comingSoon">Coming Soon</div>
-                </div>
-            </div>
+<!--            <div id="inquizzitive" class="item cs" style="border-color: #137163">-->
+<!--                <!--            <h1 id="inquizzitive" class="item">INQUIZZITIVE</h1>-->
+<!--                <div class="blankDiv" style="background-color: #cfa518">-->
+<!--                    <div>Inquizzitive</div>-->
+<!--                    <div class="progress">-->
+<!--                        <div class="indeterminate"></div>-->
+<!--                    </div>-->
+<!--                    <div class="comingSoon">Coming Soon</div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div id="seminar" class="item cs" style="border-color: #624293;background-color: none">
 
                 <div id="matrixWrapper">
