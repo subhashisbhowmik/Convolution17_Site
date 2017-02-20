@@ -737,7 +737,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
-                    <div id="decisiaDetails">Let your intellect shine, let the rolling of brain race with every passing of minute. Convolution  is coming up with a distinctive quiz competition for school and college students on 3rd March from 4pm-7pm named  Inquizzitive. The Quiz is going to be based on General knowledge to make it more practicable for participants.<br>We also boast on bringing one of the best quizmaster in the kolkata quizzing circuit Mr Somnath Chanda and apart from this we have cash prizes for the top 3 teams worth Rs 14K. Hurry up and register your names!!!</div>
+                    <div id="decisiaDetails">Let your intellect shine, let the rolling of brain race with every passing of minute. Convolution  is coming up with a distinctive quiz competition for school and college students on 3rd March from 4pm-7pm named  Inquizzitive. The Quiz is going to be based on General knowledge to make it more practicable for participants.<br>We also boast on bringing one of the best quizmasters in the kolkata quizzing circuit Mr Somnath Chanda and apart from this we have cash prizes for the top 3 teams worth Rs 14K. Hurry up and register your names!!!</div>
 
                     <div id="circuistic_contacts" style="cursor: default;color:black;margin-top:1%;font-size:0.3em">
                         <div id="circuistic_contacts_inner"><i style="color: dodgerblue">Contact: </i>
