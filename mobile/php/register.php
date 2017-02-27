@@ -22,24 +22,37 @@ if ($x == 1) {
 //    echo "INSERT INTO `registration` (`id`,`email`,`event`) VALUES (NULL,'$email','$event')";
         if($event=='algomaniac') {
             $body = "Thanks for registering on Algomaniac, Convolution 2017. The online prelims of Algomaniac will be held on 28th Feb, 2017 on Hackerrank, from 8 pm to 9 pm.
-
+<br>
 The Rules and procedure for the prelims are as the following:
+<br>
 
 <b style='text-decoration: underline'>Create Your Team</b>
+<br>
 Since Algomaniac is a team contest, you need to register as a team. To register as a team please follow these steps : 
+<br>
 
 1. Log in to Hackerrank
+<br>
 2. Click on the RIGHT drop down beside your username
+<br>
 3. Click on SETTINGS from the drop-down
+<br>
 4. Your Account settings will appear on the screen. Click on TEAMS on the left side
+<br>
 5. Register your team with a decent team name and contest Algomaniac 4.0 Prelims I
+<br>
 6. Add your teammate. Maximum 2 persons allowed in a team.
+<br>
 
 <b style='text-decoration: underline'>Regulations:</b>
 
+<br>
 1. All the team members must be registered in Algomaniac on the site www.convolutionjuee.com
+<br>
 2. Scoring will be judged based on junior(1st and 2nd yr UG)/senior(3rd and 4th yr UG) group.
+<br>
 3. Selected few will directly qualify for Algomaniac final rounds. 
+<br>
 
 Prelims link: <a href='https://www.hackerrank.com/algomaniac-4-0-prelims'>https://www.hackerrank.com/algomaniac-4-0-prelims</a>";
             ob_end_flush();
