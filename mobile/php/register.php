@@ -37,7 +37,7 @@ The Rules and procedure for the prelims are as the following:
 3. Selected few will directly qualify for Algomaniac final rounds. 
 <br>
 <br>
-For more info, use the details button on the <a href='http://www.convolutionjuee.com'>website</a>.
+For more info, use the details button on the <a href='http://www.convolutionjuee.com'>website, www.convolutionjuee.com .</a>
 ";
         }else{
             $e=ucfirst($event);
