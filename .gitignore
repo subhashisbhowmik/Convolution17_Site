@@ -4,3 +4,5 @@
 .idea/workspace.xml
 *.psd
 *.ai
+functions.php
+.gitignore

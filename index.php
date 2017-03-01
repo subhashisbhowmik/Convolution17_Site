@@ -138,6 +138,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
             <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
+            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
@@ -782,6 +783,9 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <img style="width:45%" class="comingSoon" src="img/cs.svg"/>
 
                 </div>
+            </div>
+            <div id="sponsors" class="item" >
+                <img style="width:100vw" src="img/spons.jpg"/>
             </div>
             <!--            <div id="sponsors" class="item cs">-->
             <!--                <!--            <h1 id="sponsors" class="item">SPONSORS</h1>-->

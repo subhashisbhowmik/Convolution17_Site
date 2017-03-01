@@ -6,8 +6,9 @@ session_start();
 function connect()
 {
     $server = "localhost";
-    $user = "med";
-    $pass = "Local_123";
+    $user = "root";
+    $pass = "";
+//    $pass="";
     $dbname = "convo";
 
     global $conn;
