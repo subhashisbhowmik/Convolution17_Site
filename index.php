@@ -137,7 +137,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
-            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
+<!--            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>-->
             <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
@@ -905,7 +905,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
-                    <div class="comingSoon">Coming Soon</div>
+                    <div class="comingSoon"><a style="font-size: 0.7em; color:black" href="https://www.facebook.com/convolutionpd">Follow the Facebook page for more details</a></div>
                 </div>
             </div>
 <!--            <div id="inquizzitive" class="item cs" style="border-color: #137163">-->
@@ -918,22 +918,22 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <!--                    <div class="comingSoon">Coming Soon</div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div id="seminar" class="item cs" style="border-color: #624293;background-color: none">
-
-                <div id="matrixWrapper">
-                    <canvas id="seminar_canvas"></canvas>
-                </div>
-                <div class="blankDiv" style="background: none">
-                    <!--Seminar - Guest Lecture-->
-                    <img style="width:80%" src="img/seminar.svg"/>
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-<!--                    <div class="comingSoon">Coming Soon</div>-->
-                    <img style="width:45%" class="comingSoon" src="img/cs.svg"/>
-
-                </div>
-            </div>
+<!--            <div id="seminar" class="item cs" style="border-color: #624293;background-color: none">-->
+<!---->
+<!--                <div id="matrixWrapper">-->
+<!--                    <canvas id="seminar_canvas"></canvas>-->
+<!--                </div>-->
+<!--                <div class="blankDiv" style="background: none">-->
+<!--                    <!--Seminar - Guest Lecture-->-->
+<!--                    <img style="width:80%" src="img/seminar.svg"/>-->
+<!--                    <div class="progress">-->
+<!--                        <div class="indeterminate"></div>-->
+<!--                    </div>-->
+<!--<!--                    <div class="comingSoon">Coming Soon</div>-->-->
+<!--                    <img style="width:45%" class="comingSoon" src="img/cs.svg"/>-->
+<!---->
+<!--                </div>-->
+<!--            </div>-->
             <div id="sponsors" class="item" >
                 <img style="width:100vw" src="img/spons.jpg"/>
             </div>

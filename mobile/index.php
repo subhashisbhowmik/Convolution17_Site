@@ -149,7 +149,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <li id="tab-decisia" data-id="decisia"><span><b>Decisia</b></span></li>
             <li id="tab-inquizzitive" data-id="inquizzitive"><span><b>Inquizzitive</b></span></li>
             <li id="tab-controversial" data-id="CONtroversial"><span><b>CONtroversial</b></span></li>
-            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>
+<!--            <li id="tab-seminar" data-id="seminar"><span><b>Seminar</b></span></li>-->
             <!--            <li id="tab-sponsors" data-id="sponsors"><span><b>Sponsors</b></span></li>-->
             <li id="tab-contact" data-id="contact"><span><b>Contact</b></span></li>
         </ul>
@@ -837,7 +837,7 @@ if (isset($_GET['m'])) $m = $_GET['m'];
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
-                    <div class="comingSoon">Coming Soon</div>
+                    <div class="comingSoon"><a style="font-size: 0.7em; color:black" href="https://www.facebook.com/convolutionpd">Follow the Facebook page for more details</a></div>
                 </div>
             </div>
 <!--            <div id="inquizzitive" class="item cs" style="border-color: #137163">-->
@@ -850,17 +850,17 @@ if (isset($_GET['m'])) $m = $_GET['m'];
 <!--                    <div class="comingSoon">Coming Soon</div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div id="seminar" class="item cs" style="border-color: #624293">
-                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->
-                <div class="blankDiv" style="background-color: #c4402d">
-                    Seminar
-                    <div style="display:block; font-size: 4vw">Guest Lecture</div>
-                    <div class="progress">
-                        <div class="indeterminate"></div>
-                    </div>
-                    <div class="comingSoon">Coming Soon</div>
-                </div>
-            </div>
+<!--            <div id="seminar" class="item cs" style="border-color: #624293">-->
+<!--                <!--            <h1 id="presentation" class="item">PRESENTATION</h1>-->-->
+<!--                <div class="blankDiv" style="background-color: #c4402d">-->
+<!--                    Seminar-->
+<!--                    <div style="display:block; font-size: 4vw">Guest Lecture</div>-->
+<!--                    <div class="progress">-->
+<!--                        <div class="indeterminate"></div>-->
+<!--                    </div>-->
+<!--                    <div class="comingSoon">Coming Soon</div>-->
+<!--                </div>-->
+<!--            </div>-->
             <!--            <div id="sponsors" class="item cs">-->
             <!--                <!--            <h1 id="sponsors" class="item">SPONSORS</h1>-->
             <!--                <div class="blankDiv">-->
