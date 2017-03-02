@@ -2121,3 +2121,38 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.3em;
     text-align: justify;
 }
+
+#inquiBG{
+    /*height: calc(100vh - 5px);*/
+    /*width: 100%;*/
+    /*!*position: absolute;*!*/
+    /*!*background-image:  url("../img/inquizzitive/inquizzitive_bg.jpg");*!*/
+    /*background-size: cover;*/
+}
+
+#inquiBG img{
+    width:100%;
+    position:absolute;
+}
+
+#inquiRegister{
+    position:absolute;
+    width:15.7vw;
+    height:14vw;
+    margin-top:2.8vw;
+    right:4.5vw;
+    z-index: 500;
+    border-radius: 10vw;
+    cursor: pointer;
+}
+#inquiDetails{
+    position:absolute;
+    width:20.2vw;
+    height:5.5vw;
+    transform-origin: 0 0;
+    transform:rotate(-16deg);
+    margin-top:20vw;
+    left:10.4vw;
+    z-index: 500;
+    cursor: pointer;
+}

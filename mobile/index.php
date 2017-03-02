@@ -334,135 +334,276 @@ if (isset($_GET['m'])) $m = $_GET['m'];
             <div class="teamDesignation">Website</div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Subhashis Bhowmik</div>
+                <div class="member_img"><img src="../img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Subhashis Bhowmik </div>
             </div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/sudipto.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Sudipto Banik</div>
+                <div class="member_img"><img src="../img/contacts/sudipto.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sudipto Banik </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Pratik Karmakar</div>
+                <div class="member_name">Pratik Karmakar </div>
             </div>
-
-<!--            <div class="teamDesignation">Organization</div>-->
-<!---->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'>-->
-<!--                </div>-->
-<!--                <div class="member_name">Subhashis Bhowmik</div>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>-->
-<!--                <div class="member_name">Pratik Karmakar</div>-->
-<!--            </div>-->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'>-->
-<!--                </div>-->
-<!--                <div class="member_name">Biswajit Tikadar</div>-->
-<!--            </div>-->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'>-->
-<!--                </div>-->
-<!--                <div class="member_name">Debapriya Basu</div>-->
-<!--            </div>-->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'>-->
-<!--                </div>-->
-<!--                <div class="member_name">Debarshi Chanda</div>-->
-<!--            </div>-->
-<!--            <div class="member">-->
-<!--                <div class="member_img"><img src="../img/contacts/anirjit.jpg" onerror='$(this).parent().hide();'></div>-->
-<!--                <div class="member_name">Anirjit Mitra</div>-->
-<!--            </div>-->
+            <!---->
+            <!--            <div class="teamDesignation">Organization</div>-->
+            <!---->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/subhashis.jpg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Subhashis Bhowmik </div>-->
+            <!--            </div>-->
+            <!---->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/pratik.jpeg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Pratik Karmakar </div>-->
+            <!--            </div>-->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Biswajit Tikadar </div>-->
+            <!--            </div>-->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Debapriya Basu </div>-->
+            <!--            </div>-->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Debarshi Chanda </div>-->
+            <!--            </div>-->
+            <!--            <div class="member">-->
+            <!--                <div class="member_img"><img src="../img/contacts/anirjit.jpg" onerror='$(this).parent().hide();'></div>-->
+            <!--                <div class="member_name">Anirjit Mitra </div>-->
+            <!--            </div>-->
             <div class="teamDesignation">Algomaniac</div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/anisha.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Anisha Bannerjee</div>
+                <div class="member_img"><img src="../img/contacts/anisha.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anisha Bannerjee </div>
             </div>
 
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/nag.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Sayan Nag</div>
+                <div class="member_name">Sayan Nag </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/niladri.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Niladri Dutta</div>
+                <div class="member_img"><img src="../img/contacts/niladri.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Niladri Dutta </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Shounak Biswas</div>
+                <div class="member_img"><img src="../img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Shounak Biswas </div>
             </div>
 
             <div class="teamDesignation">Circuistic</div>
 
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/druhin.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Druhin Chowdhury</div>
+                <div class="member_name">Druhin Chowdhury </div>
             </div>
 
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/soumee.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Soumee Guha</div>
+                <div class="member_name">Soumee Guha </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/anurag.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Anurag Chhetri</div>
+                <div class="member_name">Anurag Chhetri </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/sadaf.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Sadaf Syed</div>
+                <div class="member_img"><img src="../img/contacts/sadaf.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sadaf Syed </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sindhunil.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sindhunil Bhaumik </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/soham.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Soham Mondal </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sohamr.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Soham Roy </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/pratikn.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Pratik Nath </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/ritajyoti.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Ritajyoti Ray </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/saurabh.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Saurabh Goswami </div>
             </div>
             <div class="teamDesignation">Decisia</div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Debapriya Basu</div>
+                <div class="member_img"><img src="../img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debapriya Basu </div>
             </div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Shounak Biswas</div>
+                <div class="member_img"><img src="../img/contacts/shounak.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Shounak Biswas </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/anirjit.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Anirjit Mitra</div>
+                <div class="member_img"><img src="../img/contacts/anirjit.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anirjit Mitra </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/debayan.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Debayan Seal</div>
+                <div class="member_name">Debayan Seal </div>
             </div>
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/aritra.jpg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Aritra Roy</div>
+                <div class="member_name">Aritra Ray </div>
             </div>
             <div class="teamDesignation">SparkHACK</div>
 
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/paulomi.jpeg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Paulomi Bhowmick</div>
+                <div class="member_img"><img src="../img/contacts/paulomi.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Paulomi Bhowmick </div>
             </div>
 
             <div class="member">
                 <div class="member_img"><img src="../img/contacts/sanmoy.jpeg" onerror='$(this).parent().hide();'></div>
-                <div class="member_name">Sanmoy Chakrabarty</div>
+                <div class="member_name">Sanmoy Chakrabarty </div>
             </div>
             <div class="member">
-                <div class="member_img"><img src="../img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'>
-                </div>
-                <div class="member_name">Debarshi Chanda</div>
+                <div class="member_img"><img src="../img/contacts/sanjoy.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sanjoy Poddar </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/debarshi.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debarshi Chanda </div>
+            </div>
+            <div class="teamDesignation">Inquizzitive</div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/anirjit.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anirjit Mitra </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/budha.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Budhaditya Ghosh </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/suchita.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Suchita Mali </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/rima.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Rima Akhter Banu </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/trishita.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Trishita Majumder </div>
+            </div>
+            <div class="teamDesignation">Papier</div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sourya.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sourya Sengupta </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sayanb.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sayan Biswas </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sanmitra.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sanmitra Bhowmik </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/anandarup.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Anandarup Bhowmick </div>
+            </div>
+            <div class="teamDesignation">CONtroversial</div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sahil.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sahil Badani </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/saptashwa.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Saptashwa Sen </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/aman.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Aman Choudhury </div>
+            </div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/harsh.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Harsh Agarwal </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sayantan.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sayantan Roychoudhury </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/souryadeep.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Souryadeep Basak </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/archik.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Archik Byaborta </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sourav.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sourav Mishra </div>
+            </div>
+
+            <div class="teamDesignation">Stage Committee</div>
+
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/biswajit.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Biswajit Tikadar </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/sudipta.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Sudipto Mondal </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/basobjit.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Basobjit Halder </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/rounakshee.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Rounakshi Dey </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/arunima.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Arunima Oraon </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/rima.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Rima Akhter Banu </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/suchita.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Suchita Mali </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/trishita.jpg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Trishita Majumder </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/paulomi.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Paulomi Bhowmick </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/debapriya.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Debapriya Basu </div>
+            </div>
+            <div class="member">
+                <div class="member_img"><img src="../img/contacts/soumee.jpeg" onerror='$(this).parent().hide();'></div>
+                <div class="member_name">Soumee Guha </div>
             </div>
         </div>
     </div>
