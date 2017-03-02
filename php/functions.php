@@ -8,6 +8,7 @@ function connect()
     $server = "localhost";
     $user = "med";
     $pass = "Local_123";
+//    $pass="";
     $dbname = "convo";
 
     global $conn;
