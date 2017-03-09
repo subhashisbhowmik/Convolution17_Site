@@ -48,7 +48,7 @@ if ($event == "All Users") {
     $select = "SELECT id AS QueryID,email, query as Query FROM `query`";
 } else if($event=="Analytics"){
     $sum=sql("SELECT * FROM `hit`")->num_rows;
-    $select="SELECT DAY(ts)+(WEEK(ts)-7)*7 AS `Day`,COUNT(*) AS Hits FROM `hit` GROUP BY Day";
+    $select="SELECT DAYOFYEAR(ts) AS `Day`,COUNT(*) AS Hits FROM `hit` GROUP BY Day";
     $select2="SELECT WEEK(ts) AS `Week`, COUNT(*) AS `Hits` FROM `hit` GROUP BY Week";
 
 } else if($event=="Admin"){
